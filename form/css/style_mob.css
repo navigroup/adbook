@@ -361,3 +361,37 @@
     
     }
 
+    .buy-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+    }
+    
+    .buy-btn {
+        display: block;
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+        padding: 15px 0;
+        font-size: 1.7rem;
+        font-weight: bold;
+        color: white;
+        border-radius: 8px;
+        transition: 0.3s;
+        text-decoration: none;
+        margin: 0 auto;
+    }
+    
+    /* 버튼별 스타일 */
+    .aladin { background: #1E4DD3; } /* 알라딘 */
+    .kyobo { background: #4CAF50; } /* 교보문고 */
+    .yes24 { background: #9696ff; } /* 교보문고 */
+    .ypbooks { background: #DA3C3C; } /* 영풍문고 */
+    .coupang { background: #FF9900; } /* 쿠팡 */
+    
+    /* 호버 효과 */
+    .buy-btn:hover {
+        opacity: 0.85;
+        transform: scale(1.05);
+    }
