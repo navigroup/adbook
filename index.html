@@ -3,6 +3,15 @@
 <html lang="ko">
     <head>
 
+        <!-- Danggeun Market Code -->
+        <script src="https://karrot-pixel.business.daangn.com/0.4/karrot-pixel.umd.js"></script>
+        <script>
+        window.karrotPixel.init('1742365652695400001');
+        window.karrotPixel.track('ViewPage');
+        window.karrotPixel.track('Purchase');
+        </script>
+        <!-- End Danggeun Market Code -->
+
         <title>불황을 극복하고 사업을 큰 성공으로 이루는 '운'의 법칙 | 운좋은 놈이 성공한다 </title>
         <meta charset="UTF-8">
         <meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
@@ -1984,7 +1993,18 @@ Frequently Asked Questions Section
     }); 
   </script>
 
-
+  
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // 모든 .buy-btn 요소에 클릭 이벤트 추가
+        document.querySelectorAll(".buy-btn").forEach(function(button) {
+            button.addEventListener("click", function() {
+                // Karrot Pixel 이벤트 트래킹 실행
+                window.karrotPixel.track('Purchase');
+            });
+        });
+    });
+</script>
 
 
 </html>
