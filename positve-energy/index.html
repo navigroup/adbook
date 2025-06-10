@@ -61,8 +61,10 @@ body{font-family:'Noto Sans KR',sans-serif;background:#FAFAFA;position:relative}
 
 /* ▼ 더 알아보기 토글 */
 #moreContent{overflow:hidden;max-height:0;transition:max-height .6s ease}
-#moreContent.open{max-height:10000px}
-
+#moreContent.open{max-height:10000px;margin-right:300px;}
+@media screen and (max-width:768px) {
+  #moreContent.open{margin-right:0px;}
+}
 /* ==================== DOTCOM-STYLE ==================== */
 nav::before{
   content:"📘  International Bestseller With Over 300,000+ Copies Sold!";
@@ -215,7 +217,7 @@ nav{top:1.75rem!important}
     
 
     <!-- ▼ 토글될 나머지 콘텐츠 -->
-    <div id="moreContent" style="margin-right:300px;">
+    <div id="moreContent" >
       <!-- Introduction -->
       <div class="bg-white rounded-lg shadow-md p-5 mb-6">
         <h2 class="text-xl font-bold mb-4">당신의 에너지는 지금 안녕하신가요?</h2>
@@ -265,7 +267,7 @@ nav{top:1.75rem!important}
       <!-- Special Offer -->
       <div class="bg-primary/10 rounded-lg shadow-md p-5 mb-6">
         <h3 class="text-lg font-bold mb-3">🎁 무료 샘플북 다운로드 </h3>
-        <div ="flex items-center mb-2"><span class="text-primary mr-2"></span></div>
+        <div class="flex items-center mb-2"><span class="text-primary mr-2"></span></div>
         <div class="bg-white p-4 rounded-lg mb-4">
           <h4 class="font-bold mb-2">지금까지 아무리 노력해도 원하는 삶을 이루지 못했다면 </h4>
           <p class="text-gray-700 mb-2">당신의 문제는 재능이나 노력이 아닙니다!</p>
