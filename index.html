@@ -1,2017 +1,489 @@
-
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-
-        <!-- Danggeun Market Code -->
-        <script src="https://karrot-pixel.business.daangn.com/0.4/karrot-pixel.umd.js"></script>
-        <script>
-        window.karrotPixel.init('1742365652695400001');
-        window.karrotPixel.track('ViewPage');
-        
-        </script>
-        <!-- End Danggeun Market Code -->
-
-        <script type="text/javascript" charset="UTF-8" src="//t1.daumcdn.net/kas/static/kp.js"></script>
-        <script type="text/javascript">
-            kakaoPixel('6291338014999429090').pageView('');
-            
-        </script>
-
-        <title>불황을 극복하고 사업을 큰 성공으로 이루는 '운'의 법칙 | 운좋은 놈이 성공한다 </title>
-        <meta charset="UTF-8">
-        <meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="">
-        <meta name="description" content="">
-        <meta name="keywords" content="">
-        <link rel="shortcut icon" href="./img/favicon.png">
-
-
-     
-        <link rel='stylesheet' href='./hoogi/css/hoogi.css' type='text/css' media='all' />
-        <script type='text/javascript' src='https://www.nhreits.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.3' id='jquery-core-js'></script>
-
-        <script type='text/javascript' src='https://www.nhreits.com/wp-content/themes/nhreits/assets/js/jquery-3.3.1.min.js?ver=6.2' id='theme-js-jquery-js'></script>
-        <!-- BS -->
-        <!-- Latest compiled and minified CSS -->
-        <link
-            rel="stylesheet"
-            href="./main1/css/bootstrap.min.css">
-        <!-- jQuery library -->
-        <script src="./main1/js/jquery.min.js"></script>
-        <script src="./main1/js/jquery-ui.min.js"></script>
-        <!-- Popper JS -->
-        <script src="./main1/js/popper.min.js"></script>
-        <!-- Latest compiled JavaScript -->
-        <script src="./main1/js/bootstrap.min.js"></script>
-        <!-- CSS File -->
-        <link rel="stylesheet" href="./form/css/style_tab.css">
-        <link rel="stylesheet" href="./form/css/style_mob.css">
-        <link rel="stylesheet" href="./form/css/style_bar.css">
-
-        <!-- <link rel="stylesheet" href="./main1/css/reset.css"> -->
-        <link rel="stylesheet" href="./main1/css/style.css">
-        <link rel="stylesheet" href="./main1/css/animate.css">
-        <link rel="stylesheet" href="./main1/css/jquery.simplyscroll.css">
-        <link rel="stylesheet" href="./main1/css/all.css">
-
-
-
-        <link
-        rel="stylesheet"
-        href="./css/bootstrap.min.css">
-    <!-- jQuery library -->
-    <script src="./js/jquery.min.js"></script>
-    
-    <link href="css/ionicons.min.css" rel="stylesheet" />
-    <!-- <link rel="stylesheet" href="css/reset.css"> -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/jquery.simplyscroll.css">
-    <link rel="stylesheet" href="css/all.css">
-
-
-
-
-        <!-- Script File -->
-        <script language="javascript" src="./main1/js/script.js"></script>
-        <script src="./main1/js/main.js" charset="euc-kr"></script>
-        <!-- animation script -->
-        <script src="./main1/js/wow.min.js"></script>
-        <script src="js/jquery.waypoints.min.js"></script>
-        <script src="js/jquery.counterup.min.js"></script>
-        <script src="js/jquery.simplyscroll.min.js"></script>
-
-        <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-
-
-        <script>
-            $(document).ready(function ($) {
-                $(".scroll").click(function(event){
-                    event.preventDefault();
-                    $('html,body').animate({
-                        scrollTop:$(this.hash).offset().top
-                    }, 500); //smooth scroll
-                });
-
-                $("#scroller").simplyScroll({
-                    pauseOnHover: true,
-                    speed: 1,
-                    auto: true,
-                    autoMode: 'loop'
-                });
-            	
-                new WOW().init();
-
-                $('.counter').counterUp({delay: 10, time: 1000});
-
-                document
-                    .getElementById('time-result')
-                    .innerHTML = today;
-            }); 
-
-            msg_time();
-            setInterval('msg_time()',1000); // 타이머 1초간격으로 수행
-            function msg_time(){
-                var remainTime;
-                var stDate = new Date().getTime();//현재날짜
-                var now = new Date();
-                var nowYear = now.getFullYear();
-                var nowMonth = now.getMonth()+1;
-                var nowDate = now.getDate();
-                var edDate =nowYear+"/"+nowMonth+"/"+nowDate + " 17:59:59";
-                edDate = new Date(edDate).getTime();
-                var RemainDate = edDate - stDate;//남은시간
-
-                var hours = Math.floor((RemainDate % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                var miniutes = Math.floor((RemainDate % (1000 * 60 * 60)) / (1000 * 60));
-                var seconds = Math.floor((RemainDate % (1000 * 60)) / 1000);
-
-                // if(hours < 10){
-                //     hours = "0" + hours;
-                // }
-                // if(miniutes < 10){
-                //     miniutes = "0" + miniutes;
-                // }
-                // if(seconds < 10){
-                //     seconds = "0" + seconds;
-                // }
-                remainTime =  hours + "시간 " + miniutes + "분 " + seconds + "초 남음 "; // 남은 시간 text형태로 변경
-                $(".countVer02").html(remainTime);
-                // $(".hours").text(hours); //영역에 넣기
-                // $(".miniutes").text(miniutes); //영역에 넣기
-                // $(".seconds").text(seconds); //영역에 넣기
-            }
-        </script>
-
-
-    </head>
-    <body oncontextmenu="return false">
-    
-        <!-- 1 -->
-        <div class="contents-time">
-            <p>&nbsp;<span class="typeText" style="font-size:1.4em;"></span>
-                <!-- <br><br>[ 마감 기한 | <span class="countVer02"></span> ] -->
-            </p>
-        </div>
-        
-
-        
-        
-        <!-- 3 -->
-        <style>
-            .m_go_btn, #mob_btn{
-                background:#AC9173;
-            }
-
-                .intro-text{
-                    font-size:3em;
-                }
-             @media screen and (max-width: 1200px) {
-                .intro-text{
-                    font-size:3em;
-                }
-            }
-
-            @media screen and (max-width: 768px) {
-                .intro-text{
-                    font-size:4em;
-                }
-            }
-
-            .bg-black {
-            background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-            }
-           
-
-            .bg-main{
-                background: url('./img/Back.png') no-repeat center center / cover;
-                
-            }
-
-         
-
-            .bg-black {
-            --tw-bg-opacity: 1;
-            }
-        </style>
-
-
-
-<style>
-
-    /* 배경 이미지 */
-    #intro .background-img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position:center;
-        filter: brightness(0.6); 
-        /* 기본 밝기 설정 */
-        z-index: -1; 
-    }
-    
-    </style>
-
-<style>
-    .underline{
-    text-decoration: underline;text-underline-offset: 0.2em; 
-    }
-</style>
-
-<!-- 3 -->
-<div class="contents" style="color:#fff;padding:40px 0 70px;position:relative;" id="intro">
-    <img class="background-img wow fadeIn" src="./img/pn-intro.jpeg">
-    <div class="container m-center">
-        <div class=" text-center">
-            <div class="graph-section" style="padding:80px 0 0;"> 
-                <h2 class="wow fadeInUp" style="line-height:140%;">
-                    쉬지 않고 노력하고<br>실력이 없는게 아닌데도<br>남들은 잘만 되는데<br>나만 제자리라고 느낀다면?<br><br>어려운 경제 위기 속<br>불황을 이겨나갈<br>방법을 찾고 있다면?<br><br>사업이 더 커지는데 있어서<br>한계가 크게 느껴지고<br>돌파구를 못 찾겠다면?<br><br>
-                   
-                </h2>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="contents" style="background: #000;color:#fff;padding:90px 0 90px;">
-    <div class="container m-center">
-        <div class="row text-center" style="display: initial !important;">
-            <div class="graph-section" style="padding-bottom:0;">
-                <h2 class="wow fadeInUp">
-                    다가오는 경제 위기로<br>어려운 사업 환경 속<br>
-
-                </h2>
-                <img src="./img/30w-article4.png" class="wow fadeInLeft" style="border:1px solid #fff;border-radius:5px;margin:10px 0;max-width:600px;">
-                <img src="./img/40w-article1.png" class="wow fadeInLeft" style="border:1px solid #fff;border-radius:5px;margin:10px 0;max-width:600px;">
-                <img src="./img/30w-article1.png" class="wow fadeInLeft" style="border:1px solid #fff;border-radius:5px;margin:10px 0;max-width:600px;">
-
-                <h2 class="wow fadeInUp" style="padding:40px 0 0;">
-                    일이 풀리지 않고<br>상황이 어렵기만한<br>사장님들에게
-                </h2>
-                <img src="./img/article1.png" class="wow fadeInLeft" style="border:1px solid #fff;border-radius:5px;margin:10px 0;max-width:600px;">
-                <img src="./img/20mw-article-s1.png" class="wow fadeInLeft" style="border:1px solid #fff;border-radius:5px;margin:10px 0;max-width:600px;">
-                <img src="./img/article-crisis1.png" class="wow fadeInLeft" style="border:1px solid #fff;border-radius:5px;margin:10px 0;max-width:600px;">
-
-                <h2 class="wow fadeInUp" style="padding:40px 0 0;">
-                    막막한 여러분의 사업을<br>더 큰 성공으로 바꿀 수 있는<br><br>실질적인 기회의 발판을<br>제공하고자 준비했습니다!
-                </h2>
-            </div>
-        </div>
-    </div>
-</div>
-
-<style>
-    .intro-btn{
-        border:2px solid #fff;
-        padding:15px 50px;
-        border-radius:10px;
-    }
-
-    .intro-btn:hover{
-        border:2px solid #fff;
-        background: rgba(0, 0, 0, 0.4);
-        /* color:rgba(255, 255, 255, 0.3); */
-        padding:15px 50px;
-        transition:1.2s;
-        border-radius:10px;
-    }
-</style>
-
-<div class="contents bg-main" style="background-color: #000;padding:100px 0 0;">
-    <div class="container">
-        <div class="row align-items-center align-responsive" style="flex-direction:column;text-align:center;">
-            <div class="col col-md-6 col-12 m-center text-white">
-                <h2 class="wow fadeInUp two-title"><span id="">실력과 노력만으로는<br>극복하기 어려운<br>어려운 상황 속에서<br><br>큰 성공을 하는 길을 찾고<br>사업의 흐름을 역전시키는 힘!</span>
-                <img src="./img/intro-lucky.png" style="margin:30px 0;max-width:600px;border-radius:10px;width:100%;">
-                    <br>일본의 잃어버린 30년<br>장기 불황 속에서도<br><br><u style="text-decoration: underline;text-underline-offset: 0.2em; ">흙수저에서 시작해<br>일본 최고의 부호이자<br>12년간 납세액 1위에 오르고</u><br><br>학벌과 스펙이 없던<br>10명의 제자를 모두<br>실제 부자로 만든 비결!<br><img src="https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791194114055.jpg" style="margin:30px 0;max-width:300px;border-radius:10px;"><br>사이토 히토리가 말하는<br>불황과 불운 속에서도<br>당신의 비즈니스를<br>큰 성공으로 바꾸는 방법!<br><br><br><a class="intro-btn scroll" href="#buy">바로 구매하기 ></a><br><br></h2>
-                  <ul class="list-item list-text" style="margin-bottom:60px;">
-                    <li class="wow fadeInLeft" style="color:#fff;border-radius:10px;background:rgba(255,255,255,.2);letter-spacing: normal;">
-                  <img src="./main1/img/icon1.png" alt="" class="mr-2" style="color:#fff;">
-                  일본 30만부 베스트셀러 
-                    </li>
-                    <li class="wow fadeInLeft" data-wow-delay="0.2s" style="color:#fff;border-radius:10px;background:rgba(255,255,255,.2);">
-                        <img src="./main1/img/icon1.png" alt="" class="mr-2">
-                        제자 10명을 부자로 키운 비결
-                    </li>
-                 
-                    <li class="wow fadeInLeft" data-wow-delay="0.5s" style="color:#fff;border-radius:10px;background:rgba(255,255,255,.2);">
-                        <img src="./main1/img/icon1.png" alt="" class="mr-2">
-                        책추남TV 강력 추천 도서
-
-                    </li>
-                 
-                </ul>
-                <!-- <p>무직·연체중이 아니라면 신청가능</p> -->
-                <!-- <p class="small">*선착순 모집으로 예고없이 종료될 수 있습니다.</p> -->
-                <!-- <a class="btn btn-light scroll p-text" href="#form">자세히 알아보기</a> -->
-            </div>
-          
-        </div>
-    </div>
-</div>
-
-<!-- <style>
-
-.section3 .wrap1 {width:1200px; margin:0 auto;}
-.section3 .main_title {font-size:4.125rem; color:#4e4e4e; font-family: 'GmarketSans'; font-weight:700; line-height: 5rem;}
-.section3 .yellow {color:#f9eda7;}
-.section3 .green {color:#726c0b;}
-.section3 .blue {color:#345bd7;}
-.section3 .red {color:#ee0000;}
-.section3 .white {color:#fff;}
-.section3 .center {text-align: center; margin-bottom:3.75rem;}
-
-
-.section3 {padding:6.25rem 0; box-sizing: border-box; background:#e4e4e4; background-repeat: no-repeat; background-position: center; background-size: cover;}
-.section3 .content {padding:2.5rem; box-sizing: border-box; background-color: #fff; border-radius: 1.25rem; overflow: hidden;}
-.section3 .content .left {float:left; width:50%; padding-right:1.25rem; box-sizing: border-box;}
-.section3 .content .left h2 {font-size:2.5rem; font-weight: 700; color:#4d4d4d;}
-.section3 .content .left h3 {font-size:1.625rem; line-height: 2.375rem; color:#4d4d4d; padding:1.875rem 0; box-sizing: border-box;}
-.section3 .content .left img {width:100%;}
-.section3 .content .left h4 {background-color: #dddcd7; border-radius: 1.25rem; padding:1.25rem 0; box-sizing: border-box;}
-.section3 .content .left h4 span {text-align:Center; color:#3e3b07; font-weight: 700; font-size:2rem; padding:0 0 1.25rem; box-sizing: border-box;}
-.section3 .content .left h4 span:last-child {padding:4.188rem 0 0; box-sizing: border-box; position:relative;}
-.section3 .content .left h4 span:last-child::before {display: block; content: ''; width:2.5rem; height: 2.5rem; position: absolute; left:50%; top:0; transform:translate(-50%,0); background-image: url(../img/icon_plus.png); background-size: cover; background-repeat: no-repeat;}
-
-
-.section3 .content .right {float:left; width:50%;}
-.section3 .content .right table {width:100%; text-align:center;}
-.section3 .content .right table th {line-height: 3.5rem; color:#fff; background-color: #797317; border-radius:1.25rem 1.25rem 0 0; font-size:1.25rem; font-weight:500;}
-.section3 .content .right table tbody tr {border-bottom:1px solid #bfbfbf; box-sizing: border-box;}
-.section3 .content .right table tbody tr.borderline {border-top:2px solid #797317;}
-.section3 .content .right table td { line-height:3.875rem; font-size:1.125rem; font-weight:500; color:#000; line-height: 3.5rem;}
-.section3 .content .right table tbody tr:last-child {border-bottom:0px;}
-.section3 .content .right table tr:last-child td {color:#000; font-family: 'GmarketSans'; font-weight:700; font-size:1.438rem;}
-
-
-.section3 .content .right .bottom_table {position: relative; padding-top:4.063rem; box-sizing: border-box;}
-.section3 .content .right .bottom_table::before {display: block; content: ''; width:2.5rem; height: 2.5rem; position: absolute; left:50%; top:0; transform:translate(-50%,0); background-image: url(../img/icon_arrow.png); background-size: cover; background-repeat: no-repeat;}
-.section3 .content .right .bottom_table th {background-color:#345bd7;}
-.section3 .content .right .bottom_table tbody tr.borderline {border-top:2px solid #345bd7;}
-
-/* ï¿½ì„Žë–’ï¿½ÑŠì˜„éºï¿½éºï¿½ */
-.section3 .content2 {margin-top:2.5rem;}
-.section3 .content2 .left h4 {position: relative;}
-.section3 .content2 .left h4 > img {position: absolute; top:-3%; left:5%; height: 1.25rem!important; width:auto;}
-.section3 .content2 .left h4 span:last-child::before {display: block; content: ''; width:2.5rem; height: 2.5rem; position: absolute; left:50%; top:0; transform:translate(-50%,0); background-image: url(../img/icon_equal.png); background-size: cover; background-repeat: no-repeat;}
-.section3 .content2 .right table tbody tr.borderline {border-bottom:2px solid #797317; border-top:1px solid #bfbfbf; box-sizing: border-box; }
-.section3 .content2 .right table tr:last-child td {line-height:3.875rem; font-size:1.125rem; font-weight:500; color:#000; line-height: 3.5rem;}
-.section3 .content2 .right table tbody tr.point td {color:#ee0000; font-family: 'GmarketSans'; font-weight:700; font-size:1.438rem;}
-.section3 .content2 .right .bottom_table tbody tr.borderline {border-top:1px solid #bfbfbf; border-bottom:2px solid #345bd7;}
-.section3 .content2 .right .top_table {margin-bottom:1.25rem;}
-
-
-
-
-@media screen and (max-width: 1200px) {
-    .section3 .wrap1 {width:auto; padding:0 1.875rem; box-sizing: border-box;}
-      .main_title {font-size:3.8rem;}
-    }
-    @media screen and (max-width: 1024px) {
-    .section3 .wrap1 { padding:0 1.25rem;}
-    .section3 .main_title {font-size:3.2rem; line-height: 4.2rem;}
-    }
-    @media screen and (max-width: 768px) {
-      
-        .section3 .wrap1 { padding:0 1rem;}
-        .section3 .main_title {font-size:3rem; line-height: 4rem;}
-    }
-    @media screen and (max-width: 640px) {
-      
-        .section3 .main_title {font-size:2.4rem; line-height: 3.4rem;}
-        .section3 .center {margin-bottom:2rem;}
-    }
-    
-    
-
-@media screen and (max-width: 1200px) {
-  .section3 .content {position: relative;}
-  .section3 .content .bottom_wrap {position: absolute; bottom:2.5rem; left:2.5rem; width:34%;}
-  .section3 .content .left {width:40%;}
-  .section3 .content .right {width:60%;}
-  .section3 .content .left h3 {font-size:1.2rem; line-height: 2rem;}
-  .section3 .content .left h4 span {font-size:2.5rem;}
-
-}
-@media screen and (max-width: 1024px) {
-  .section3 .content {padding:2rem 1.5rem;}
-  .section3 .content .left h2 {font-size:2rem;}
-  .section3 .content .left h3 br {display: none;}
-  .section3 .content .left h4 {padding:1rem 0 ;}
-  .section3 .content .bottom_wrap {bottom:2rem; left:1rem; width:38%;}
-  .section3 .content .right table tr:last-child td,
-  .section3 .content2 .right table tbody tr.point td {font-size:1.2rem;}
-
-}
-@media screen and (max-width: 768px) {
-
-}
-@media screen and (max-width: 640px) {
-  .section3 {padding:4rem 0;}
-  .section3 .content .left,
-  .section3 .content .right {width:100%; float:none; padding:0;}
-  .section3 .content .bottom_wrap {position: static; bottom:0; left:0; right:0; top:0; width:100%;}
-  .section3 .content .bottom_wrap img {display: none;}
-  .section3 .content .left h3 {font-size:1.3rem;}
-  .section3 .content .left h4 {padding:2rem 0;  }
-
-  .section3 .content .right {margin-top:2rem;}
-
-}
-
-</style>
-
-<article class="section3">
-    <div class="wrap1">
-      <h2 class="main_title center up-on-scroll" style="color:#000;">실제 돈을 돌려받은<br>대표님들의 후기<span class="blue"></span></h2>
-
-      <div class="content">
-      <img src="./img/hh1.png" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;" class="wow fadeInLeft" data-wow-delay="0.2s">
-      </div>
-      <div class="content content2">
-       <img src="./img/hh2.png" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInRight;" class="wow fadeInRight" data-wow-delay="0.4s">
-      </div>
-      <div class="content content2">
-        <img src="./img/hh3.png" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;" class="wow fadeInLeft" data-wow-delay="0.6s">
-       </div>
-       <div class="content content2">
-        <img src="./img/hh4.png" style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInRight;" class="wow fadeInRight" data-wow-delay="0.8s">
-       </div>
-   
-    </div>
-  </article> -->
-
-
-<!-- 3 -->
-<div class="contents">
-    <div class="container m-center">
-        <div class="row text-center" style="display: initial !important;">
-            <div class="graph-section" style="padding-bottom:0;">
-               
-                <h2 style="margin-bottom:0;"> 학벌도 스펙도 없는<br>흙수저였던 제가<br>어려운 시장 환경 속에서도<br>억만장자가 되면서<br><br>온몸으로 절실히 깨닫게 된<br>한 가지 진실이 있습니다.<br><br>사업에 어려움을 겪는<br>대부분의 사람들이<br>놓치고 있는 것이기도 한데요.<br><br>그건 바로,<br><br><u class="underline">큰 성공을 이룬 사람들은<br>‘운’을 진지하게 바라보고<br>그 중요성을 인정한다는 것입니다.</u></h2>
-                
-              
-            </div>
-        </div>
-    </div>
-</div>
-
-<div style="position:relative;text-align:-webkit-center;background:#fff;" >
-    <img src="./img/warren.jpeg" class="eg-img" >
-    <div style="position:absolute;text-align:-webkit-left;top:13%;left:12%;right:0;color:#fff;">
-        <div >
-        <h2 class="wow fadeInUp eg-text" data-wow-delay="0.8s" style="line-height:160%;padding:40px 0px;" data-wow-delay="2.2s">"저는 운이 좋은 사람입니다.<br>엄청난 운이 없었다면<br>지금과 같은 부를<br>쌓지 못했을 겁니다."<br><br>-워렌 버핏<br>버크셔 헤서웨이 회장</h2>
-
-        </div>
-    </div>
-   
-       
-        </div>
-
-        
-
-    <div style="position:relative;text-align:-webkit-center;background:#fff;" >
-        <img src="https://www.chosun.com/resizer/v2/O7G7SLUM3I2W6JDX3SHJ6NXIAE.jpg?auth=4c47e52a1db0551b8fb510dd9c346f64793d4d89e3363779fab02cc8e397e456&width=616" class="eg-img" >
-        <div style="position:absolute;text-align:-webkit-left;top:18%;left:48%;right:0;color:#fff;">
-            <div >
-            <h2 class="wow fadeInUp eg-text" data-wow-delay="0.8s" style="line-height:160%;padding:40px 0px;" data-wow-delay="2.2s">"누군가가 성공하려면<br>재능과 노력이 필요하지만,<br>많은 운도 필요합니다."<br><br>-마크 저커버그<br>Meta(페이스북) 창업자</h2>
-
-            </div>
-        </div>
-        
-            
-    </div>
-
-
-    <div style="position:relative;text-align:-webkit-center;background:#fff;" >
-        <img src="https://img.etoday.co.kr/pto_db/2021/02/600/20210203071005_1577497_1200_822.jpg" class="eg-img" >
-        <div style="position:absolute;text-align:-webkit-left;top:13%;left:12%;right:0;color:#fff;">
-            <div >
-            <h2 class="wow fadeInUp eg-text" data-wow-delay="0.8s" style="line-height:160%;padding:40px 0px;" data-wow-delay="2.2s">"아마존의 성공은 믿기 힘든 확률로<br>반은 운이었고 반은 타이밍이고<br>나머지가 머리 덕분입니다."<br><br>-제프 베이조스<br>아마존 회장</h2>
-    
-            </div>
-        </div>
-       
-    </div>
-
-    
-    
-
-    <div style="position:relative;text-align:-webkit-center;background:#fff;" >
-        <img src="https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/202403/16/2b33d799-7825-4f4c-af90-3af48ec27962.jpg" class="eg-img" >
-        <div style="position:absolute;text-align:-webkit-center;top:18%;left:0%;right:0;color:#fff;">
-            <div >
-            <h2 class="wow fadeInUp eg-text" data-wow-delay="0.8s" style="line-height:160%;padding:40px 0px;" data-wow-delay="2.2s">"성공엔 실력 뿐만 아니라<br>운이 더해져야 하고,<br>'운'이라는 것도 노력으로<br>키울 수 있다고 생각합니다."<br><br>-오타니 쇼헤이<br>LA 다저스 야구선수</h2>
-
-            </div>
-        </div>
-        
-            
-    </div>
-
-
-
-        <style>
-            .eg-img{
-               width:100%;
-               /* max-width:1000px; */
-               filter:brightness(0.5);
-               object-fit:cover;
-               /* padding:60px 0; */
-           }
-       
-           .eg-text{
-               font-size:2.5em;
-               
-           }
-        @media screen and (max-width: 1200px) {
-           .eg-text{
-               font-size:3.4em;
-           }
-       }
-       
-       @media screen and (max-width: 848px) {
-           .eg-text{
-               font-size:2em;
-           }
-       
-           .eg-img{
-              height:400px;
-           }
-       }
-       </style>
-
-
-
-<!-- <style>
-
-#law-price .left .bar{
-height:140px;
-}
-
-#law-price .right .bar{
-height:140px;
-}
-</style> -->
-
-<!-- 3 -->
-<div class="contents">
-    <div class="container m-center">
-        <div class="row text-center" style="display: initial !important;">
-            <div class="graph-section" style="padding-bottom:0;">
-                <h2 style="margin-bottom:0;">
-                 사업을 하는 분들 중에는<br>재능과 실력을 갖춘<br>사람은 너무나 많습니다.<br><br>하지만 왜 큰 성공을 하는<br>사람은 소수에 불과할까요?<br><Br>매우 안타깝지만<br>사업의 성공 요소가<br>실력과 노력만으로<br>구성되어 있지 않기 때문입니다.<br><Br>
-                  
-                  
-                </h2>
-                <!-- <ul class="wrap">
-                    <li>원금 최대 95.3%까지 탕감!</li>
-                    <li>추심, 독촉 전화 즉시 방어!</li>
-                    <li>기각 시 100% 환불!</li>
-                </ul>
-                <div class="graph" id="law-price">
-                    <div class="left">
-                        <div class="wrap">
-                            <p class="price">1억 8천만원</p>
-                            <div class="bar"></div>
-                            <p class="txt"><span>이전 세금 환급액</span></p>
-                        </div>
-                    </div>
-                    <div class="middle" style="transform: scaleY(1);"></div>
-                    <div class="right">
-                        <div class="wrap">
-                            <p class="price txtAni">8000만원</p>
-                            <div class="bar"></div>
-                            <p class="txt"><span>최근 세금 환급액</span></p>
-                        </div>
-                    </div>
-                </div> -->
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-
-<div style="position:relative;text-align:-webkit-center;background:#fff;padding:0;">
-    <img src="https://dimg.donga.com/wps/NEWS/IMAGE/2024/08/22/126640379.2.jpg" class="eg-img" >
-    <div style="position:absolute;text-align:-webkit-center;top:16%;left:0%;right:0;color:#fff;">
-        <div >
-        <h2 class="wow fadeInUp eg-text" data-wow-delay="0.8s" style="line-height:160%;padding:40px 0px;" data-wow-delay="2.2s">"날고 기는 사람이 가득한<br>연예계에서의 성공은<br>잘하는 것을 너머<br>저는 운이 너무 좋았기 때문에<br>이렇게 될 수 있었어요."<br><br>- 가수 아이유</h2>
-
-        </div>
-    </div>
-   
-</div>
-
-
-<!-- 3 -->
-<div class="contents">
-    <div class="container m-center">
-        <div class="row text-center" style="display: initial !important;">
-            <div class="graph-section" style="padding-bottom:0;">
-                <h2 style="margin-bottom:0;">   
-                    사업에 있어서<br>능력은 당연한 기본입니다.<br><br>여러분의 사업의 흐름을<br>크게 변화시키기 위해서는<br><br>진정한 성공의 마지막에는<br>'운'의 요소가 반드시<br>있어야 한다는 걸<br>알고 계셔야 합니다.<br>
-                    <img src="./img/logic.png" style="width:100%;max-width:500px;margin:30px 0;"><br>
-                    모든 부를 차지하는 0.1%와<br>99.9%를 가르는 것은<br>단지 종잇장 차이이며<br><br>이것을 결정하는 '운'의<br>흐름을 받아들이고<br>법칙을 이해하는 순간<br><br>여러분의 사업은<br>한 단계 도약할 것이라<br>자신있게 약속합니다.
-                </h2>
-                <!-- <ul class="wrap">
-                    <li>원금 최대 95.3%까지 탕감!</li>
-                    <li>추심, 독촉 전화 즉시 방어!</li>
-                    <li>기각 시 100% 환불!</li>
-                </ul>
-                <div class="graph" id="law-price">
-                    <div class="left">
-                        <div class="wrap">
-                            <p class="price">1억 8천만원</p>
-                            <div class="bar"></div>
-                            <p class="txt"><span>이전 세금 환급액</span></p>
-                        </div>
-                    </div>
-                    <div class="middle" style="transform: scaleY(1);"></div>
-                    <div class="right">
-                        <div class="wrap">
-                            <p class="price txtAni">8000만원</p>
-                            <div class="bar"></div>
-                            <p class="txt"><span>최근 세금 환급액</span></p>
-                        </div>
-                    </div>
-                </div> -->
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-<div style="position:relative;text-align:-webkit-center;background:#fff;" >
-    <img src="https://www.seoulfn.com/news/photo/202212/473809_238402_010.png" class="eg-img" >
-    <div style="position:absolute;text-align:-webkit-center;top:20%;left:0%;right:0;color:#fff;">
-        <div >
-        <h2 class="wow fadeInUp eg-text" data-wow-delay="0.8s" style="line-height:160%;padding:40px 0px;" data-wow-delay="2.2s">"매우 안타깝지만,<br>사업 성공에 있어<br>운은 95%도 겸손하고<br>99%에 해당합니다."<br><br>- 이승건 대표<br>TOSS 창업자</h2>
-
-        </div>
-    </div>
-   
-</div>
-
-
-<!-- 3 -->
-<div class="contents">
-    <div class="container m-center">
-        <div class="row text-center" style="display: initial !important;">
-            <div class="graph-section" style="padding-bottom:0;">
-                <h2 style="margin-bottom:0;">
-                    아마 많은 분들이<br>'운'을 미신적이거나<br><br>행운에 가까운 걸로<br>생각하실 수도<br>있을 거라 생각합니다.<br><br>하지만, 제가 말하는<br>'운'은 그게 아닙니다.
-                </h2>
-                <!-- <ul class="wrap">
-                    <li>원금 최대 95.3%까지 탕감!</li>
-                    <li>추심, 독촉 전화 즉시 방어!</li>
-                    <li>기각 시 100% 환불!</li>
-                </ul>
-                <div class="graph" id="law-price">
-                    <div class="left">
-                        <div class="wrap">
-                            <p class="price">1억 8천만원</p>
-                            <div class="bar"></div>
-                            <p class="txt"><span>이전 세금 환급액</span></p>
-                        </div>
-                    </div>
-                    <div class="middle" style="transform: scaleY(1);"></div>
-                    <div class="right">
-                        <div class="wrap">
-                            <p class="price txtAni">8000만원</p>
-                            <div class="bar"></div>
-                            <p class="txt"><span>최근 세금 환급액</span></p>
-                        </div>
-                    </div>
-                </div> -->
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div style="position:relative;text-align:-webkit-center;background:#fff;" >
-    <img src="https://lh6.googleusercontent.com/proxy/8WikphSubxEiB5I4IfghpS5nuckOg-PRZ_T_kAO28HslV4qyGnK-3vBZ2ixxkAy0ehFJfJ2V0AhZGCzhacpS-FWbDMszFixLabTU4TIuPGgwrf4E4sZyCQ39Qq4pUALnnoijFvoi0ZEc" class="eg-img" >
-    <div style="position:absolute;text-align:-webkit-center;top:20%;left:0%;right:0;color:#fff;">
-        <div >
-        <h2 class="wow fadeInUp eg-text" data-wow-delay="0.8s" style="line-height:160%;padding:40px 0px;" data-wow-delay="2.2s">"운은 행운적인 요소가 아니라<br>마인드와 태도, 말투, 행동으로<br>키울 수 있는 능력입니다."<br><br>- 영국 심리학자<br>리처드 와이즈먼</h2>
-
-        </div>
-    </div>
-   
-</div>
-
-
-
-
-
-<!-- 3 -->
-<div class="contents">
-    <div class="container m-center">
-        <div class="row text-center" style="display: initial !important;">
-            <div class="graph-section" style="padding-bottom:0;">
-                <h2 style="margin-bottom:0;">
-                    이 글을 읽는 당장에도<br>바꿀 수 있는<br>'마인드와 태도'이며<br>키워나갈 수 있는 요소입니다.<br><br>
-                    이 사실을 당신은<br>받아들일 준비가 되셨나요?<br><br>
-                    
-                    만약 그렇다면, 축하합니다!<br><br>여러분은 불황 속에서도<br>사업의 흐름을 역전시킬 수 있는<br>준비가 되신 분입니다.<br>
-                    <img src="./img/business-change.png" style="width:100%;max-width:500px;margin:30px 0;"><br>
-                    그럼, 지금부터 제가 알게 된<br>
-                    큰 사업을 위한 법칙을<br>모두 공개하고자 합니다.<br><br>
-                    이제부터 말하는 내용은<br>
-                    단순한 이론이 아닙니다.<br><br>
-                    오로지 실전이며,<br> 
-                    직접 억만장자가 되어보고<br>
-                    10명의 제자까지 부자로 만들면서
-                    <br><br>
-                    온몸으로 체득한<br>큰 성공을 만드는 사업의<br>진실이자 법칙을<br>
-                    전부 알려드리고자 합니다.
-                
-                </h2>
-                <!-- <ul class="wrap">
-                    <li>원금 최대 95.3%까지 탕감!</li>
-                    <li>추심, 독촉 전화 즉시 방어!</li>
-                    <li>기각 시 100% 환불!</li>
-                </ul>
-                <div class="graph" id="law-price">
-                    <div class="left">
-                        <div class="wrap">
-                            <p class="price">1억 8천만원</p>
-                            <div class="bar"></div>
-                            <p class="txt"><span>이전 세금 환급액</span></p>
-                        </div>
-                    </div>
-                    <div class="middle" style="transform: scaleY(1);"></div>
-                    <div class="right">
-                        <div class="wrap">
-                            <p class="price txtAni">8000만원</p>
-                            <div class="bar"></div>
-                            <p class="txt"><span>최근 세금 환급액</span></p>
-                        </div>
-                    </div>
-                </div> -->
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- <script type="text/javascript">
-    $(window).scroll(function() { 
-        if ($(this).scrollTop() > 20) {
-            $(".graph-section #law-price .right .bar").stop().animate({"height":"10"},1000);
-        } 
-    }); 
-</script> -->
-
-<style>
-
-   
-    #introduce .background-img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position:center;
-        filter: brightness(0.4); 
-        z-index: -1; 
-    }
-
-  
-    #introduce .introduce-list {
-    list-style: none;
-}
-
-#introduce .introduce-list li {
-    height: 60px;
-    line-height: 60px;
-    background: #fff;
-    margin: 5px 0;
-    box-shadow: 1px 5px 10px rgba(0,0,0,0.1);
-    font-weight: bold;
-    font-size: 22px;
-    text-align: left;
-    padding: 0 30px;
-}
-
-@media screen and (max-width:1200px) {
-    
-
-    #introduce .introduce-list li {
-        font-size: 22px !important;
-    }
-    
-}
-
-
-@media screen and (max-width:1100px) {
-    
-
-    #introduce .introduce-list li {
-        font-size: 19px !important;
-    }
-    
-}
-
-@media screen and (max-width:900px) {
-    
-
-    #introduce .introduce-list li {
-        font-size: 19px !important;
-    }
-    
-}
-
-#introduce .introduce-list li img {
-    width: 25px;
-}
-
-    .main-pic{
-        width:100%;
-    }
-    
-    </style>
-
-<div class="contents" style="padding:100px 0 0;position:relative;" id="introduce">
-        <img class="background-img wow fadeIn" src="./img/law-pic2.jpg">
-    <div class="container">
-        <div class="row d-flex align-items-center align-responsive">
-            <div class="col col-md-6 col-12 m-center text-white">
-                <h2 class="wow fadeInUp two-title"><span class="">막막한 여러분의 사업을<br>즐거운 성공으로 이끌어주는</span><br><br>실제 억만장자가 이야기 해주는<br>큰 성공의 실전 법칙!<br>'운 좋은 놈이 성공한다'</h2>
-                <ul class="introduce-list list-text" style="margin-bottom:60px;">
-                    <li class="wow fadeInLeft" style="color:#fff;border-radius:10px;background:rgba(255,255,255,.2);letter-spacing: normal;">
-                  <img src="./main1/img/icon1.png" alt="" class="mr-2" style="color:#fff;">
-                  일본 30만부 베스트셀러
-                    </li>
-                    <li class="wow fadeInLeft" data-wow-delay="0.2s" style="color:#fff;border-radius:10px;background:rgba(255,255,255,.2);">
-                        <img src="./main1/img/icon1.png" alt="" class="mr-2">
-                        12년 연속 일본 납세자 1위 
-
-                    </li>
-                 
-                    <li class="wow fadeInLeft" data-wow-delay="0.5s" style="color:#fff;border-radius:10px;background:rgba(255,255,255,.2);">
-                        <img src="./main1/img/icon1.png" alt="" class="mr-2">
-                        흙수저에서 억만장자가 된
-
-                    </li>
-
-                    <li class="wow fadeInLeft" data-wow-delay="0.5s" style="color:#fff;border-radius:10px;background:rgba(255,255,255,.2);">
-                        <img src="./main1/img/icon1.png" alt="" class="mr-2">
-                        사이토 히토리의 '운'의 법칙
-
-                    </li>
-                  
-                </ul>
-             
-            </div>
-            <div class="col col-md-6 col-12 main-pic">  
-              <img class="main-pic" src="https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791194114055.jpg" style="max-height:400px;width:100%;height:100%;object-fit: contain;padding-bottom:30px;">
-              
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<style>
-
-#hg-slide {
-        max-width: 600px;
-        margin: 60px auto;
-        font-family: 'Helvetica', sans-serif;
-        overflow: hidden;
-        position: relative;
-        width:90%;
-        
-      }
-    
-      #hg-slide .hg-slide-wrapper {
-    position: relative;
-    transition: height 0.3s ease;
-    overflow: hidden;
-  }
-  
-  #hg-slide .hg-slide-track {
-    display: flex;
-    transition: transform 0.4s ease;
-    align-items: flex-start; /* ← 이거 꼭 있어야 함 */
-  }
-    
-      #hg-slide .hg-slide-item {
-        min-width: 100%;
-        box-sizing: border-box;
-        background-color: #f9f9f9;
-        border:1px solid #eee;
-        border-radius: 12px;
-        padding: 16px;
-        margin:30px 0;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      }
-    
-      #hg-slide .hg-slide-profile {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        margin-bottom: 8px;
-      }
-    
-      #hg-slide .hg-slide-profile-icon {
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        background-color: #f3f4f6;
-      }
-    
-      #hg-slide .hg-slide-badge {
-        background-color: #e7e7e7;
-      color: #505152;
-      font-size: 12px;
-      line-height: 240%;
-      padding: 4px 5px;
-      margin: 10px 0;
-      border-radius: 8px;
-      }
-    
-      #hg-slide .hg-slide-name {
-        font-size: 14px;
-        color: #111827;
-      }
-    
-      #hg-slide .hg-slide-income {
-        color: #10b981;
-        font-weight: bold;
-      }
-    
-      #hg-slide .hg-slide-text {
-        font-size: 17px;
-        color: #374151;
-        line-height: 1.6;
-      }
-    
-      #hg-slide .hg-slide-dots {
-        display: flex;
-        justify-content: center;
-        margin-top: 12px;
-      }
-    
-      #hg-slide .hg-slide-dot {
-        width: 8px;
-        height: 8px;
-        margin: 0 4px;
-        background-color: #d1d5db;
-        border-radius: 50%;
-      }
-  
-      #hg-slide span{
-        background-color: #fef141;
-        
-      }
-    
-      #hg-slide .hg-slide-dot.active {
-        background-color: #ef4444;
-      }
-    
-      @media (max-width: 768px) {
-        #hg-slide {
-          max-width: 100%;
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>포지티브 에너지 파워</title>
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: '#6366F1',
+          secondary: '#F59E0B'
+        },
+        borderRadius: {
+          'none': '0px',
+          'sm': '4px',
+          DEFAULT: '8px',
+          'md': '12px',
+          'lg': '16px',
+          'xl': '20px',
+          '2xl': '24px',
+          '3xl': '32px',
+          'full': '9999px',
+          'button': '8px'
         }
       }
-</style>
+    }
+  }
+</script>
 
-<div style="text-align:-webkit-center;">
-<hr class="wow fadeIn" style="border:2px solid #000; width: 0.1px;height: 130px;background:#000;margin:70px 0 0;">
+<!-- Fonts & Icons -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<script src="./js/jquery.min.js"></script>
+<script src="./js/jquery-migrate.min.js"></script>
+
+<!-- Style -->
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body{font-family:'Noto Sans KR',sans-serif;background:#FAFAFA;position:relative}
+.sidebar{
+  transition:transform .3s ease;
+  -ms-overflow-style:none;            /* IE & Edge */
+  scrollbar-width:none;              /* Firefox    */
+}
+.sidebar::-webkit-scrollbar{display:none;} /* Chrome, Safari  */
+.sidebar-toggle{z-index:50}
+.sidebar.closed{transform:translateX(100%)}
+.sidebar.open{transform:translateX(0)}
+@media(min-width:768px){
+  .content-container{margin-right:300px}
+  .sidebar.closed{transform:translateX(0)}
+}
+
+/* ▼ 더 알아보기 토글 */
+#moreContent{overflow:hidden;max-height:0;transition:max-height .6s ease}
+#moreContent.open{max-height:10000px;margin-right:300px;}
+@media screen and (max-width:768px) {
+  #moreContent.open{margin-right:0px;}
+}
+/* ==================== DOTCOM-STYLE ==================== */
+nav::before{
+  content:"📘  International Bestseller With Over 300,000+ Copies Sold!";
+  position:fixed;top:0;left:0;width:100%;
+  background:#B6191F;color:#fff;font-weight:700;font-size:.85rem;
+  line-height:1.75rem;text-align:center;z-index:45
+}
+nav{top:1.75rem!important}
+.bg-primary{background:#B6191F!important}
+.text-primary{color:#B6191F!important}
+.hover\:bg-primary\/90:hover{background:#C1171A!important}
+.bg-primary\/10{background:#FFF5F5!important;border:2px solid #B6191F}
+.bg-secondary\/10{border:2px solid #B6191F}
+.content-container h1{
+  font-family:'Georgia','Times New Roman',serif;font-weight:800;line-height:1.2;
+  font-size:clamp(2rem,6vw,4rem);color:#0F1A38;text-align:center;margin-bottom:.75rem
+}
+.content-container h2{
+  font-family:'Noto Sans KR',sans-serif;font-weight:500;color:#374151;
+  font-size:clamp(1.125rem,3vw,1.5rem);text-align:center;margin-bottom:2.5rem
+}
+.aspect-video{border:4px solid #B6191F;border-radius:10px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,.12)}
+.aspect-video::before{
+  content:"Make Sure Your Sound Is Turned ON! (Please Wait For Video To Fully Load)";
+  display:block;background:#B6191F;color:#fff;font-size:.75rem;font-weight:700;text-align:center;padding:.35rem .5rem
+}
+.sidebar .bg-secondary{background:#B6191F!important}
+.sidebar .bg-secondary:hover{background:#C1171A!important}
+.fixed.bottom-0 a.text-primary{color:#B6191F!important}
+.bg-primary\/10 h3{color:#B6191F}
+.bg-primary\/10 h4{color:#0F1A38;font-weight:700}
+.star-rating{color:#FDBA12;font-size:1.25rem}
+
+/* ========== Testimonial Cards ========== */
+.testi-wrap{@apply max-w-7xl mx-auto mb-16 px-4}
+.testi-card{@apply bg-white rounded-3xl shadow-md ring-1 ring-gray-100 p-8 flex flex-col md:flex-row items-center gap-6 transition-transform}
+.testi-card:hover{transform:translateY(-4px)}
+.testi-img{@apply w-28 h-28 md:w-32 md:h-32 rounded-md object-cover flex-shrink-0}
+.testi-quote{@apply italic text-lg leading-relaxed text-gray-800 text-center md:text-left}
+.testi-author{@apply mt-4 font-extrabold text-2xl text-[#0F1A38] text-center md:text-left}
+@media(max-width:1300px){
+  .testi-card{padding:2rem 1.5rem}
+  .testi-img{width:100%;height:auto}
+  .testi-quote{margin-top:1rem}
+}
+
+/* 카드 컨테이너 – 1열(모바일) ▶︎ 2열(PC) */
+.testi-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:2rem;
+}
+@media(min-width:1300px){
+  .testi-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+/* 카드 자체 — 그라데이션+둥근 모서리+입체 그림자 */
+.testi-card{
+  background:linear-gradient(135deg,#ffffff 0%,#f7f9fc 100%);
+  border-radius:24px;
+  padding:2rem;
+  display:flex;align-items:center;gap:1.5rem;
+  box-shadow:0 6px 20px rgba(0,0,0,.05);
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+.testi-card:hover{transform:translateY(-8px);box-shadow:0 12px 28px rgba(0,0,0,.08)}
+
+.testi-img{width:90px;height:90px;border-radius:12px;object-fit:cover;flex-shrink:0}
+.testi-quote{font-size:1.05rem;line-height:1.6;color:#1F2937;font-style:italic;margin-bottom:.75rem}
+.testi-author{    font-size: 0.8rem;
+    font-weight: 600;
+    color: #3d3e42;margin:0}
+
+@media(max-width:1300px){
+  .testi-card{flex-direction:column;text-align:center}
+  .testi-img{width:120px;height:120px}
+  .testi-quote{margin-top:1rem}
+}
+</style>
+</head>
+
+
+<body class="bg-white text-gray-800">
+<!-- ================== NAV ================== -->
+<nav class="fixed w-full bg-white shadow-md z-40 h-14">
+  <div class="flex items-center justify-between px-4 h-full">
+    <a href="./index.html"><span class="font-['Pacifico'] text-primary text-xl"><img src="./logo1.png" style="width:100%;max-width:120px ;"></span></a>
+    <button class="sidebar-toggle md:hidden w-10 h-10 flex items-center justify-center"><i class="ri-menu-line ri-lg"></i></button>
+  </div>
+</nav>
+
+<div class="flex flex-col md:flex-row mt-14">
+  <!-- ============ MAIN ============ -->
+  <main class="content-container flex-1 p-4 pb-20">
+    <div style="text-align:-webkit-center"><br><br><h1>포지티브 에너지 파워 </h1><h2>당신의 운명은 포지티브 에너지가 좌우한다! </h2></div>
+
+    <!-- Video -->
+    <div class="w-full max-w-3xl mx-auto aspect-video mb-6">
+      <iframe class="w-full h-full" src="https://www.youtube.com/embed/-1pnFBeZoGs?si=SUwIsjjwyXXfXaO8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+   
+
+        <!-- Testimonials -->
+        <section class="testi-wrap">
+          <h3 class="text-lg font-bold mb-4">🌍 세계적 명의들의 추천사</h3>
+          <div class="testi-grid  gap-8">
+            <figure class="testi-card">
+              <img src="./deepak.jpeg" class="testi-img" alt="Tony Robbins">
+              <figcaption>
+                <p class="testi-quote">"정말 재미있고 실용적인 책이다. 실제로 써먹을 수 있는 효과적이고 귀중한 팁이 가득하다.
+  
+            주디스 올로프는 우리를 신비로운 에너지의 세계로 안내하는 진정한 선각자다. 매사에 짜증이 나거나, 이유 없이 조급해하는 사람, 모든 일에 자신이 없고 사는 게 막연히 두려운 사람이라면 반드시 읽어야 한다."</p>
+                <h4 class="testi-author">- 🧠 디팩 초프라(Deepak Chopra 의학박사, 심신상관의학 창시자, 타임지 선정 ‘100년간 가장 영향력 있는 인물 100인’ 베스트셀러 『바라는 대로 이루어진다』의 저자)</h4>
+              </figcaption>
+            </figure>
+            <figure class="testi-card">
+              <img src="./dr-dean-ornish.png" class="testi-img" alt="Dan S. Kennedy">
+              <figcaption>
+                <p class="testi-quote">"당신을 둘러싼 모든 것을 에너지의 관점에서 보라. 직관과 에너지 치유법의 대가, 주디스 올로프는 당신이 가진 좋은 에너지를 끌어내고, 삶을 갉아먹는 에너지 뱀파이어에 대항하는 방법을 알려준다. 끊임없이 누군가에게 활력을 빼앗겨 고갈되고 있다면, 이 책에 나온 열 가지 처방으로 그 악순환의 고리를 끊고 내면의 평화를 얻기 바란다. 강력하게 추천하고 싶은 책이다!"</p>
+                <h4 class="testi-author">- 🧘‍♂️ 딘 오니시딘 오니시(Dean Ornish 의학박사, 샌프란시스코·샌디에이고 의과대학 교수 예방의학연구소 설립자, 베스트셀러 『Undo It』 저자)</h4>
+              </figcaption>
+            </figure>
+<figure class="testi-card">
+              <img src="./dr-larry-dossey-holding-glasses.jpg" class="testi-img" alt="Dan S. Kennedy">
+              <figcaption>
+                <p class="testi-quote">"현대의학에 에너지를 결합한 새롭고 독보적인 책이다. 과로와 스트레스, 엇나가는 대인관계로 완전히 탈진해버린 사람들에게 중요한 구급약이 될 것이다. 언제나 에너제틱하고 유쾌한 사람, 보기만 해도 기분이 좋아지는 사람들의 비밀이 여기에 다 있다."</p>
+                <h4 class="testi-author">- 💬 래리 도시(Larry Dossey 의학박사, 통합의학의 선구자 베스트셀러 『Healing Words』 저자)</h4>
+              </figcaption>
+            </figure>
+<figure class="testi-card">
+              <img src="./bernie.jpeg" class="testi-img" alt="Dan S. Kennedy">
+              <figcaption>
+                <p class="testi-quote">"더욱 에너제틱한 삶으로 한 단계 업그레이드하고 싶은가? 이 책은 축제처럼 열정적인 삶을 꿈꾸는 사람들에게 가장 완벽한 안내자가 될 것이다"</p>
+                <h4 class="testi-author">- 💬 버니 시겔(Bernie Siegel, 의학박사, 대체 의학의 선구자, ㅅ게계적인 영성 잡지 '왓킨스'선정 영성 지도자 20인, 베스트셀러 『Love, Medicine and Miracles』 저자)</h4>
+              </figcaption>
+            </figure>
+          
+        </section><br><br>
+  <div style="text-align:-webkit-center;">
+<p class="text-gray-700 mb-2">『포지티브 에너지 파워』는 CNN, CBS, NPR, 오프라 매거진 등 주요 매체와 USA투데이, 리더스 다이제스트에서 극찬을 받았습니다.</p>
 </div>
 
+<!-- ▼ 더 알아보기 버튼 -->
+    <button id="moreBtn" class="mx-auto mb-6 flex items-center gap-1 text-primary font-medium hover:text-primary/80 transition-colors" style="margin-bottom:50px;margin-top:20px;">
+      더 알아보기 <i class="ri-arrow-down-s-line"></i>
+    </button>
+          </div>
+   
+    
 
-<section id="hg-slide">
-    <div class="hg-slide-item" data-index="0">
-        <div class="hg-slide-profile">
-            <img src="./img/profile_gray.svg" alt="User Icon" class="hg-slide-profile-icon">
-            <div class="hg-slide-profile-info">
-                <span class="hg-slide-badge">30대 / 사업자 / 최**</span><br>
-                <!-- <span class="hg-slide-name"><strong>최**</strong> -->
-                     <!-- | <span class="hg-slide-income">투자 유치 및 1억 매출 상승</span> -->
-                    </span>
-            </div>
+    <!-- ▼ 토글될 나머지 콘텐츠 -->
+    <div id="moreContent" >
+      <!-- Introduction -->
+      <div class="bg-white rounded-lg shadow-md p-5 mb-6">
+        <h2 class="text-xl font-bold mb-4">당신의 에너지는 지금 안녕하신가요?</h2>
+        <p class="text-gray-700 mb-3">출근길부터 피로하고, 하루 종일 쏟아지는 업무와 사람들 속에서 자꾸만 지쳐가는 나.</p>
+        <p class="text-gray-700 mb-3">이유 없이 짜증이 나고, 작은 말에도 마음이 무너지고, 모든 것이 버겁게만 느껴지는 당신.</p>
+        <p class="text-gray-700 mb-4">'나는 왜 이렇게 쉽게 기운이 빠질까?' '왜 나만 이렇게 예민하게 반응할까?' 그런 생각을 반복한 적 있다면, 이제는 알아야 할 시간이 왔습니다.</p>
+        <div class="bg-gray-50 p-4 rounded-lg mb-4">
+          <p class="font-medium mb-2">💡 문제는 피곤함이 아닙니다.</p>
+          <p class="text-primary font-bold">진짜 원인은… 당신의 에너지가 고갈되고 있다는 것.</p>
         </div>
-        <p class="hg-slide-text">
-            <br><b>"저는 '운'이라는 말을 정말 싫어하는 사람이었습니다."</b><br><br>
+        <ul class="space-y-2 mb-4">
+          <li class="flex items-start"><span class="mr-2">✔</span><span>아무리 쉬어도 회복되지 않는 피로감</span></li>
+          <li class="flex items-start"><span class="mr-2">✔</span><span>나도 모르게 무너지는 감정의 벽</span></li>
+          <li class="flex items-start"><span class="mr-2">✔</span><span>누군가와 대화한 뒤엔 더 지쳐 있는 나</span></li>
+          <li class="flex items-start"><span class="mr-2">✔</span><span>삶의 방향조차 불분명한 막막함</span></li>
+        </ul>
+        <p class="text-gray-700 mb-3">이 모든 것은 감정의 소진, 내면의 에너지 유출에서 비롯됩니다.</p>
+        <p class="text-gray-700 font-medium">그리고 이제, 그 에너지를 되찾을 시간입니다.</p>
+      </div>
 
-            '운'이라는 개념이 행운과 미신적인 의미로 느껴져서, 실력과 노력으로 승부를 보려는 제 성향상 받아들이기 어려운 개념이었습니다. 그래서 이 책을 선물 받았지만, 가장 싫어하는 책 중에 하나가 되어 한동안 방구석에 방치되어 있었습니다.<br><br>
+      <!-- Book Introduction -->
+      <div class="bg-white rounded-lg shadow-md p-5 mb-6">
+        <div class="flex flex-col md:flex-row gap-4">
+          <div class="w-full md:w-1/3">
+            <img src="./positive.jpg" alt="포지티브 에너지 파워 책" class="w-full h-auto rounded-md shadow-sm">
+          </div>
+          <div class="w-full md:w-2/3">
+            <h3 class="text-lg font-bold mb-2">📖 『포지티브 에너지 파워』</h3>
+            <p class="text-gray-700 mb-3">세계적인 정신과 의사이자 UCLA 교수, 주디스 올로프 박사가 전하는 에너지 치유의 바이블.</p>
+            <p class="text-gray-700 mb-3">20년 임상 데이터를 바탕으로 과학, 직관, 영성, 심리학을 융합하여 10가지 실천 처방으로 구성된 실제 효과 검증된 회복 프로그램입니다.</p>
+            <p class="text-gray-700">잠재적 에너지를 감지하고, 정화하고, 다시 나를 중심에 세우는 10주.</p>
+          </div>
+        </div>
+      </div>
 
-            하지만 사업을 진행하면서 다양한 사람들을 만나게 되었고, 특히 성공한 대표님들과의 대화를 나누면서 반복적으로 들은 말이 있었습니다.<br><br>
-            <i><b><span>"실력만으로는 한계가 있다. 사람들과의 관계와 운이라는 것이 중요하다."</span></b></i><br><br>
+      <!-- Benefits -->
+      <div class="bg-white rounded-lg shadow-md p-5 mb-6">
+        <h3 class="text-lg font-bold mb-4">🌿 이 책은 당신에게 이런 변화를 약속합니다</h3>
+        <ul class="space-y-3 mb-4">
+          <li class="flex items-start"><span class="text-primary mr-2">✅</span><span>외부 환경에 휘둘리지 않고 감정을 지키는 힘</span></li>
+          <li class="flex items-start"><span class="text-primary mr-2">✅</span><span>'예민함'을 잠재력으로 바꾸는 전략</span></li>
+          <li class="flex items-start"><span class="text-primary mr-2">✅</span><span>관계 속에서 에너지를 뺏기지 않는 자기 보호</span></li>
+          <li class="flex items-start"><span class="text-primary mr-2">✅</span><span>지친 일상 속에서도 나답게 회복하는 기술</span></li>
+        </ul>
+      </div>
 
-            처음에는 인정하고 싶지 않았습니다. 하지만 점차 사업이 진행될수록 많은 시행착오를 겪고 어려움을 겪으며 <span>실력과 노력이 채워줄 수 없는 마지막 큰 부분</span>이 있다는 걸 그제서야 느끼기 시작했습니다.<br><br>
+      <!-- Special Offer -->
+      <div class="bg-primary/10 rounded-lg shadow-md p-5 mb-6">
+        <h3 class="text-lg font-bold mb-3">🎁 무료 샘플북 다운로드 </h3>
+        <div ="flex items-center mb-2"><span class="text-primary mr-2"></span></div>
+        <div class="bg-white p-4 rounded-lg mb-4">
+          <h4 class="font-bold mb-2">지금까지 아무리 노력해도 원하는 삶을 이루지 못했다면 </h4>
+          <p class="text-gray-700 mb-2">당신의 문제는 재능이나 노력이 아닙니다!</p>
+          <p class="text-gray-700">이제는 포지티브 에너지의 비밀'을 깨달아야 합니다!</p>
+        </div>
+        <button class="w-full bg-primary text-white py-3 px-4 rounded-button font-medium shadow-md hover:bg-primary/90 transition-colors cursor-pointer" onclick="document.querySelector('.sidebar').classList.remove('closed'); document.querySelector('.sidebar').classList.add('open');">
+          지금 바로 무료 샘플북 받기
+        </button>
+      </div>
+      <br><Br><Br>
+    </div>
+  </div>
 
-            그때부터 대표님들에게 어떻게 '운'을 다루는지 여쭤보면서 히토리의 이야기를 작은 부분부터 실천해보기 시작했습니다.<br><br>
 
-            <span>단순히 '운'을 바라는 것이 아니라, 작은 행동과 태도, 말투 하나하나가 중요하다는 것을 인식</span>하고 작게나마 바꿔보니 변화가 시작되었습니다. 사람들과의 관계에서 애정 어린 관심을 가지려고 노력했고, 긍정적인 태도를 유지하며 자연스럽게 좋은 인연을 만들어갔습니다.<br><br>
+  </main>
 
-            <span>그 결과, 생각지도 못한 기회가 찾아왔습니다.</span> 사람들의 추천으로 새로운 프로젝트를 진행하게 되었고, 투자까지 받으면서 사업이 한 단계 성장했습니다. 이전에는 풀리지 않던 문제들이 자연스럽게 해결되었고, 예상치 못한 좋은 인연들이 찾아오면서 선순환이 만들어졌습니다.<br><br>
-
-            솔직히 이게 정확히 운인지는 모르겠습니다만, <span>내 마음이 달라지고 사람들과 함께하는 태도가 달라지면서 변화</span>가 느껴졌습니다. <span>작은 태도와 관심이 점점 더 큰 기회를 가져다준다는 것을 몸소 경험</span>하면서, '운'을 관리하는 것이 사업 성장의 정말 중요한 요소라는 것을 깨닫고 계속 연습하고 적용하고 있습니다.<br><br>
-
-            <span>이 달라진 사업의 관점이 어떤 큰 전환점으로 이어질지 너무 기대가 됩니다.</span> 사업의 흐름이 막히거나 잘 안 풀린다고 하면 꼭 한번은 시도해보셨으면 좋겠습니다.
-        </p>
+  <!-- ============ SIDEBAR (폼) ============ -->
+  <aside class="sidebar fixed top-14 right-0 h-[calc(100%-3.5rem)] w-full md:w-[300px] bg-white shadow-lg z-30 overflow-y-auto p-4 closed">
+    <div class="bg-secondary/10 rounded-lg p-4 mb-6">
+      <h3 class="text-lg font-bold mb-3 text-center">📘 무료 샘플북</h3>
+      <p class="text-sm text-gray-700 mb-4 text-center">당신의 내면을 살리는 첫걸음, 지금 바로 시작하세요.</p>
+      <form id="form_e11" class="space-y-4" action="" method="POST" target="hidden_iframe11" onsubmit="dll();submitted=true;">
+        <input type="hidden" name="entry.1052012929" value="메타">
+        <div><label class="block text-sm font-medium text-gray-700 mb-1" for="name">이름</label><input id="name" name="entry.556779716" type="text" maxlength="4" placeholder="홍길동" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-secondary"></div>
+        <div><label class="block text-sm font-medium text-gray-700 mb-1" for="email">이메일 주소</label><input id="email" name="entry.181386148" type="email" placeholder="example@email.com" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-secondary"></div>
+        <div><label class="block text-sm font-medium text-gray-700 mb-1" for="phone">전화번호</label><input id="phone" name="entry.947408275" type="tel" maxlength="11" placeholder="휴대폰번호" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-secondary"></div>
+        <label class="text-sm"><input id="agree11" type="checkbox" checked> 개인정보동의</label>
+        <input id="send_message" type="submit" value="샘플북 무료신청" disabled class="w-full bg-secondary text-white py-3 px-4 rounded-button font-medium shadow-md hover:bg-secondary/90 transition-colors cursor-pointer">
+        <iframe id="hidden_iframe11" name="hidden_iframe11" style="display:none"></iframe>
+        <script>var submitted=false;</script>
+      </form>
     </div>
 
-    <div class="hg-slide-item" data-index="1">
-        <div class="hg-slide-profile">
-            <img src="./img/profile_gray.svg" alt="User Icon" class="hg-slide-profile-icon">
-            <div class="hg-slide-profile-info">
-                <span class="hg-slide-badge">40대 / 사업자 / 조**</span><br>
-                <!-- <span class="hg-slide-name"><strong>조**</strong></span> -->
-            </div>
-        </div>
-        <p class="hg-slide-text">
-            <br><b>"실력만으로 부족했던 이유를 깨닫다"</b><br><br>
-
-            나는 오랫동안 노력해왔지만, 언제나 어떤 벽에 부딪히는 기분이었다. 실력이 없는 것도 아니고 열심히 하지 않는 것도 아닌데, 소위 남들 부러워하는 유학도 다녀와 스펙도 부족하지 않은 것 같은데, 동기들은 기회들을 잡으며 자꾸 앞서 나가는 것 같은데, 나는 자꾸 제자리걸음인 것 같았다. 차츰 위축되고 나만 뒤쳐지는 것 같은 불안감이 불쑥 불쑥 엄습해왔다.<br><br>
-
-            <span>'과연 이 상황을 어떻게 극복할 수 있을까?'</span>라는 질문이 머릿속을 떠나지 않았다.<br><br>
-
-            그러다가 정말 우연히 『1퍼센트 부자의 법칙』이라는 책을 통해 사이토 히토리라는 신기한 사업가에 대해 알게 되었고, 자연스럽게 그의 저서 중 일본에서 가장 많이 팔렸다고 알려진 『운 좋은 놈이 성공한다』를 접하게 되었다.<br><br>
-
-            <span>운이 단순한 우연이 아니라, 전략적으로 설계할 수 있는 것이라는 점</span>이었다. 나는 그동안 운은 우연히 어쩌다 재수 좋게 일어나는 일이라고 생각했었는데, 진실은 <span>내가 운을 끌어당기는 방법을 제대로 몰랐다는 것을 깨달은 것</span>이다.<br><br>
-
-            <span>책을 읽고 깨달음에서 머무르고 싶지 않아 제대로 실천하기로 마음먹었다.</span> 히토리씨가 말해준 대로 우선 열린 마음을 가지고 '나는 참 운이 좋은 사람이야'라고 말해보기 시작했다. 그리고 내가 알고 있던 기존의 방식이 아니라 사이토 히토리식의 가르침에 따라 새로운 가능성에 눈을 돌리기로 했다.<br><br>
-
-            <span>그 결과, 정말 기적 같은 일이 일어났다.</span> 답답하게 막혀 있던 커리어에서 뜻밖의 기회와 만남을 통해 새로운 기회를 얻게 되었고, 새로운 돌파구가 생기면서 그동안 답답했던 상황이 풀리기 시작했다. 한계를 느끼며 절망하던 순간이었는데, 이 책이 내 사고방식을 바꾸면서 실제로 커다란 삶의 전환점이 이루어졌다.<br><br>
-
-            <span>이제 나는 더 이상 불안해하지 않는다.</span> 왜냐하면 나는 운이 좋은 사람이기 때문이다!!!
-        </p>
+   <!-- Related Books -->
+    <div class="mb-6">
+      <h3 class="text-lg font-bold mb-3">관련 도서</h3>
+      <div class="space-y-4">
+        <a href="https://product.kyobobook.co.kr/detail/S000214874666" class="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer">
+          <div class="w-16 h-16 flex-shrink-0 overflow-hidden rounded">
+            <img src="https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791194114055.jpg" alt="명상의 힘" class="w-full h-full" style="object-fit: contain;">
+          </div>
+          <div class="ml-3">
+            <h4 class="font-medium text-sm">운 좋은 놈이 성공한다 </h4>
+            <p class="text-xs text-gray-500">경제불황 30년 동안 승승장구한 1% 부자의 사이토 히토리의 성공비결</p>
+          </div>
+        </a>
+        <a href="https://product.kyobobook.co.kr/detail/S000211745020" class="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer">
+          <div class="w-16 h-16 flex-shrink-0 overflow-hidden rounded">
+            <img src="https://image.yes24.com/goods/124226256/XL" alt="바라는 대로 이루어진다다" class="w-full h-full" style="object-fit: contain;">
+          </div>
+          <div class="ml-3">
+            <h4 class="font-medium text-sm">바라는 대로 이루어진다</h4>
+            <p class="text-xs text-gray-500">세계 영향력 1위 의학 박사 디팩 초프라의 고품격 자기 계발서! </p>
+          </div>
+        </a>
+        <a href="https://product.kyobobook.co.kr/detail/S000213674290" class="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer">
+          <div class="w-16 h-16 flex-shrink-0 overflow-hidden rounded">
+            <img src="https://image.yes24.com/goods/128262716/XL" alt="수면의 과학" class="w-full h-full" style="object-fit: contain;">
+          </div>
+          <div class="ml-3">
+            <h4 class="font-medium text-sm">간헐적 몰입</h4>
+            <p class="text-xs text-gray-500">‘최고의 나’를 일깨우는 에너지 몰입 혁명!</p>
+          </div>
+        </a>
+      </div>
     </div>
+
+    <!-- Social -->
+    <div>
+      <h3 class="text-lg font-bold mb-3">소셜 미디어</h3>
+      <div class="flex flex-col space-y-3">
+        <a href="#" class="flex items-center p-3 bg-red-50 rounded-lg hover:bg-red-100 transition-colors cursor-pointer"><i class="ri-youtube-fill ri-lg text-red-600"></i><span class="ml-2 text-sm">유튜브 채널</span></a>
+        <a href="#" class="flex items-center p-3 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors cursor-pointer"><i class="ri-instagram-fill ri-lg text-blue-600"></i><span class="ml-2 text-sm">인스타그램</span></a>
+        <a href="#" class="flex items-center p-3 bg-green-50 rounded-lg hover:bg-green-100 transition-colors cursor-pointer"><i class="ri-kakao-talk-fill ri-lg text-yellow-500"></i><span class="ml-2 text-sm">카카오 채널</span></a>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<!-- Tab Bar -->
+<footer class="fixed bottom-0 w-full bg-white border-t border-gray-200 shadow-lg z-40">
+  <div class="grid grid-cols-3 h-16">
+   
+    <a href="#" class="flex flex-col items-center justify-center text-gray-500 sidebar-toggle"><i class="ri-book-open-line"></i><span class="text-xs">요약본 신청</span></a>
+    <a href="https://product.kyobobook.co.kr/detail/S000216175186" class="flex flex-col items-center justify-center text-gray-500"><i class="ri-shopping-cart-line"></i><span class="text-xs">장바구니</span></a>
+    <a href="https://youtube.com/booktuber" class="flex flex-col items-center justify-center text-gray-500">
+      <div class="w-6 h-6 flex items-center justify-center"><i class="ri-youtube-fill"></i></div>
+      <span class="text-xs mt-1">책추남 TV</span>
+
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  const sidebar=document.querySelector('.sidebar');
+  /* 모든 sidebar-toggle 요소(네비 햄버거 버튼 + 요약본 아이콘)에서 사이드바 토글 */
+  document.querySelectorAll('.sidebar-toggle').forEach(btn=>{
+    btn.addEventListener('click',e=>{
+      e.preventDefault();
+      sidebar.classList.toggle('closed');
+      sidebar.classList.toggle('open');
+    });
+  });
+  const moreBtn=document.getElementById('moreBtn');
+  const moreContent=document.getElementById('moreContent');
+  moreBtn.addEventListener('click',()=>{
+    moreContent.classList.toggle('open');
+    moreBtn.innerHTML=moreContent.classList.contains('open')?
+      '접기 <i class="ri-arrow-up-s-line"></i>':
+      '더 알아보기 <i class="ri-arrow-down-s-line"></i>';
+  });
+});
+</script>
+<style>
+  #footer-energy {
+    --e-bg:#000;
+    --e-text:#F4F4F4;
+    --e-accent:#B6191F;
+    --e-sub:#9CA3AF;
+    background:var(--e-bg);color:var(--e-text);font-family:'Noto Sans KR',sans-serif;margin-top:4rem;
+  }
+  #footer-energy a {color:var(--e-text);transition:color .25s;}
+  #footer-energy a:hover {color:var(--e-accent);}
+  .footer-flexbox {
+    max-width:1280px;
+    margin-left:0;
+    margin-right:300px;
+    padding:3.5rem 1.25rem 2.5rem;
+    display:grid;
+    grid-template-columns:repeat(4,1fr); /* 기본: 4단 */
+    grid-template-areas:
+      "logo quick resource .";
+    gap:3rem;
+    align-items:flex-start;
+    justify-content:flex-start;
+  }
+  .footer-col { min-width:0; display:flex; flex-direction:column; align-items:flex-start; text-align:left;}
+  .logo-col    { grid-area: logo; }
+  .quick-col   { grid-area: quick; }
+  .resource-col{ grid-area: resource; }
+  /* 로고 강제 왼쪽 (항상 1번칸에) */
+  .footer-logo {margin-bottom:1.1rem;}
+  .footer-title {font-size:1rem;font-weight:700;margin-bottom:1rem;color:#fff}
+  .footer-linklist {list-style:none;display:flex;flex-direction:column;gap:.8rem;margin:0;padding:0;}
+  .footer-linkitem {font-size:.92rem}
+  .footer-slogan {margin-top:0.5rem;font-size:.97rem;line-height:1.6;}
+  .footer-sns-row {display:flex;gap:.7rem;margin-top:1.1rem;}
+  .footer-sns-link {width:42px;height:42px;display:flex;align-items:center;justify-content:center;border:1.5px solid var(--e-accent);border-radius:50%;transition:all .25s;}
+  .footer-sns-link:hover {background:var(--e-accent);border-color:var(--e-text);}
+  .footer-sns-link i {font-size:1.25rem;}
+  .footer-line {height:1px;width:100%;background:rgba(255,255,255,.1);margin:2.8rem 0 1.6rem}
+  .footer-copy {text-align:center;font-size:.8rem;color:var(--e-sub);padding-bottom:2.2rem;}
+  /* 1200px 이하: 2단, 로고 1번, quick 2번, resource 1행 2번 */
+  @media (max-width:1200px) {
+    .footer-flexbox {
+      grid-template-columns:1fr 1fr;
+      grid-template-areas:
+        "logo quick"
+        "resource resource";
+      gap:2.2rem;
+    }
+    .logo-col    { grid-area: logo; }
+    .quick-col   { grid-area: quick; }
+    .resource-col{ grid-area: resource; }
+  }
+  /* 640px 이하: 2단 유지, 줄여서 */
+  @media (max-width:640px) {
+    .footer-flexbox {
+      grid-template-columns:1fr 1fr;
+      grid-template-areas:
+        "logo quick"
+        "resource resource";
+      gap:1.5rem;
+      margin-right:0;
+      padding:3rem 1rem 2rem;
+    }
+    .logo-col    { grid-area: logo; }
+    .quick-col   { grid-area: quick; }
+    .resource-col{ grid-area: resource; }
+  }
+  @media (max-width:370px) {
+    .footer-flexbox {padding:2rem .5rem 1.2rem;}
+  }
+</style>
+
+<section id="footer-energy">
+  <div class="footer-flexbox">
+    <!-- 브랜드 영역 (로고, 항상 왼쪽) -->
+    <div class="footer-col logo-col">
+      <div class="footer-logo"><img src="./logo1.png" alt="포지티브 에너지 로고" style="width:200px;"></div>
+      <div class="footer-slogan">회사명 : 나비스쿨출판 |<br>법인사업자번호: 355-87-08194 |<br>대표자: 조우석 |<br>
+        <a href="./policy.html">개인정보처리방침</a></div>
+    </div>
+    <!-- 바로가기 -->
+    <!-- <nav class="footer-col quick-col" aria-label="빠른 이동">
+      <span class="footer-title">바로 가기</span>
+      <ul class="footer-linklist">
+        <li class="footer-linkitem"><a href="#form_e11">무료 샘플북</a></li>
+        <li class="footer-linkitem"><a href="#top">맨 위로</a></li>
+      </ul>
+    </nav> -->
+    <!-- 자료실 -->
+  
+  </div>
+  <div class="footer-line"></div>
+  <p class="footer-copy">        
+    © 2025 포지티브 에너지. All rights reserved.</p><Br><br><Br>
 </section>
 
 
 
 
-<div class="contents" id="process" style="background: linear-gradient(to bottom, #1e1e30, #1b1b27);">
 
-    <div class="container">
-        <div class="header" style="line-height:140%;letter-spacing: normal;">큰 성공을 위한다면?<br>꼭 알아야 할<br>6가지 성공법칙</div><br>
-        
-        <div class="toggle-buttons" style="text-align:-webkit-center;">
-            <button class="toggle-pcs active" data-target="rehab" style="width:100%;">책 목차</button>
-            <!-- <button class="toggle-pcs" data-target="bankruptcy">개인파산</button> -->
-        </div>
-        <div class="content" id="rehab-content">
-            <ul class="steps">
-                <li>
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3 class="margin:15px 0 10px 0;">돈을 부르는 절대 성공법칙</h3>
-                        
-                    </div>
-                </li>
-                <li>
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>성공을 부르는 절대 성공법칙</h3>
-                        <!-- <p>개인회생에서 가장 중요한 변제계획안 작성,전국 단 5%밖에 없는 도산전문 변호사가 도와 상황에 맞는 최적의 변제계획안을 작성합니다.</p> -->
-                    </div>
-                </li>
-                <li>
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>부자가 되는 절대 성공법칙</h3>
-                        <!-- <p>법적 절차에 맞는 신청서를 작성합니다.</p> -->
-                    </div>
-                </li>
-                <li>
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h3>풍요를 부르는 절대 성공법칙</h3>
-                        <!-- <p>신청서 내용 중 보정이 필요한 부분에 대해 보정명령이 내려오면, 의뢰인이 최대한 많은 혜택을 받을 수 있도록 작성합니다.</p> -->
-                    </div>
-                </li>
-                <li>
-                    <div class="step-number">5</div>
-                    <div class="step-content">
-                        <h3>운이 좋아지는 절대 성공법칙</h3>
-                        <!-- <p>작성된 서류를 법원에 접수합니다.</p> -->
-                    </div>
-                </li>
-                <li>
-                    <div class="step-number">6</div>
-                    <div class="step-content">
-                        <h3>즐겁게 돈을 버는 절대 성공법칙</h3>
-                        <!-- <p>불참 시 사건이 기각되기 때문에 채무자가 필수 참석해야 합니다.</p> -->
-                    </div>
-                </li>
-               
-            </ul>
-        </div>
-
-
-       
-    </div>
-</div>
-
-<script>
-    // 버튼과 콘텐츠 선택
-    const toggleBtns = document.querySelectorAll("#process .toggle-pcs");
-    const contents = document.querySelectorAll("#process .content");
-
-    // 각 버튼에 클릭 이벤트 추가
-    toggleBtns.forEach(btn => {
-        btn.addEventListener("click", () => {
-            // 모든 버튼에서 'active' 클래스 제거
-            toggleBtns.forEach(b => b.classList.remove("active"));
-            // 클릭된 버튼에 'active' 클래스 추가
-            btn.classList.add("active");
-
-            // 클릭된 버튼의 data-target 속성 가져오기
-            const target = btn.dataset.target;
-
-            // 모든 콘텐츠 숨기기
-            contents.forEach(content => {
-                content.style.display = content.id === `${target}-content` ? "block" : "none";
-            });
-        });
-    });
-</script>
-
-            
-    
-              
-                       
-        
-    
-        
-        
-        
-        
-        <script>
-        
-        window.lazyLoadOptions = {
-                        elements_selector: "img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",
-                        data_src: "lazy-src",
-                        data_srcset: "lazy-srcset",
-                        data_sizes: "lazy-sizes",
-                        class_loading: "lazyloading",
-                        class_loaded: "lazyloaded",
-                        threshold: 300,
-                        callback_loaded: function(element) {
-                            if ( element.tagName === "IFRAME" && element.dataset.rocketLazyload == "fitvidscompatible" ) {
-                                if (element.classList.contains("lazyloaded") ) {
-                                    if (typeof window.jQuery != "undefined") {
-                                        if (jQuery.fn.fitVids) {
-                                            jQuery(element).parent().fitVids();
-                                        }
-                                    }
-                                }
-                            }
-                        }};
-                
-                </script>
-                
-                
-                <script data-no-minify="1" async src="https://www.nhreits.com/wp-content/plugins/rocket-lazy-load/assets/js/16.1/lazyload.min.js"></script>
-            
-        
-    
-    
-    
-    
-
-
-            
-            <style>
-                .three-text{
-                    font-size:1.5em;
-                }
-
-                .two-title{
-                        font-size:27px !important;
-                    }
- @media screen and (max-width: 1200px) {
-                    .two-title{
-                        font-size:2.7em !important;
-                    }
-                    .two-text, .three-text{
-                        font-size:2em;
-                    }
-
-                    .list-text li{
-                        padding-left:30px;
-                        font-size:2em !important;
-                    }
-                }
-
-                @media screen and (max-width: 600px) {
-                    .two-title{
-                        font-size:3em !important;
-                    }
-                    .two-text, .three-text{
-                        font-size:2em;
-                    }
-                    .list-text li{
-                        padding-left:20px;
-                        font-size:2.1em !important;
-                    }
-                }
-            </style>
-
-        
-                <div class="contents bg-darker">
-                    <div class="container">
-                        <div class="row d-flex align-items-center align-responsive">
-                            <div class="col col-md-4 col-12 m-center text-white">
-                                <h2 class="wow fadeInUp two-title">'운'의 법칙을 이해했을 때<br>여러분은 자연스레<br>느끼게 될 것입니다.</h2>
-                                <h3 class="two-text">'운'은 행운만이 아닙니다.<br>여러분의 작은 행동이<br>부르는 결과입니다.</h3><br>
-                                
-                            </div>
-                            <div class="col col-md-8 col-12 mx-auto">  
-                                <ul class="list-item list-text">
-                                    <li class="wow fadeInLeft">
-                                <img src="./main1/img/icon1.png" alt="" class="mr-2">
-                                        큰 성공의 흐름을 알게 된다.
-                                    </li>
-                                    <li class="wow fadeInLeft" data-wow-delay="0.2s">
-                                        <img src="./main1/img/icon1.png" alt="" class="mr-2">
-                                        좋은 인연과 새로운 기회가 찾아온다.
-                                    </li>
-                                
-                                    <li class="wow fadeInLeft" data-wow-delay="0.5s">
-                                        <img src="./main1/img/icon1.png" alt="" class="mr-2">
-                                        어려움에서 기회를 발견하게 됩니다.
-                                    </li>
-                                    <li class="wow fadeInLeft" data-wow-delay="0.5s">
-                                        <img src="./main1/img/icon1.png" alt="" class="mr-2">
-                                        주변에서 여러분을 도와줍니다.
-                                    </li>
-                                </ul>
-                                <!-- <div class="m-text text-center">
-                                    <a class="btn btn-darker scroll" href="#form2">자세히 알아보기</a>
-                                </div> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-               <!-- 7 -->
-               <!-- <div class="contents bg-light">
-                <div class="container">
-                    <div class="row d-flex align-items-center align-responsive">
-                        <div class="col col-md-6 col-12 m-center">
-                            <h2 class="wow fadeInUp" id="title_txt" >'운'의 법칙을 이해했을 때<br>여러분은 자연스레<br>느끼게 될 것입니다.</h2>
-                            <p class="three-text" style="line-height:140%;margin-bottom:30px;">매년 사업체마다 평균 794만원이<br>다음의 이유로 더 납부되고 있습니다.<br>5년 뒤 국고로 귀속되기 전<br>꼭 받아야 할 여러분의 돈입니다</p>
-                            
-                        </div>
-                        <div class="col col-md-6 col-12 mx-auto">  
-                            <ul class="list-item">
-                                
-                                <li class="wow fadeInLeft" data-wow-delay="0.2s">
-                                    <img src="./main1/img/icon5.png" alt="" class="mr-2">
-                                    긍정적인 마인드셋이 형성됩니다.
-                                </li>
-                              
-                                <li class="wow fadeInLeft" data-wow-delay="0.4s">
-                                    <img src="./img/no-shouting.png" alt="" class="mr-2">
-                                    행동력과 결정 속도가 빨라집니다.
-                                </li>
-                                <li class="wow fadeInLeft" data-wow-delay="0.6s">
-                                    <img src="./img/conversation.png" alt="" class="mr-2">
-                                    주변 사람들과의 관계가 좋아집니다. 
-                                </li>
-
-                                <li class="wow fadeInLeft" data-wow-delay="0.6s">
-                                    <img src="./main1/img/icon7.png" alt="" class="mr-2">
-                                    작은 성공이 쌓이며 자신감이 높아집니다.
-                                </li>
-
-                                <li class="wow fadeInLeft" data-wow-delay="0.6s">
-                                    <img src="./main1/img/icon9.png" alt="" class="mr-2">
-                                    운을 끌어당기는 행동 습관이 형성됩니다.
-                                </li>
-                              
-                            </ul>
-                            <div class="m-text text-center" style="margin-top:30px;">
-                                <a class="btn btn-darker scroll" href="#form_e11">무료 상담 받기</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-
-
-
-  <!-- 3 -->
-  <div class="contents" >
-    <div class="container m-center">
-        <div class="row text-center" style="display: initial !important;">
-            <div class="graph-section">
-                <h2>
-                    운을 바꾸는 데는<br>많은 시간이 걸리지 않습니다.
-                    <br><br>
-                    이 노하우를 배우는 순간,<br>당신의 사업은<br>완전히 새로운 흐름을<br>타게 될 것입니다."
-
-                </h2>
-                <ul class="wrap">
-                    <li>사업이 풀리지 않는다면?</li>
-                    <li>불황을 극복하고 큰 성공을 원한다면?</li>
-                    <li>•</li>
-                
-                    <li>사업의 흐름을 완전히 바꾸는<br>꼭 놓치고 있던 '운'의 법칙을 배우세요.</li>
-                </ul>
-                <div class="graph" >
-                    <div class="left">
-                        <div class="wrap">
-                            <p class="price"></p>
-                            <div class="bar" style="height:10px;"></div>
-                            <p class="txt"><span>사업의 흐름</span></p>
-                        </div>
-                    </div>
-                    <div class="middle" ></div>
-                    <div class="right">
-                        <div class="wrap">
-                            <p class="price txtAni">'운'의 힘</p>
-                            <div class="bar" style="height:10px;"></div>
-                            <p class="txt"><span>사업의 흐름</span></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<script type="text/javascript">
-    $(window).scroll(function() { 
-        if ($(this).scrollTop() > 800) {
-            $(".graph-section .graph .right .bar").stop().animate({"height":"140"},1400);
-        } 
-    }); 
-</script>
-       
-
-
-
-
-
-
-
-
-    <style> 
-    /* 배경 이미지 (img 태그 활용) */
-    #intro-law .background-img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        filter: brightness(0.4); /* 기본 밝기 설정 */
-        z-index: -1; /* 텍스트 및 비디오보다 뒤로 배치 */
-    }
-    
-    </style>
-    
-        
-        <!-- 5 -->
-        <!-- <div class="contents pb-0" id="intro-law" style="position:relative;color:#fff;">
-            <img class="background-img" src="./img/law-pic2.jpg" alt="배경 이미지">
-
-            <div class="container m-center">
-                <div class="row d-flex align-items-center">
-                    <div class="col col-md-6 col-12">
-                        <h2 class="wow fadeInLeft">
-                           더 낸 세금 돌려 받으세요!<br>2명 중 1명이 현재<br><span style="color:#2196F3;font-weight:900;">평균 <span class="counter" style="font-weight:900;bottom:0;color:#2196F3">2,200</span> 만원</span><br>세금 환급 받고 계십니다
-                        </h2>
-                        <br>
-                        <p style="font-size:20px;line-height:160%;">더 낸 세금 원래 여러분의 돈입니다.<br>최신 세법을 토대로 서울대 회계사가<br>몰라서 더 낸 세금 전부 찾아서<br><u style="text-underline-position:under">1원도 빠짐없이 모두 돌려드립니다.</u>
-                        </p><br><br><br>
-
-                        <a class="btn btn-darker scroll" href="#form_e11">무료 환급금 조회</a>
-                    </div>
-                    <div class="col col-md-6 col-12 p-0">
-                       <video src="./img/intro_phone-ezgif.com-gif-to-mp4-converter.mp4" autoplay muted loop playsinline style="width:100%;"></video>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
-
-
-
-        <script>
-            var typeText = document.querySelector(".typeText")
-var textToBeTyped = "사업자 세금 환급금"
-var textToBeTypedArr = ["사업이 도무지 안풀린다면?", "사업을 크게 성공시키고 싶다면?", "꼭 받아들여야만 하는 진실이 하나 있습니다.", "사업 성공은 실력과 노력만으로","이뤄져 있지 않다는 겁니다.", "실력과 노력은 당연한 기본입니다.",  "사업 성공에 '운'이라는 요소가 꼭 필요하다는 걸", "겸허하게 받아들여야 합니다.", "사업에 있어 '운'은 행운적인 요소만이 아닙니다.", "사업의 '운'은 키워나갈 수 있는 요소입니다.", "현재 여러분의 말, 행동, 태도 모두가 운의 요소입니다.","여러분이 이 진실을 받아들이는 순간부터", "당신의 사업은 새로운 차원으로 도약할 것입니다."]
-var index = 0, isAdding = true, textToBeTypedIndex = 0
-
-function playAnim() {
-setTimeout(function () {
-// set the text of typeText to a substring of the text to be typed using index.
-typeText.innerText = textToBeTypedArr[textToBeTypedIndex].slice(0, index)
-if (isAdding) {
- // adding text
- if (index > textToBeTypedArr[textToBeTypedIndex].length) {
-   // no more text to add
-   isAdding = false
-   //break: wait 2s before playing again
-   setTimeout(function () {
-     playAnim()
-   }, 2000)
-   return
- } else {
-   // increment index by 1
-   index++
- }
-} else {
- // removing text
- if (index === 0) {
-   // no more text to remove
-   isAdding = true
-   //switch to next text in text array
-   textToBeTypedIndex = (textToBeTypedIndex + 1) % textToBeTypedArr.length
- } else {
-   // decrement index by 1
-   index--
- }
-}
-// call itself
-playAnim()
-}, isAdding ? 65 : 35)
-}
-// start animation
-playAnim();
-           </script>
-
- 
-
-
-
-<style>
-    #prcess {
-        width:100%;
-        margin:0;
-        padding:0;
-    }
-
-    #process .container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-        text-align: center;
-        color: white;
-    }
-
-    #process .header {
-        background: transparent;
-        font-size: 24px;
-        font-weight: bold;
-        margin-bottom: 15px;
-        letter-spacing: 1px;
-    }
-
-    #process .toggle-buttons {
-        display: flex;
-        width:100%;
-        justify-content: center;
-        margin-bottom: 30px;
-        background: #27293a;
-        padding: 5px;
-        border-radius: 50px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    #process .toggle-pcs {
-        background: transparent;
-        color: white;
-        border: none;
-        flex: 1;
-        padding: 10px 20px;
-        font-size: 16px;
-        font-weight: bold;
-        border-radius: 50px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-
-    #process .toggle-pcs.active {
-        background: #6b6bff;
-        color: white;
-        box-shadow: 0 4px 10px rgba(107, 107, 255, 0.5);
-    }
-
-    #process .content {
-        margin-top: 20px;
-        text-align: left;
-    }
-
-    #process .content p {
-        margin-bottom: 20px;
-        line-height: 1.8;
-    }
-
-    #process .steps {
-        list-style: none;
-        padding: 0;
-    }
-
-    #process .steps li {
-        display: flex;
-        align-items: flex-start;
-        margin-bottom: 20px;
-        padding: 10px;
-        background: #27293a;
-        border-radius: 12px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        transition: all 0.3s ease;
-    }
-
-    #process .steps li:hover {
-        transform: translateY(-5px);
-        background: #333547;
-    }
-
-    #process .steps li .step-number {
-        flex-shrink: 0;
-        width: 30px;
-        height: 30px;
-        background: #6b6bff;
-        color: white;
-        font-weight: bold;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        margin: 10px 15px;
-        font-size: 14px;
-    }
-
-    #process  .steps li .step-content {
-        flex: 1;
-    }
-
-    #process .steps li .step-content h3 {
-        font-size: 16px;
-        font-weight: bold;
-        margin-bottom: 8px;
-    }
-
-    #process .steps li .step-content p {
-        margin: 0;
-        font-size: 14px;
-        line-height: 1.6;
-    }
-
-    @media (max-width: 768px) {
-        #process  .steps li {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-/* 
-        #process  .steps li .step-number {
-            margin-right: 0;
-            margin-bottom: 10px;
-        } */
-
-        #process  .steps li .step-content {
-            text-align: center;
-        }
-    }
-</style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <style>
-                .sec04 h2{
-                    font-size:34px;
-                }
-
-                @media screen and (max-width: 500px) {
-                    .sec04 h2{
-                    font-size:2.6rem;
-                }
-                    
-                }
-            </style>
-
-
-
-<!--==========================
-Frequently Asked Questions Section
-============================-->
-<section id="faq">
-    <div class="container">
-    <header class="section-header">
-    <h3>FAQ</h3>
-    </header>
-    
-    <ul id="faq-list" class="wow fadeInUp">
-    
-    <li>
-      <a data-toggle="collapse" class="collapsed faq1" href="#faq1">이 책이 정말 내게 도움이 될까요?<i class="ion-android-remove"></i></a>
-      <div id="faq1" class="collapse" data-parent="#faq-list">
-        <p><b>A. 지금 사업이 잘 풀리지 않는다면, 바로 이 책이 필요한 순간입니다.</b></p>
-        <p>이 책은 일본 장기 불황 속에서도 억만장자가 된 사람이 직접 경험한 실전 성공 법칙을 다룹니다. 단순한 이론이 아니라, 실제 성공한 사람들이 적용한 ‘운을 키우는 법’을 알려주기 때문에, 사업이 답답하거나 성장의 한계를 느끼는 분이라면 반드시 읽어야 할 책입니다.</p>
-      </div>
-    </li>
-    
-    <li>
-      <a data-toggle="collapse" href="#faq2" class="collapsed faq2">‘운’이 과학적으로 근거가 있는 건가요?<i class="ion-android-remove"></i></a>
-      <div id="faq2" class="collapse" data-parent="#faq-list">
-        <p><b>A. 단순한 미신이 아닙니다. ‘운’은 과학적으로 키울 수 있습니다.</b></p>
-        <p>이 책은 행동, 말투, 태도를 바꾸어 운을 만들어 가는 법칙을 설명합니다. 워렌 버핏, 제프 베이조스 등 세계적인 성공한 사람들이 운의 중요성을 강조합니다. 운이 좋았던 사람들의 공통적인 패턴을 심리학적으로 분석한 연구도 다수 존재합니다.</p>
-      </div>
-    </li>
-    
-    <li>
-      <a data-toggle="collapse" href="#faq3" class="collapsed faq3">나는 사업가가 아닌데, 일반 직장인도 도움이 될까요?<i class="ion-android-remove"></i></a>
-      <div id="faq3" class="collapse" data-parent="#faq-list">
-        <p><b>A. 물론입니다. 이 책은 사업뿐만 아니라 모든 인생 영역에 적용할 수 있습니다.</b></p>
-        <p>✅ 직장인: 좋은 기회를 잡고 승진을 빠르게 할 수 있는 방법<br>
-        ✅ 자영업자: 매출이 오르는 흐름을 만드는 방법<br>
-        ✅ 취준생 & 대학생: 원하는 기회를 얻는 방법</p>
-      </div>
-    </li>
-    
-    <li>
-      <a data-toggle="collapse" href="#faq4" class="collapsed faq4">책 내용이 너무 어려운 건 아닐까요?<i class="ion-android-remove"></i></a>
-      <div id="faq4" class="collapse" data-parent="#faq-list">
-        <p><b>A. 전혀 어렵지 않습니다! 오히려 가장 쉽고, 바로 실천할 수 있는 방법들만 담았습니다.</b></p>
-        <p>✅ 어려운 이론 없이, 사례 중심으로 설명<br>
-        ✅ 즉시 실행할 수 있는 실전법 포함<br>
-        ✅ 읽는 즉시 사고방식이 변화하는 경험을 할 수 있음</p>
-      </div>
-    </li>
-    
-    <li>
-      <a data-toggle="collapse" href="#faq5" class="collapsed faq5">얼마나 빨리 변화를 경험할 수 있을까요?<i class="ion-android-remove"></i></a>
-      <div id="faq5" class="collapse" data-parent="#faq-list">
-        <p><b>A. 이 책은 이론서가 아닙니다. 바로 적용할 수 있도록 가볍게 읽고 체득할 수 있습니다.</b></p>
-        <p>✅ 3일 안에 말투와 태도를 바꾸는 것만으로도, 주변의 반응이 달라짐<br>
-        ✅ 한 달 안에 ‘운이 좋아졌다’는 느낌을 받을 수 있음<br>
-        ✅ 6개월 안에 사업과 인생이 변화하는 것을 경험할 수 있음</p>
-      </div>
-    </li>
-    
-
-    
-    <li>
-      <a data-toggle="collapse" href="#faq7" class="collapsed faq7">아직도 고민된다면?<i class="ion-android-remove"></i></a>
-      <div id="faq7" class="collapse" data-parent="#faq-list">
-        <p><b>A. 고민하는 순간에도, 기회는 지나가고 있습니다.</b></p>
-        <p>이 책을 읽지 않으면, 당신의 인생은 지금과 똑같을 것입니다. 하지만 이 책을 읽는다면, 당신의 인생은 완전히 새로운 방향으로 움직일 것입니다.</p>
-        <p>👉 단 한 권의 책으로 운과 사업의 흐름을 바꿀 수 있는 기회!<br>
-        👉 망설이면 기회도 사라집니다. 지금 바로 구매하세요! 🚀</p>
-      </div>
-    </li>
-    
-    </ul>
-    </div>
-    </section>
-    <!-- #faq -->
-
-<!-- 
-<section id="call-to-action" class="wow fadeIn">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-9 text-center text-lg-left wow fadeInUp">
-          <h3 class="cta-title" style="line-height:140%;">세무 대리인 변경 없어도<br>편하게 환급 가능합니다</h3>
-          <p class="cta-text">그러니 전혀 부담갖지 마시고<br>5년간 더 낸 여러분의 돈을<br>3분 조회로 지금 당장 찾아가세요.</p>
-         
-        </div>
-        <div class="col-lg-3 cta-btn-container text-center wow fadeInUp">
-          <a class="cta-btn align-middle motive-btn scroll" href="#form_e11">무료 환급금 조회</a>
-        </div>
-      </div>
-
-    </div>
-  </section> -->
-
-<!-- 1 -->
-<div class="contents sec01" style="margin-bottom:0px;border-bottom:0px;">
-    <div class="container m-center">
-        <div class="row d-flex align-items-center">
-            <div class="col col-md-6 col-12">
-                <h4>여러분의 사업 흐름을<br>바꿀 기회를<br>더 이상 놓치지 마세요.</h4>
-                <br><h2>
-                    억만장자가 직접 느낀 노하우를<br>얼른 체득하시고 불황을<br>이겨나갈 힘을 갖추세요!
-                </h2>
-             
-            </div>
-            <div class="col col-md-6 col-12 p-0">
-                <div class="count">
-                    <div class="row pb-2">
-                        <div class="col-4 text-left align-bottom">
-                            <p>일본 개인 납세액 1위</p>
-                        </div>
-                        <div class="col-8 text-right">
-                            <p>
-                                
-                                <span class="counter" style="color:#2196F3;bottom:0px;">12</span>년간</p>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row py-2">
-                        <div class="col-4 text-left">
-                            <p>일본 베스트 셀러</p>
-                        </div>
-                        <div class="col-8 text-right">
-                            <p>
-                                <span class="counter" style="color:#2196F3;bottom:0px;">30</span>
-    
-                                만부 판매</p>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row pt-2">
-                        <div class="col-4 text-left">
-                            <p>실제 부호가 된 제자 수</p>
-                        </div>
-                        <div class="col-8 text-right">
-                            <p>
-                                <span class="counter"  style="color:#2196F3;bottom:0px;">10</span>
-                                명</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col col-12 pb-0">
-                <!-- <p class="text-right small" style="line-height: 1.3em;color: #9b9b9b;">
-                    *최저 연 %기준<br>
-                    ()
-                </p> -->
-            </div>
-        </div>
-    </div>
-    </div>
-
-    <div  id="buy" class="buy-buttons" style="padding:0;margin:0;">
-        <a href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=352981544" target="_blank" class="buy-btn aladin">알라딘에서 구매하기</a>
-        <a href="https://product.kyobobook.co.kr/detail/S000214874666" target="_blank" class="buy-btn kyobo">교보문고에서 구매하기</a>
-        <a href="https://www.yes24.com/product/goods/139734898" target="_blank" class="buy-btn yes24">예스24에서 구매하기</a>
-        
-        <a href="https://www.coupang.com/vp/products/8474081005?itemId=24520832322&vendorItemId=91575471637&q=%EC%9A%B4+%EC%A2%8B%EC%9D%80+%EB%86%88%EC%9D%B4+%EC%84%B1%EA%B3%B5%ED%95%9C%EB%8B%A4&itemsCount=36&searchId=05efa8f33077708&rank=0&searchRank=0&isAddedCart=" target="_blank" class="buy-btn coupang">쿠팡에서 구매하기</a>
-    </div><br><br>
-<!-- <div id="test_body"></div> -->
-        <!--footer 시작-->
-   
-        <footer class="bg-light p-4">
-            <div class="container-fluid">
-                <div class="row justify-content-center text-center">
-                    <p style="text-align:center; color:#000; font-size: 12px; line-height: +1.4;">
-                        나비스쿨출판 | 법인사업자번호: 355-87-08194 | 대표자: 조우석 |<br>
-마케팅 업체: 플로스 | 사업자번호: 471-09-01112 | 주소: 서울 영등포구 선유로 53길 22 502호<br>
-FLOS (C) All rights reserved<br><br><br><br><br><br>
-            </p>
-                </div>
-
-            </div>
-        </footer>
-        <!--footer 끝-->
-
-        <!-- end form -->
-        <script>
-            function chk_num(obj){obj.value=obj.value.replace(/[^0-9]/g,'');}
-
-            $(document).ready(function ($) {
-                $(".btn-show").click(function (e) {
-                    $(".agreement").toggle();
-                    return false;
-                });
-            });
-        </script>
-
-            <!-- Script File -->
-   
-
-            <div id="privacy">
-                <div id="privacyContent">
-                  <div class="titWrap">
-                    <span>개인정보처리방침</span>
-                    <i style="margin-top:-20px !important" class="ion-close-circled closeBtn"></i>
-                  </div>
-                  <div style="line-height:1.2" class="conWrap">
-                    개인정보처리방침<br><br>
-                    ‘주식회사 플로스’ 회사는 (이하 ‘회사’는) 고객님의 개인정보를 중요시하며, “개인정보보호법”, “정보통신망 이용촉진 및 정보보호에 관한 법률”등 관련법규를 준수하고 있습니다. 회사는 개인정보취급방침을 통하여 고객님께서 제공하시는 개인정보가 어떠한 용도와 방식으로 이용되고 있으며, 개인정보보호를 위해 어떠한 조치가 취해지고 있는지 알려드립니다.<br />
-                    아울러 개인정보 제공자가 동의한 내용 외의 다른 목적으로 활용하지 않으며, 제공된 개인정보의 이용을 거부하고자 할 때에는 개인정보 관리책임자를 통해 열람, 정정, 삭제를 요구할 수 있습니다.<br><br>
-                    <br />
-                    01. 수집하는 개인정보 항목<br />
-                    <br />
-                    회사는 상담, 서비스 신청 등등을 위해 아래와 같은 개인정보를 수집하고 있습니다.<br />
-                    <br />
-                    -수집항목 : 본인이름, 이메일, 본인연락처, 문의사항<br />
-                    -개인정보수집방법 : 홈페이지(상담신청양식), 전화<br />
-                    <br />
-                    02. 개인정보의 수집 및 이용목적<br />
-                    회사는 수집한 개인정보를 다음의 목적을 위해 활용합니다.<br />
-                    <br />
-                    서비스 제공에 관한 계약 이행 및 서비스 제공에 따른 상담, 요금정산, 구매 및 요금결제, 물품배송 또는 청구지 등 발송<br />
-                    회원관리 : 회원제 서비스 이용에 따른 본인확인 , 개인 식별 , 불량회원의 부정 이용 방지와 비인가 사용 방지 , 구매 의사 확인 , 연령확인 , 만14세 미만 아동 개인정보 수집 시 법정 대리인 동 여부 확인 , 불만처리 등 민원처리 , 고지사항 전달, 입사 지원에 따른 본인 확인, 제휴신청 업체 정보 확인<br />
-                    마케팅 및 광고      에 활용 : 신규 서비스(제품) 개발 및 특화 , 이벤트 등 광고성 정보 전달 , 인구통계학적 특성에 따른 서비스 제공 및 광고 게재 , 접속 빈도 파악 또는 회원의 서비스 이용에 대한 통계<br />
-                    <br />
-                    또한, 본 회사는 “통신비밀보호법”에 의거하여 공개되지 않은 타인 간의 대화를 녹음 또는 청취하지 못하며,<br />
-                    위반 시 10년 이하의 징역과 5년 이하의 자격정지에 처하도록 규정을 따르고 있으며, 녹취를 할 때 내 사건에 증거로 제출할 목적으로 서로간의 합의하에만 녹취가 가능합니다.<br />
-                    <br />
-                    03. 개인정보의 보유 및 이용기간<br />
-                    원칙적으로, 개인정보 수집 및 이용목적이 달성된 후에는 예외 없이 해당 정보를 지체 없이 파기합니다. 단, 다음의 정보에 대해서는 아래의 이유로 명시한 기간 동안 보존합니다.<br />
-                    <br />
-                    보존항목 : 이름, 나이, 연락처, 주소, 이메일<br />
-                    보존근거 : 전자상거래 등에서의 소비자보호에 관한 법률<br />
-                    보존기간 : 5년<br />
-                    <br />
-                    그리고 관계법령의 규정에 의하여 보존할 필요가 있는 경우 회사는 아래와 같이 관계법령에서 정한 일정한 기간 동안 회원정보를 보관합니다.<br />
-                    <br />
-                    보존항목 : 이름, 나이, 연락처, 주소, 이메일<br />
-                    보존근거 : 전자상거래 등에서의 소비자보호에 관한 법률<br />
-                    보존기간 : 5년<br />
-                    <br />
-                    04. 개인정보의 파기절차 및 방법<br />
-                    회사는 원칙적으로 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다. 파기절차 및 방법은 다음과 같습니다.<br />
-                    <br />
-                    <br />
-                    -파기절차<br />
-                    <br />
-                    고객님이 상담신청 등을 위해 입력하신 정보는 목적이 달성된 후 별도의 DB로 옮겨져(종이의 경우 별도의 서류함)내부 방침 및 기타 관련 법령에 의한 정보보호 사유에 따라(보유 및 이용기간 참조)일정기간 저장된 후 파기되어집니다. 별도 DB로 옮겨진 개인정보는 법률에 의한 경우가 아니고서는 보유되어지는 이외의 다른 목적으로 이용되지 않습니다.<br />
-                    <br />
-                    -파기방법<br />
-                    <br />
-                    전자적 파일형태로 저장된 개인정보는 기록을 재생할 수 없는 기술적 방법을 사용하여 삭제합니다.<br />
-                    <br />
-                    05. 개인정보의 제3자 제공<br />
-                    회사는 정보주체의 개인정보를 이용목적 내에서만 처리하며, 정보 주체의 동의, 법률의 특별한 규정이 있는 경우에만 개인정보를 제3자에게 제공합니다.<br />
-                    회사는 다음과 같이 개인정보를 제3자에게 제공하고 있습니다.<br />
-                    <br />
-                    -제공하는 개인정보 항목 : 본인이름, 본인나이, 본인연락처, 불편사항, 결혼유무, 이메일 등 고객이 입력한 정보<br />
-                    -제공받는 자의 개인정보 이용목적<br />
-                    서비스 제공에 관한 이행 및 서비스 제공에 따른 콘텐츠제공<br />
-                    고객을 대상으로 제품 상담 응대 및 판매<br />
-                    서비스 제공에 관한 계약 이행 및 서비스 제공에 따른 상담, 요금정산, 구매 및 요금결제, 물품배송 또는 청구지 등 발송<br />
-                    -회원 관리 : 회원제 서비스 이용에 따른 본인확인 , 개인 식별 , 불량회원의 부정 이용 방지와 비인가 사용 방지 , 구매 의사 확인 , 연령확인 , 만14세 미만 아동 개인정보 수집 시 법정 대리인 동의여부 확인 , 불만처리 등 민원처리 , 고지사항 전달, 입사 지원에 따른 본인 확인, 제휴신청 업체 정보 확인<br />
-                    -마케팅 및 광고에 활용 : 신규 서비스(제품) 개발 및 특화 , 이벤트 등 광고성 정보 전달 , 인구통계학적 특성에 따른 서비스 제공 및 광고 게재 , 접속 빈도 파악 또는 회원의 서비스 이용에 대한 통계<br />
-                    -제공받는 자의 보유․이용기간 : 5년(소비자의 불만 또는 분쟁처리에 관한 기록 : 3년)<br />
-                    고객은 제3자 개인정보 제공에 대하여 동의를 거부할 권리가 있으며 동의를 거부할 경우 서비스 제공 및 서비스 제공에 따른 콘텐츠 제공에 제한이 있을 수 있습니다.<br />
-                    <br />
-                    06. 이용자 및 법정대리인의 권리와 그 행사방법<br />
-                    이용자는 언제든지 등록되어 있는 자신의 개인정보를 조회하거나 수정할 수 있으며 가입해지를 요청할 수도 있습니다. 이용자들의 개인정보 조회, 수정을 위해서는 ‘개인정보변경’(또는 ‘회원정보수정’ 등)을 가입해지(동의철회)를 위해서는 “회원탈퇴”를 클릭하여 본인 확인 절차를 거치신 후 직접 열람, 정정 또는 탈퇴가 가능합니다. 혹은 개인정보관리책임자에게 서면, 전화 또는 이메일로 연락하시면 지체 없이 조치하겠습니다. 귀하가 개인정보의 오류에 대한 정정을 요청하신 경우에는 정정을 완료하기 전까지 당해 개인정보를 이용 또는 제공하지 않습니다. 또한 잘못된 개인정보를 제3자에게 이미 제공한 경우에는 정정 처리결과를 제3자에게 지체 없이 통지하여 정정이 이루어지도록 하겠습니다. 회사는 이용자의 요청에 의해 해지 또는 삭제된 개인정보는 “회사가 수집하는 개인정보의 보유 및 이용기간”에 명시된 바에 따라 처리하고 그 외의 용도로 열람 또는 이용할 수 없도록 처리하고 있습니다.<br />
-                    <br />
-                    07. 개인정보 자동수집 장치의 설치, 운영 및 그 거부에 관한 사항<br />
-                    회사는 귀하의 정보를 수시로 저장하고 찾아내는‘쿠키(cookie)’ 등을 운용합니다. 쿠키란 인사이드케어 솔루션의 웹사이트를 운영하는데 이용되는 서버가 귀하의 브라우저에 보내는 아주 작은 텍스트 파일로서 귀하의 컴퓨터 하드디스크에 저장됩니다. 회사은(는) 다음과 같은 목적을 위해 쿠키를 사용합니다.<br />
-                    <br />
-                    쿠키 등 사용 목적<br />
-                    회원과 비회원의 접속 빈도나 방문 시간 등을 분석, 이용자의 취향과 관심분야를 파악 및 자취 추적, 각종 이벤트 참여 정도 및 방문 회수 파악 등을 통한 타겟 마케팅 및 개인 맞춤 서비스 제공<br />
-                    귀하는 쿠키 설치에 대한 선택권을 가지고 있습니다. 따라서, 귀하는 웹브라우저에서 옵션을 설정함으로써 모든 쿠키를 허용하거나, 쿠키가 저장될 때마다 확인을 거치거나, 아니면 모든 쿠키의 저장을 거부할 수도 있습니다.<br />
-                    쿠키 설정 거부 방법<br />
-                    예: 쿠키 설정을 거부하는 방법으로는 회원님이 사용하시는 웹 브라우저의 옵션을 선택함으로써 모든 쿠키를 허용하거나 쿠키를 저장할 때마다 확인을 거치거나, 모든 쿠키의 저장을 거부할 수 있습니다.<br />
-                    설정방법 예(인터넷 익스플로어의 경우) : 웹 브라우저 상단의 도구 &gt; 인터넷 옵션 &gt; 개인정보<br />
-                    단, 귀하께서 쿠키 설치를 거부하였을 경우 서비스 제공에 어려움이 있을 수 있습니다.<br />
-                    <br />
-                    08. 개인정보에 관한 민원서비스<br />
-                    회사는 고객의 개인정보를 보호하고 개인정보와 관련한 불만을 처리하기 위하여 아래와 같이 관련 부서 및 개인정보관리책임자를 지정하고 있습니다.<br />
-                    <br /> 
-                    귀하께서는 회사의 서비스를 이용하시며 발생하는 모든 개인정보 보호 관련민원을 개인정보관리책임자 혹은 담당부서로 신고하실 수 있습니다.<br />
-                    회사는 이용자들의 신고사항에 대해 신속하게 충분한 답변을 드릴 것입니다.<br />
-                    <br />
-                    기타 개인정보침해에 대한 신고나 상담이 필요하신 경우에는 아래 기관에 문의하시기 바랍니다.<br />
-                    <br />
-                    개인분쟁조정위원회 (www.1336.or.kr/1336)<br />
-                    정보보호마크인증위원회 (www.eprivacy.or.kr/02-580-0533~4)<br />
-                    대검찰청 인터넷범죄수사센터 (http://icic.sppo.go.kr/02-3480-3600)<br />
-                    경찰청 사이버테러대응센터 (www.ctrc.go.kr/02-392-0330)
-                  </div>
-                </div>
-              </div>
-
-
-
-
-
-
-
-
-
-   
-  </form>
-
-    <div class="bottom_contact_mob mob_img">
-        <div class="top_thumb">
-    <div class="title">
-      <a ></a>
-      <a  style="display:contents;width:100%;max-width:300px;"> <img src="./form/img/click_icon.png" alt="" class="click_img">
-      <span class="tit">사업이 도무지 안풀린다면?</span>
-      <span class="tel">억만장자의 비법 배우기</span></a>
-    </div><!-- // title -->
-    <div class="btn">
-      <a href="javascript:void(0)" style="padding-top:0px;font-size:1.4rem;">구매하기</a>
-    </div><!-- // btn -->
-        </div><!-- // top_thumb -->
-        <div class="bottom_con">
-            <div class="inner">
-                <div  class="buy-buttons">
-                    <a href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=352981544" target="_blank" class="buy-btn aladin">알라딘에서 구매하기</a>
-                    <a href="https://product.kyobobook.co.kr/detail/S000214874666" target="_blank" class="buy-btn kyobo">교보문고에서 구매하기</a>
-                    <a href="https://www.yes24.com/product/goods/139734898" target="_blank" class="buy-btn yes24">예스24에서 구매하기</a>
-                    
-                    <a href="https://www.coupang.com/vp/products/8474081005?itemId=24520832322&vendorItemId=91575471637&q=%EC%9A%B4+%EC%A2%8B%EC%9D%80+%EB%86%88%EC%9D%B4+%EC%84%B1%EA%B3%B5%ED%95%9C%EB%8B%A4&itemsCount=36&searchId=05efa8f33077708&rank=0&searchRank=0&isAddedCart=" target="_blank" class="buy-btn coupang">쿠팡에서 구매하기</a>
-                </div>
-                <script type="text/javascript">var submitted2 = false;</script>
-                <iframe name="hidden_iframe12" id="hidden_iframe12" style="display:none;" onload=""></iframe>
-
-                
-    <script type="text/javascript">var submitted3 = false;</script>
-    <iframe name="hidden_iframe13" id="hidden_iframe13" style="display:none;" onload=""></iframe>
-            </div><!-- // inner -->
-        </div><!-- // bottom_con -->
-    </div><!-- // bottom_contact_mob -->
-
-
-    </body>
-    <script src="./form/js/jquery.min.js"></script>
-    <script src="./form/js/jquery-migrate.min.js"></script>
-    <script src="./form/js/form.js"></script>
-    <script src="./form/js/validation.js"></script>
-
-    <script src="./form/js/validation-float-pc.js"></script>
-    <script src="./form/js/validation-float-mob.js"></script>
-    <script src="./form/column/js/personal_f.js"></script>
-
-    <script>
-        $('.navi_btn').click(function(){
-          $(this).toggleClass('on');
-          $('.navi').stop().fadeToggle()
-        });
-      
-      
-      
-        $('.lnb h3').click(function(){
-          var naviTitle = $(this).next('ul');
-          $(this).addClass('on');
-          $('.lnb h3').not(this).removeClass('on');
-          naviTitle.stop().slideDown();
-          $('.lnb h3').next().not(naviTitle).slideUp();
-        });
-      
-        $('.right_contact .left').click(function(){
-          $('.right_contact').toggleClass('on');
-        });
-      
-        $('.bottom_contact_mob .top_thumb').click(function(){
-          $('.bottom_contact_mob').toggleClass('on');
-        });
-      
-        $('.bottom_contact_mob .bottom_con .btn_list .close_btn').click(function(){
-          $('.bottom_contact_mob').removeClass('on');
-        });	
-      </script>  
-  
-  <script type="text/javascript">
-    $(window).scroll(function() { 
-        if ($(this).scrollTop() > 1800) { 
-            $(".roll-text ul.wrap > li").eq(0).find("ul").stop().animate({"bottom":"-1000px"},1000,"easeInOutCubic");
-                setTimeout(function(){
-                    $(".roll-text ul.wrap > li").eq(1).find("ul").stop().animate({"bottom":"-1000px"},1000,"easeInOutCubic");
-                },200);
-                setTimeout(function(){
-                    $(".roll-text ul.wrap > li").eq(2).find("ul").stop().animate({"bottom":"-900px"},1000,"easeInOutCubic");
-                },300);
-        } 
-    }); 
-  </script>
-
-  
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // 모든 .buy-btn 요소에 클릭 이벤트 추가
-        document.querySelectorAll(".buy-btn").forEach(function(button) {
-            button.addEventListener("click", function() {
-                // Karrot Pixel 이벤트 트래킹 실행
-                window.karrotPixel.track('Purchase');
-                kakaoPixel('6291338014999429090').purchase('');
-            });
-        });
-    });
-</script>
-
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="./js/validation-form.js"></script>
+<script src="./js/personal_f.js"></script>
+</body>
 </html>
