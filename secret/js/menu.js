@@ -12,7 +12,7 @@
       <div class="logo-group">
         <a href="../index.html">
           <img id="logoImg"
-               src="../img/logo-white.png"
+               src=".s./img/logo-white.png"
                data-src-light="../img/logo-white.png"
                data-src-dark="../img/logo_on.png"
                >
