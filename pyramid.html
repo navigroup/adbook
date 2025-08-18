@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>운 70%, 실력 30% 피라미드 (section #pyramid)</title>
+  <style>
+    /* 모든 스타일을 #pyramid 범위 안에서만 적용 */
+    
+    /* #pyramid 최상단 스타일 (배경, 폰트 등) */
+    #pyramid {
+      /* 원하시는 높이나 배경을 지정 */
+      min-height: 2000px; /* 스크롤 테스트용 길이 */
+      background: linear-gradient(135deg, #f0f0f3, #e8e8ee);
+      font-family: "Helvetica Neue","Noto Sans KR",sans-serif;
+    }
+
+    /* 가운데 정렬을 위한 컨테이너 */
+    #pyramid .pyramid-container {
+      width: 450px; 
+      margin: 200px auto; 
+      text-align: center;
+      position: relative;
+    }
+
+    /* SVG 전체 크기 지정 */
+    #pyramid svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* 텍스트 공통 스타일 */
+    #pyramid text {
+      text-anchor: middle;
+      dominant-baseline: middle;
+      font-weight: 700;
+      user-select: none;
+    }
+
+    /* 피라미드 외곽 */
+    #pyramid #pyramid-outline {
+      fill: none;
+      stroke: #00000054;
+      stroke-width: 1;
+    }
+
+    /* 성공 텍스트 (아래->위 마스크) */
+    #pyramid #text-success-bg {
+      fill: rgba(0, 0, 0, 0.3);
+    }
+    #pyramid #text-success-fg {
+      fill: green;
+      mask: url(#maskSuccess);
+    }
+    #pyramid #maskRect {
+      fill: #fff;
+    }
+
+    /* 운(polyon-luck)에 opacity transition 적용 */
+    #pyramid #polygon-luck {
+      fill: #ffcb00;
+      opacity: 1;
+      transition: opacity 0.4s ease-in-out; /* 부드러운 페이드 */
+    }
+  </style>
+</head>
+<body>
+
+<section id="pyramid">
+  <div class="pyramid-container">
+    <!-- 
+      viewBox: 400 x 420
+        실력: y=380->188
+        운: y=188->60
+    -->
+    <svg viewBox="0 0 400 420">
+      <defs>
+        <!-- 피라미드 클리핑 -->
+        <clipPath id="pyramidClip">
+          <polygon points="20,380 380,380 200,60 20,380" />
+        </clipPath>
+        <!-- "성공" 텍스트 아래->위로 채워질 마스크 -->
+        <mask id="maskSuccess">
+          <rect id="maskRect" x="0" y="50" width="100%" height="0"/>
+        </mask>
+      </defs>
+
+      <!-- 외곽선 -->
+      <polygon id="pyramid-outline"
+               points="20,380 380,380 200,60 20,380" />
+
+      <!-- 실력 -->
+      <polygon id="polygon-skill"
+               clip-path="url(#pyramidClip)"
+               fill="#86A8E7"
+               points="" />
+      <!-- 운 -->
+      <polygon id="polygon-luck"
+               clip-path="url(#pyramidClip)"
+               points="" />
+
+      <!-- 텍스트 -->
+      <text id="text-skill" x="200" y="350" font-size="26" fill="#ffffff">
+        실력
+      </text>
+      <text id="text-luck" x="200" y="130" font-size="26" fill="#ffffff">
+        운
+      </text>
+
+      <!-- 성공 -->
+      <text id="text-success-bg" x="200" y="30" font-size="28">성공</text>
+      <text id="text-success-fg" x="200" y="30" font-size="28">성공</text>
+    </svg>
+  </div>
+</section>
+
+<script>
+  /* 좌표 정의 */
+  const BOTTOM_LEFT  = { x:20,  y:380 };
+  const BOTTOM_RIGHT = { x:380, y:380 };
+  const TOP_VERTEX   = { x:200, y:60 };
+  const SKILL_TOP    = 188; // 실력 상단
+
+  // DOM
+  const polygonSkill = document.getElementById('polygon-skill');
+  const polygonLuck  = document.getElementById('polygon-luck');
+  const textSkill    = document.getElementById('text-skill');
+  const maskRect     = document.getElementById('maskRect');
+
+  // 애니메이션 관련
+  let durationSkill   = 1200;
+  let durationLuck    = 1000;
+  let durationSuccess = 1000;
+  let startTimeSkill, startTimeLuck, startTimeSuccess;
+
+  // IntersectionObserver 재실행
+  let hasLeftViewport = true;
+  let luckBlinkInterval = null;
+
+  /* 초기화 */
+  function resetAnimationStates(){
+    if(luckBlinkInterval){
+      clearInterval(luckBlinkInterval);
+      luckBlinkInterval=null;
+    }
+    startTimeSkill = null;
+    startTimeLuck  = null;
+    startTimeSuccess = null;
+
+    polygonSkill.setAttribute('points',"20,380 20,380 20,380");
+    polygonLuck.setAttribute('points',"20,188 20,188 20,188");
+    polygonLuck.style.opacity=1;
+
+    maskRect.setAttribute('y',"50");
+    maskRect.setAttribute('height',"0");
+  }
+
+  /* 1) 실력 채우기 */
+  function animateSkill(timestamp){
+    if(!startTimeSkill) startTimeSkill=timestamp;
+    const elapsed = timestamp - startTimeSkill;
+    let fraction = elapsed / durationSkill;
+    if(fraction>1) fraction=1;
+
+    // y=380->188
+    const currentY = 380 - fraction*(380 - SKILL_TOP);
+    polygonSkill.setAttribute('points',
+      `20,380 380,380 380,${currentY} 20,${currentY}`
+    );
+
+    // 실력 텍스트 중앙
+    const midY = (380 + currentY)/2;
+    textSkill.setAttribute('y', midY);
+
+    if(fraction<1){
+      requestAnimationFrame(animateSkill);
+    } else {
+      flickerLuck();
+    }
+  }
+
+  /* 2) 운 깜박(0.3초, fill대신 opacity로) */
+  function flickerLuck(){
+    polygonLuck.setAttribute('fill','#ffcb00');
+    polygonLuck.style.opacity='1';
+
+    let visible=false;
+    const flickerInterval = setInterval(()=>{
+      polygonLuck.style.opacity = visible? '1':'0';
+      visible=!visible;
+    },100);
+
+    setTimeout(()=>{
+      clearInterval(flickerInterval);
+      polygonLuck.style.opacity='0';
+      requestAnimationFrame(animateLuck);
+    },300);
+  }
+
+  /* 3) 운 채우기 */
+  function animateLuck(timestamp){
+    if(!startTimeLuck) startTimeLuck=timestamp;
+    const elapsed = timestamp - startTimeLuck;
+    let fraction = elapsed / durationLuck;
+    if(fraction>1) fraction=1;
+
+    // y=188->60
+    const currentY = 188 - fraction*(188 - TOP_VERTEX.y);
+    polygonLuck.setAttribute('points',
+      `20,188 380,188 380,${currentY} 20,${currentY}`
+    );
+    // 운 영역 채우면서 보이기
+    polygonLuck.style.opacity='1';
+
+    if(fraction<1){
+      requestAnimationFrame(animateLuck);
+    } else {
+      requestAnimationFrame(animateSuccess);
+    }
+  }
+
+  /* 4) 성공 텍스트(아래->위) */
+  function animateSuccess(timestamp){
+    if(!startTimeSuccess) startTimeSuccess=timestamp;
+    const elapsed = timestamp - startTimeSuccess;
+    let fraction = elapsed / durationSuccess;
+    if(fraction>1) fraction=1;
+
+    const maxH=50;
+    const h = fraction*maxH;
+    const rectY = 50-h;
+    maskRect.setAttribute('y', rectY);
+    maskRect.setAttribute('height', h);
+
+    if(fraction<1){
+      requestAnimationFrame(animateSuccess);
+    } else {
+      startLuckBlink();
+    }
+  }
+
+  /* 5) 운 부드러운 깜박
+        opacity 1 <-> 0
+        transition: opacity 0.4s ease-in-out
+  */
+  function startLuckBlink(){
+    let off=false;
+    luckBlinkInterval=setInterval(()=>{
+      polygonLuck.style.opacity = off? '1':'0';
+      off=!off;
+    },650); 
+  }
+
+  /* IntersectionObserver */
+  document.addEventListener('DOMContentLoaded',()=>{
+    resetAnimationStates();
+    const container=document.querySelector('#pyramid .pyramid-container');
+    const observer=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          if(hasLeftViewport){
+            hasLeftViewport=false;
+            resetAnimationStates();
+            requestAnimationFrame(animateSkill);
+          }
+        } else {
+          hasLeftViewport=true;
+        }
+      });
+    },{threshold:0.5});
+    observer.observe(container);
+  });
+</script>
+
+</body>
+</html>

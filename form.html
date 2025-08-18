@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .form-container {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 800px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .form-header {
+            flex: 1;
+        }
+
+        .form-header h2 {
+            font-size: 20px;
+            color: #777777;
+            margin-bottom: 8px;
+        }
+
+        .form-header h1 {
+            font-size: 28px;
+            color: #000000;
+            line-height: 1.4;
+            font-weight: bold;
+        }
+
+        .form-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            color: #333333;
+        }
+
+        .form-group input,
+        .form-group select {
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #dddddd;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #6b6bff;
+        }
+
+        .form-group .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .form-group .checkbox-group input {
+            width: auto;
+        }
+
+        .form-group .checkbox-group label {
+            font-size: 14px;
+            color: #666666;
+        }
+
+        .privacy-link {
+            color: #6b6bff;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .submit-btn {
+            background-color: #00237d;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #001860;
+        }
+
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            width: 90%;
+            max-width: 500px;
+            display: none;
+            z-index: 1000;
+        }
+
+        .popup h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .popup p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .popup .close-btn {
+            margin-top: 20px;
+            background-color: #00237d;
+            color: #ffffff;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            float: right;
+        }
+
+        .popup .close-btn:hover {
+            background-color: #001860;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 999;
+        }
+
+        @media (max-width: 768px) {
+            .form-container {
+                flex-direction: column;
+            }
+
+            .form-header {
+                margin-bottom: 20px;
+            }
+
+            .form-content {
+                width: 100%; /* Ensure the form content takes full width */
+            }
+
+            .form-group input,
+            .form-group select,
+            .submit-btn {
+                width: 100%; /* Expand input fields, select, and button to fill available space */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="privacy-popup">
+        <h3>개인정보수집 및 이용 동의</h3>
+        <p>본인은 귀하의 개인정보를 수집하고 처리하는 것에 동의합니다. 수집된 정보는 상담 및 서비스 제공 목적으로만 사용됩니다.</p>
+        <button class="close-btn" id="close-popup">닫기</button>
+    </div>
+
+    <div class="form-container">
+        <div class="form-header">
+            <h2>상담 요청</h2>
+            <h1>최인호 변호사에게<br>상담 받고 싶다면?</h1>
+        </div>
+        <form class="form-content">
+            <div class="form-group">
+                <label for="name">이름</label>
+                <input type="text" id="name" placeholder="이름 입력" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">휴대폰번호</label>
+                <input type="tel" id="phone" placeholder="숫자만 입력" required>
+            </div>
+            <div class="form-group">
+                <label for="category">상담 주제</label>
+                <select id="category" required>
+                    <option value="" disabled selected>상담 주제를 선택해주세요</option>
+                    <option value="personal-rehabilitation">개인회생</option>
+                    <option value="personal-bankruptcy">개인파산</option>
+                </select>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="privacy" required>
+                <label for="privacy">
+                    개인정보수집에 동의합니다.
+                    <span class="privacy-link" id="show-popup">[자세히 보기]</span>
+                </label>
+            </div>
+            <button type="submit" class="submit-btn">상담요청</button>
+        </form>
+    </div>
+
+    <script>
+        const popup = document.getElementById('privacy-popup');
+        const overlay = document.getElementById('overlay');
+        const showPopup = document.getElementById('show-popup');
+        const closePopup = document.getElementById('close-popup');
+
+        showPopup.addEventListener('click', () => {
+            popup.style.display = 'block';
+            overlay.style.display = 'block';
+        });
+
+        closePopup.addEventListener('click', () => {
+            popup.style.display = 'none';
+            overlay.style.display = 'none';
+        });
+
+        overlay.addEventListener('click', () => {
+            popup.style.display = 'none';
+            overlay.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

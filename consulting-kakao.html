@@ -1,0 +1,3007 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        
+        <!-- Danggeun Market Code -->
+<script src="https://karrot-pixel.business.daangn.com/0.4/karrot-pixel.umd.js"></script>
+<script>
+  window.karrotPixel.init('1739437016340400001');
+  window.karrotPixel.track('ViewPage');
+</script>
+<!-- End Danggeun Market Code -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NDCSD8F6SD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NDCSD8F6SD');
+</script>
+
+
+        <title>인생의 위기 속에서 새로운 희망을 찾아드립니다. | 법무법인 JLP </title>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <link rel="shortcut icon" href="./img/favicon.ico">
+
+
+     
+        <link rel='stylesheet' href='./hoogi/css/hoogi.css' type='text/css' media='all' />
+        <script type='text/javascript' src='https://www.nhreits.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.3' id='jquery-core-js'></script>
+
+        <script type='text/javascript' src='https://www.nhreits.com/wp-content/themes/nhreits/assets/js/jquery-3.3.1.min.js?ver=6.2' id='theme-js-jquery-js'></script>
+        <!-- BS -->
+        <!-- Latest compiled and minified CSS -->
+        <link
+            rel="stylesheet"
+            href="./main1/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="./main1/js/jquery.min.js"></script>
+        <script src="./main1/js/jquery-ui.min.js"></script>
+        <!-- Popper JS -->
+        <script src="./main1/js/popper.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="./main1/js/bootstrap.min.js"></script>
+        <!-- CSS File -->
+        <link rel="stylesheet" href="./form/css/style_tab.css">
+        <link rel="stylesheet" href="./form/css/style_mob.css">
+        <link rel="stylesheet" href="./form/css/style_bar.css">
+
+        <!-- <link rel="stylesheet" href="./main1/css/reset.css"> -->
+        <link rel="stylesheet" href="./main1/css/style.css">
+        <link rel="stylesheet" href="./main1/css/animate.css">
+        <link rel="stylesheet" href="./main1/css/jquery.simplyscroll.css">
+        <link rel="stylesheet" href="./main1/css/all.css">
+
+
+
+        <link
+        rel="stylesheet"
+        href="./css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="./js/jquery.min.js"></script>
+    
+    <link href="css/ionicons.min.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="css/reset.css"> -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/jquery.simplyscroll.css">
+    <link rel="stylesheet" href="css/all.css">
+
+
+
+
+        <!-- Script File -->
+        <script language="javascript" src="./main1/js/script.js"></script>
+        <script src="./main1/js/main.js" charset="euc-kr"></script>
+        <!-- animation script -->
+        <script src="./main1/js/wow.min.js"></script>
+        <script src="js/jquery.waypoints.min.js"></script>
+        <script src="js/jquery.counterup.min.js"></script>
+        <script src="js/jquery.simplyscroll.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+
+
+        <script>
+            $(document).ready(function ($) {
+                $(".scroll").click(function(event){
+                    event.preventDefault();
+                    $('html,body').animate({
+                        scrollTop:$(this.hash).offset().top
+                    }, 500); //smooth scroll
+                });
+
+                $("#scroller").simplyScroll({
+                    pauseOnHover: true,
+                    speed: 1,
+                    auto: true,
+                    autoMode: 'loop'
+                });
+            	
+                new WOW().init();
+
+                $('.counter').counterUp({delay: 10, time: 1000});
+
+                document
+                    .getElementById('time-result')
+                    .innerHTML = today;
+            }); 
+
+            msg_time();
+            setInterval('msg_time()',1000); // 타이머 1초간격으로 수행
+            function msg_time(){
+                var remainTime;
+                var stDate = new Date().getTime();//현재날짜
+                var now = new Date();
+                var nowYear = now.getFullYear();
+                var nowMonth = now.getMonth()+1;
+                var nowDate = now.getDate();
+                var edDate =nowYear+"/"+nowMonth+"/"+nowDate + " 17:59:59";
+                edDate = new Date(edDate).getTime();
+                var RemainDate = edDate - stDate;//남은시간
+
+                var hours = Math.floor((RemainDate % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var miniutes = Math.floor((RemainDate % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((RemainDate % (1000 * 60)) / 1000);
+
+                // if(hours < 10){
+                //     hours = "0" + hours;
+                // }
+                // if(miniutes < 10){
+                //     miniutes = "0" + miniutes;
+                // }
+                // if(seconds < 10){
+                //     seconds = "0" + seconds;
+                // }
+                remainTime =  hours + "시간 " + miniutes + "분 " + seconds + "초 남음 "; // 남은 시간 text형태로 변경
+                $(".countVer02").html(remainTime);
+                // $(".hours").text(hours); //영역에 넣기
+                // $(".miniutes").text(miniutes); //영역에 넣기
+                // $(".seconds").text(seconds); //영역에 넣기
+            }
+        </script>
+
+
+    </head>
+    <body oncontextmenu="return false">
+    
+        <!-- 1 -->
+        <div class="contents-time">
+            <p>&nbsp;<span class="typeText" style="font-size:1.4em;"></span>
+                <!-- <br><br>[ 마감 기한 | <span class="countVer02"></span> ] -->
+            </p>
+        </div>
+        
+
+        
+        
+        <!-- 3 -->
+        <style>
+            .m_go_btn, #mob_btn{
+                background:#AC9173;
+            }
+
+                .intro-text{
+                    font-size:3em;
+                }
+             @media screen and (max-width: 1200px) {
+                .intro-text{
+                    font-size:3em;
+                }
+            }
+
+            @media screen and (max-width: 768px) {
+                .intro-text{
+                    font-size:4em;
+                }
+            }
+
+            .bg-black {
+            background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+            }
+           
+
+            .bg-main{
+                background: url('./img/Back.png') no-repeat center center / cover;
+                
+            }
+
+         
+
+            .bg-black {
+            --tw-bg-opacity: 1;
+            }
+        </style>
+
+
+
+<style>
+
+    /* 배경 이미지 */
+    #intro .background-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position:center;
+        filter: brightness(0.6); 
+        /* 기본 밝기 설정 */
+        z-index: -1; 
+    }
+    
+    </style>
+
+
+<style>
+
+   
+    #introduce .background-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position:center;
+        filter: brightness(0.4); 
+        z-index: -1; 
+    }
+
+  
+    #introduce .introduce-list {
+    list-style: none;
+}
+
+#introduce .introduce-list li {
+    height: 60px;
+    line-height: 60px;
+    background: #fff;
+    margin: 5px 0;
+    box-shadow: 1px 5px 10px rgba(0,0,0,0.1);
+    font-weight: bold;
+    font-size: 22px;
+    text-align: left;
+    padding: 0 30px;
+}
+
+@media screen and (max-width:1200px) {
+    
+
+    #introduce .introduce-list li {
+        font-size: 22px !important;
+    }
+    
+}
+
+
+@media screen and (max-width:1100px) {
+    
+
+    #introduce .introduce-list li {
+        font-size: 19px !important;
+    }
+    
+}
+
+@media screen and (max-width:900px) {
+    
+
+    #introduce .introduce-list li {
+        font-size: 19px !important;
+    }
+    
+}
+
+#introduce .introduce-list li img {
+    width: 25px;
+}
+
+    .main-pic{
+        width:100%;
+    }
+    
+    </style>
+
+<div class="contents" style="padding:100px 0 0;position:relative;" id="introduce">
+        <img class="background-img wow fadeIn" src="./img/law-pic2.jpg">
+    <div class="container">
+        <div class="row d-flex align-items-center align-responsive">
+            <div class="col col-md-6 col-12 m-center text-white">
+                <h2 class="wow fadeInUp two-title"><span class="">벗어나기 힘든 빚과 추심 문제를<br>99% 빠르게 해결하는</span><br><br>법무법인 JLP 개인회생</h2>
+                <ul class="introduce-list list-text" style="margin-bottom:60px;">
+                    <li class="wow fadeInLeft" style="color:#fff;border-radius:10px;background:rgba(255,255,255,.2);letter-spacing: normal;">
+                  <img src="./main1/img/icon1.png" alt="" class="mr-2" style="color:#fff;">
+                  원금 최대 95.3%까지 탕감!
+                    </li>
+                    <li class="wow fadeInLeft" data-wow-delay="0.2s" style="color:#fff;border-radius:10px;background:rgba(255,255,255,.2);">
+                        <img src="./main1/img/icon1.png" alt="" class="mr-2">
+                        추심, 독촉 전화 즉시 방어!
+
+                    </li>
+                 
+                    <li class="wow fadeInLeft" data-wow-delay="0.5s" style="color:#fff;border-radius:10px;background:rgba(255,255,255,.2);">
+                        <img src="./main1/img/icon1.png" alt="" class="mr-2">
+                        회생 성공률 99%!
+
+                    </li>
+
+                    <li class="wow fadeInLeft" data-wow-delay="0.5s" style="color:#fff;border-radius:10px;background:rgba(255,255,255,.2);">
+                        <img src="./main1/img/icon1.png" alt="" class="mr-2">
+                        도산전문변호사 직접 상담
+
+                    </li>
+                  
+                </ul>
+             
+            </div>
+            <div class="col col-md-6 col-12 main-pic">  
+              <img class="main-pic" src="./img/main.webp">
+              
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<style>
+    /* 토글 버튼 컨테이너 */
+    .toggle-buttons {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+        border-radius: 30px;
+        background: #f0f0f5;
+        padding: 5px;
+        width: fit-content;
+        
+        margin:60px auto;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* 개별 버튼 스타일 */
+    .toggle-btn {
+        background: transparent;
+        color: #666;
+        border: none;
+        padding: 12px 30px;
+        font-size: 16px;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        font-weight: bold;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    /* 활성화된 버튼 스타일 */
+    .toggle-btn.active {
+        background: #6b6bff;
+        color: white;
+        box-shadow: 0 4px 10px rgba(107, 107, 255, 0.3);
+    }
+    
+    /* 활성화된 버튼 아래 강조 효과 */
+    .toggle-btn.active::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50%;
+        height: 4px;
+        background: white;
+        border-radius: 2px;
+    }
+    
+    
+            /* .toggle-btn:hover, .toggle-btn.active {
+                background: #4f4fcf;
+            } */
+    
+            /* 프로필 컨테이너 기본 스타일 */
+            .profile-container {
+                display: none; /* 처음에는 숨김 */
+                max-width: 800px;
+                width: 95%;
+                margin:0 auto;
+            }
+            
+    
+            .profile-card {
+                background: #ffffff;
+                border-radius: 12px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                max-width: 700px;
+                width: 100%;
+                position: relative;
+                margin: 20px auto;
+                transition: all 0.3s ease-in-out;
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            /* show 클래스가 추가되면 애니메이션 실행 */
+            .profile-card.show {
+                animation: fadeInCards 0.6s ease-out forwards;
+            }
+    
+            @media (min-width: 600px) {
+                .profile-card {
+                    flex-direction: row;
+                }
+            }
+    
+            .profile-card .content {
+                padding: 24px;
+                flex: 1;
+                position: relative;
+                z-index: 1;
+            }
+    
+            .profile-card .content h1 {
+                font-size: 20px;
+                color: #333333;
+                margin-bottom: 12px;
+            }
+    
+            .profile-card .content p {
+                font-size: 16px;
+                color: #666666;
+                line-height: 1.6;
+                margin-bottom: 20px;
+            }
+    
+            .profile-card .content .cta {
+                font-size: 14px;
+                color: #6b6bff;
+                text-decoration: none;
+                border: 1px solid #6b6bff;
+                border-radius: 8px;
+                padding: 8px 16px;
+                display: inline-block;
+                transition: all 0.3s;
+            }
+    
+            .profile-card .content .cta:hover {
+                background: #6b6bff;
+                color: #ffffff;
+            }
+    
+            .profile-card .image {
+                height: 230px;
+                width: 230px;
+                /* background: url('./img/yang.webp') no-repeat center center; */
+                background-size: contain;
+                position: absolute;
+                bottom: 0px;
+                right: -10px;
+                z-index: 2;
+            }
+
+            .profile-card .image img{
+                height: 100%;
+                width: 100%;
+                /* background: url('./img/yang.webp') no-repeat center center; */
+                /* object-fit: contain; */
+                
+            }
+    
+            @media (min-width: 621px) {
+                .profile-card .image {
+                    position: relative;
+                    flex: 0 0 230px;
+                    height: auto;
+                    right:35px;
+                    background-size: cover;
+                    border-radius: 0;
+                    box-shadow: none;
+                }
+            }
+    
+            @media (max-width: 620px) {
+                .profile-card .image {
+                    width: 250px;
+                    height: 250px;
+                    right: -25px;
+                    bottom: 0px;
+                }
+
+                .profile-card .image img{
+                height: 100%;
+                width: 100%;
+                /* background: url('./img/yang.webp') no-repeat center center; */
+                object-fit: contain;
+                
+            }
+    
+                .profile-card .content h1 {
+                    font-size: 18px;
+                    margin-bottom: 8px;
+                }
+    
+                .profile-card .content p {
+                    font-size: 13px;
+                    line-height: 1.4;
+                    margin-bottom: 12px;
+                }
+            }
+    
+            @media (max-width: 470px) {
+                .profile-card .image {
+                    width: 170px;
+                    height: 170px;
+                    right: -25px;
+                    bottom: 0px;
+                }
+    
+                .profile-card .content h1 {
+                    font-size: 18px;
+                    margin-bottom: 8px;
+                }
+    
+                .profile-card .content p {
+                    font-size: 13px;
+                    line-height: 1.4;
+                    margin-bottom: 12px;
+                }
+            }
+    
+            .logo {
+                width:20px;
+                display: flex;
+                align-items: center;
+                font-weight: bold;
+                font-size: 18px;
+                color: #6b6bff;
+                margin-bottom: 20px;
+            }
+    
+            .logo span {
+                margin-left: 8px;
+            }
+    
+            .highlight {
+                color: #333333;
+                font-weight: bold;
+            }
+            .pf {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #ffffff;
+        width: 90%;
+        max-width: 800px;
+        max-height: 90vh; /* 화면에 맞게 최대 높이 설정 */
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto; /* 스크롤 가능하게 설정 */
+        scrollbar-width: none; /* Firefox에서 스크롤바 숨기기 */
+        -ms-overflow-style: none; /* IE 및 Edge에서 스크롤바 숨기기 */
+    }
+    
+    /* 크롬 및 사파리에서 스크롤바 숨기기 */
+    .pf::-webkit-scrollbar {
+        display: none;
+    }
+    
+            .pf.fade-in {
+                opacity: 1;
+                visibility: visible;
+            }
+    
+            .pf .pf-header {
+                padding: 20px;
+                background-color: #f4f4f4;
+                border-bottom: 1px solid #ddd;
+                text-align: center;
+            }
+    
+            .pf .pf-header h2 {
+                font-size: 24px;
+                font-weight: bold;
+                margin:0;
+            }
+    
+            .pf .pf-header p {
+                font-size: 14px;
+                color: #666;
+                margin:0;
+            }
+    
+            .pf .pf-content {
+                display: flex;
+                flex-direction: row;
+                padding: 20px;
+            }
+    
+            .pf .pf-image {
+                flex: 1;
+                /* background: url('https://yklawfirm.co.kr/upload_file/thumbnail_202405131645561.png') no-repeat center center; */
+                background-size: contain;
+                border-radius: 12px;
+                margin-right: 20px;
+                display: block;
+                text-align: -webkit-center;
+            }
+
+            .pf .pf-image img{
+                height:100%;
+                object-fit: coverx;
+            }
+    
+            .pf .pf-info {
+                flex: 2;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding-left: 30px;
+                font-family: 'Ionicons';
+            }
+    
+            .pf .pf-info h3 {
+                font-size: 20px;
+                font-weight: bold;
+                margin-: 15px 0 10px;
+            }
+    
+            .pf .pf-info p, .pf .pf-info ul {
+                font-size: 16px;
+                line-height: 1.6;
+                margin-bottom: 10px;
+                padding-left:0;
+                margin:0;
+                
+            }
+    
+            .pf .pf-info ul li {
+                margin-left: 20px;
+            }
+    
+            .close-btn {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                background: transparent;
+                color: #333;
+                font-size: 20px;
+                font-weight: bold;
+                border: none;
+                cursor: pointer;
+                z-index: 1001;
+            }
+    
+            .close-btn:hover {
+                color: #ff4d4f;
+            }
+    
+            .overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 999;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease-in-out;
+            }
+    
+            .overlay.fade-in {
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .pf .pf-mobile{
+                    display:none;
+                }
+    
+            @media (max-width: 768px) {
+    
+                .pf .pf-mobile{
+                    display:block;
+                }
+              
+                .pf .pf-content {
+                    flex-direction: column;
+                }
+    
+                .pf-image {
+                    margin: 0 auto 20px;
+                    width: 100%;
+                    height: 250px;
+                    display: block; 
+                    background-size: cover;
+                }
+
+                .pf-image img{
+                    max-width:180px;
+                    width:100%;
+                    height: 100%;
+                    display: block; 
+                    object-fit: cover;
+                }
+    
+                .pf .pf-info {
+                    padding-left: 0;
+                }
+    
+            }
+    
+         
+      /* 새로운 fade-in 효과 (순차적으로 나타나기) */
+    .fade-in-out {
+        display: block !important;
+        opacity: 0;
+        transform: scale(0.95);
+        animation: fadeInScale 0.6s ease-out forwards;
+    }
+    
+    @keyframes fadeInScale {
+        from {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    
+    /* 개별 프로필 카드 애니메이션 (순차적 등장) */
+    .profile-card {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInCards 0.6s ease-out forwards;
+    }
+    
+    
+    @keyframes fadeInCards {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    </style>
+    
+    
+    </head>
+    <body>
+    
+    <!-- 개인회생 vs 개인파산 선택 버튼 -->
+        <div class="toggle-buttons">
+            <button class="toggle-btn active" data-target="rehab">개인회생</button>
+            <button class="toggle-btn" data-target="bankruptcy">개인파산</button>
+        </div>
+    
+        <!-- 개인회생 프로필 컨테이너 -->
+        <div class="profile-container fade-in-out" id="rehab">
+        <div class="profile-card" data-target="pf1">
+            <div class="content">
+                <div class="logo">
+                    <img src="./img/icon.svg" alt="Logo" width="24" height="24">
+                    <span>개인회생</span>
+                </div>
+                <h1>원금 최대 95.3% 탕감, 가능합니다</h1>
+                <p>전국 단 5% 뿐인 도산전문 변호사가 직접<br>카드, 은행, 캐피탈, 대부업체 등<br>모든 빚을 최대 <span class="highlight">95%</span>까지 줄여드립니다.</p>
+                <p><b>JLP 대표변호사<br>장동훈</b></p>
+                <a  class="cta">자세히 보기</a>
+            </div>
+            <div class="image">
+                <img src="./img/jang.png">
+            </div>
+        </div>
+        
+    
+    
+    
+        <div class="profile-card" data-target="pf2">
+            <div class="content">
+                <div class="logo">
+                    <img src="./img/icon.svg" alt="Logo" width="24" height="24">
+                    <span>개인회생</span>
+                </div>
+                <h1>이자 걱정에서도 자유로워질 수 있도록</h1>
+                <p>카드, 은행, 캐피탈, 대부업체 등<br>모든 대출이자, 연체이자를<br>즉시 깨끗하게 없애 드립니다.</p>
+                <p><b>JLP 대표변호사<br>정유진</b></p>
+                <a  class="cta">자세히 보기</a>
+            </div>
+            <div class="image">
+                <img src="./img/jung.webp">
+            </div>
+        </div>
+
+        <div class="profile-card" data-target="pf3">
+            <div class="content">
+                <div class="logo">
+                    <img src="./img/icon.svg" alt="Logo" width="24" height="24">
+                    <span>개인회생</span>
+                </div>
+                <h1>추심의 고통을 즉시 멈추게 해드립니다.</h1>
+                <p>끊임없이 걸려오는 추심의 압박을<br>즉시 방어하여 여러분이 일상을<br>회복할 수 있도록 도와드립니다.</p>
+                <p><b>JLP 전문변호사<br>박미리</b></p>
+                <a  class="cta">자세히 보기</a>
+            </div>
+            <div class="image">
+                <img src="./img/park.png">
+            </div>
+        </div>
+        
+    </div> 
+    
+    
+     <!-- 개인회생 프로필 컨테이너 -->
+     <div class="profile-container" id="bankruptcy">
+        <div class="profile-card" data-target="pf4">
+            <div class="content">
+                <div class="logo">
+                    <img src="./img/icon.svg" alt="Logo" width="24" height="24">
+                    <span>개인파산</span>
+                </div>
+                <h1>독촉, 추심 100% 중지 가능</h1>
+                <p>이제 더 이상 채무를 갚지 않아도 됩니다.<br>카드, 은행, 캐피탈, 사채 등<br>모든 빚과 이자를 100%<br>면제 받도록 도와드립니다.</p>
+                <p><b>JLP 전문변호사<br>정영수</b></p>
+                <a  class="cta">자세히 보기</a>
+            </div>
+            <div class="image">
+                <img src="./img/jys.png">
+            </div>
+        </div>
+
+        <div class="profile-card" data-target="pf5">
+            <div class="content">
+                <div class="logo">
+                    <img src="./img/icon.svg" alt="Logo" width="24" height="24">
+                    <span>개인파산</span>
+                </div>
+                <h1>6개월이면 모두 정리됩니다</h1>
+                <p>빠르고, 안전하게, 파산 선고는 1개월,<br>면책 결정까지는 6개월이 걸립니다.<br>법무법인 JPL은 최종 면책까지<br>의뢰인을 책임지고 보호합니다.</p>
+                <p><b>JLP 전문변호사<br>김수연</b></p>
+                <a  class="cta">자세히 보기</a>
+            </div>
+            <div class="image">
+                <img src="./img/ksy.png">
+            </div>
+        </div>
+
+        <div class="profile-card" data-target="pf6">
+            <div class="content">
+                <div class="logo">
+                    <img src="./img/icon.svg" alt="Logo" width="24" height="24">
+                    <span>개인파산</span>
+                </div>
+                <h1>신청 조건 3가지만 살펴보세요</h1>
+                <p>① 빚이 재산보다 많고<br>② 수입이 최저생계비보다 적고<br>③ 건강, 나이 등으로 경제활동이 불가능한 경우</p>
+                <p><b>JLP 전문변호사<br>이주하</b></p>
+                <a  class="cta">자세히 보기</a>
+            </div>
+            <div class="image">
+                <img src="./img/ljh.png">
+            </div>
+        </div>
+        </div>
+        
+    </div> 
+    
+    
+    <div class="overlay"></div>
+    
+    
+    
+    <div class="pf" id="pf1">
+        <button class="close-btn">&times;</button>
+        <div class="pf-header">
+            <h2>장동훈 대표변호사</h2>
+            <p>법무법인 JLP</p>
+        </div>
+        <div class="pf-content">
+            <div class="pf-image">
+                <img src="./img/jang.png">
+            </div>
+            <div class="pf-info">
+              
+                <h3>학력 / 경력</h3>
+                <p>고려대학교 경영학과 졸업</p>
+                <p>사법연수원 43기</p>
+                <p>기업, 증권, 금융, 지적재산권소송실무전문분야 인증</p>
+                <p>행정, 조세소송실무 인증</p>
+                <h3>주요업무</h3>
+                <ul>
+                    <li>前) 법률구조공단 법률상담위원</li>
+                    <li>前) 서울서부지방법원 민사조정위원</li>
+                    <li>前) 법무법인 명문 변호사(기업 자문, 파산 등)</li>
+                    <li>前) 법무법인 주원(유한) 파트너 변호사</li>
+                    <li>現) 한국파산회생변호사회 이사</li>
+                    <li>現) 분당경찰서 경미범죄심사위원</li>
+                    <li>現) 법무법인JLP 대표 변호사</li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="pf" id="pf2">
+        <button class="close-btn">&times;</button>
+        <div class="pf-header">
+            <h2>정유진 대표변호사</h2>
+            <p>법무법인 JLP</p>
+        </div>
+        <div class="pf-content">
+            <div class="pf-image">
+                <img src="./img/jung.webp">
+            </div>
+            <div class="pf-info">
+              
+                <h3>학력 / 경력</h3>
+                <p>제 3회 변호사 시험 합격</p>
+                
+                <h3>주요업무</h3>
+                <ul>
+                    <li>前) 법률사무소 지안</li>
+                    <li>前) 수원지방법원 안산지원 국선변호인</li>
+                    <li>前) 수원지방검찰청 안산지청 피해자국선변호사</li>
+                    <li>前) 수원지방검찰청 안산지청 형사조정위원</li>
+                    <li>現) 법무법인 주원</li>
+                    <li>現) 제이앤엘 법률사무소</li>
+                    <li>現) 제이엘파트너스 법률사무소</li>
+                    <li>現) 대법원 국선변호인</li>
+                    <li>現) 법무법인 제이엘파트너스</li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="pf" id="pf3">
+        <button class="close-btn">&times;</button>
+        <div class="pf-header">
+            <h2>박미리 변호사</h2>
+            <p>법무법인 JLP</p>
+        </div>
+        <div class="pf-content">
+            <div class="pf-image">
+                <img src="./img/park.png">
+            </div>
+            <div class="pf-info">
+              
+                <h3>학력 / 경력</h3>
+                <p>연세대학교 법학과</p>
+                <p>서강대학교 법학전문대학원</p>
+                
+                <h3>주요업무</h3>
+                <ul>
+                    <li>前) 법률사무소 이룸</li>
+                    <li>前) 로엘 법무법인</li>
+                    <li>前) 법무법인 공정</li>
+                    <li>前) 법무법인 정박</li>
+                    <li>現) 법무법인JLP</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="pf" id="pf4">
+        <button class="close-btn">&times;</button>
+        <div class="pf-header">
+            <h2>정영수 변호사</h2>
+            <p>법무법인 JLP</p>
+        </div>
+        <div class="pf-content">
+            <div class="pf-image">
+                <img src="./img/jys.png">
+            </div>
+            <div class="pf-info">
+              
+                <h3>학력 / 경력</h3>
+                <p>제50회 사법시험 합격</p>
+                <p>사법연수원 40기 수료</p>
+                
+                <h3>주요업무</h3>
+                <ul>
+                    <li>前) 대한불교조계종 법무전문위원</li>
+                    <li>前) 더불어민주당 교섭단체 정책연구위원(4급 상당)</li>
+                    <li>前) 더불어민주당 부국장</li>
+                    <li>前) 더불어민주당 법률위원회 부위원장</li>
+                    <li>前) 송파구청 정책보좌관(4급 상당)</li>
+                    <li>前) 송파구청 정책연구단장</li>
+                    <li>現) 민주평화통일자문회의 자문위원</li>
+                    <li>現) 법무법인 제이엘파트너스 변호사</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="pf" id="pf5">
+        <button class="close-btn">&times;</button>
+        <div class="pf-header">
+            <h2>김수연 변호사</h2>
+            <p>법무법인 JLP</p>
+        </div>
+        <div class="pf-content">
+            <div class="pf-image">
+                <img src="./img/ksy.png">
+            </div>
+            <div class="pf-info">
+              
+                <h3>학력 / 경력</h3>
+                <p>이화여자대학교 법학전문대학원</p>
+                
+                
+                <h3>주요업무</h3>
+                <ul>
+                    <li>前) 법무법인 광안</li>
+                    <li>前) 변호사 김수연 법률사무소</li>
+                    <li>現) 법무법인 제이엘파트너스</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="pf" id="pf6">
+        <button class="close-btn">&times;</button>
+        <div class="pf-header">
+            <h2>이주하 변호사</h2>
+            <p>법무법인 JLP</p>
+        </div>
+        <div class="pf-content">
+            <div class="pf-image">
+                <img src="./img/ljh.png">
+            </div>
+            <div class="pf-info">
+              
+                <h3>학력 / 경력</h3>
+                <p>제53회 사법시험 합격</p>
+                <p>제43기 사법연수원 수료</p>
+                <p>한국외국어대학교 법과대학 법학 전공</p>
+                
+                <h3>주요업무</h3>
+                <ul>
+                    <li>前) 송파구청 정책발전위원회 위원, 민원조정위원</li>
+                    <li>前) 서울남부지방법원 논스톱국선변호인</li>
+                    <li>前) 한국신체장애인협회 고문변호사</li>
+                    <li>前) 예금보험공사 자문변호사</li>
+                    <li>前) 재단법인 충북학사 고문변호사</li>
+                    <li>現) 해양환경공단 정보공개심의회, 징계위원회 외부위원(2024. 3.~)</li>
+                    <li>現) 충주시 마을변호사(2014.~)</li>
+                    <li>現) 더불어민주당 법률위원회 부위원장(2014.~)</li>
+                    <li>現) 국회추천공직자자격심사특위 위원(2021.~)</li>
+                    <li>現) 대한건설기계안전관리원 청렴시민감사관(2021. 5.~)</li>
+                    <li>現) 사단법인 한국수면산업협회 이사</li>
+                    <li>現) 한국데이터산업진흥원 외부강사</li>
+                    <li>現) 국회 유라시아보건의료포럼 자문변호사</li>
+                    <li>現) 한국발명진흥회, 대전창조경제혁신센터, 경기도경제과학진흥원 등 공공기관 심의, 면접위원 등</li>
+                    <li>現) 법무법인 JLP 파트너 변호사</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+      $(document).ready(function () {
+        $('.profile-card').on('click', function () {
+            var targetPopup = $(this).data('target'); // 클릭한 요소의 data-target 값 가져오기
+            $('.overlay, #' + targetPopup).addClass('fade-in'); // 해당하는 팝업 열기
+        });
+    
+        $('.close-btn, .overlay').on('click', function () {
+            $('.overlay, .pf').removeClass('fade-in'); // 모든 팝업 닫기
+        });
+    });
+    
+    </script>
+    
+    <script>
+     $(document).ready(function () {
+        $(".toggle-btn").on("click", function () {
+            var target = $(this).data("target");
+    
+            // 버튼 활성화 변경
+            $(".toggle-btn").removeClass("active");
+            $(this).addClass("active");
+    
+            // 기존 profile-container 숨기기
+            $(".profile-container").removeClass("fade-in-out").css("display", "none");
+    
+            // 선택한 profile-container 표시 (순차 애니메이션을 위해 timeout 사용)
+            $("#" + target).css("display", "block").addClass("fade-in-out");
+    
+        
+        });
+    });
+    
+    </script>
+
+            
+    
+              
+                            <div class="main"  style="padding-top:0px;">
+            <!-- <div class="visual">
+                <img src="./img/introduce.png" style="width:100%;">
+                <div class="inner">
+                    <div class="title">
+                        <h2>
+                            <div class="motion">
+                                <div>
+                                    대체투자시장을 선도하는                        </div>
+                            </div>
+                            <div class="motion">
+                                <div>
+                                    최고의 투자 파트너                        </div>
+                            </div>
+                        </h2>
+                        <p>
+                            Your promising partner, NH REITs                </p>
+                    </div>
+                </div>
+            </div> -->
+        
+            <style>
+                /* body {
+                    font-family: Arial, sans-serif;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100vh;
+                    background-color: #f8f9fa;
+                    flex-direction: column;
+                } */
+                /* .image-container {
+                    display: flex;
+                    gap: 20px;
+                    text-align: center;
+                }
+                .image-container img {
+                    width: 150px;
+                    cursor: pointer;
+                    border-radius: 10px;
+                    transition: transform 0.2s;
+                }
+                .image-container img:hover {
+                    transform: scale(1.05);
+                } */
+                .popup-overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.6);
+                z-index: 999;
+                opacity: 0;
+                transition: opacity 0.3s ease-in-out;
+            }
+            .popup {
+                display: none;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, 50%) scale(0.8);
+                background: white;
+                padding: 45px 20px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+                border-radius: 10px;
+                z-index: 1000;
+                width: min(550px, 90%);
+                min-width: 370px;
+                max-height: 80vh;
+                overflow-y: auto;
+                text-align: center;
+                opacity: 0;
+                transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+            }
+            .popup::-webkit-scrollbar {
+                display: none;
+            }
+            .popup.show {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            .popup img {
+                width: 100%;
+                border-radius: 10px;
+            }
+            .popup-text {
+                padding-top: 20px;
+                font-size: 16px;
+                color: #333;
+                max-height: 300px;
+                line-height:140%;
+                overflow-y: auto;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+            }
+
+            .popup-text h2{
+             font-weight:bold;
+             color:#000;
+             font-size:17px;
+             letter-spacing: normal;
+             margin:15px 0 0;
+             padding:0;
+            }
+
+            
+
+            #post-15 .thumb{
+                border:2px solid #000;
+            }
+
+            #post-15 .confirm{
+               position: absolute;
+               top:0;
+               left:0;
+               width:100px;
+            }
+
+            .popup-text p{
+             font-weight:400;
+             color:#000;
+             font-size:13px;
+             letter-spacing: normal;
+             margin:15px 0 0;
+             padding:0;
+             text-align:left;
+            }
+
+            .popup-text .highlight {
+                padding:5px 10px;
+                background: rgb(232 227 253);
+                color:rgb(78 44 212);
+                border-radius:10px;
+                font-size:14px;
+                /* margin:10px; */
+            }
+            .popup-close {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                cursor: pointer;
+                background: transparent;
+                border: none;
+                font-size: 24px;
+                color: #333;
+                transition: color 0.2s;
+            }
+            .popup-close:hover {
+                color: #ff4d4d;
+            }
+    
+            .swiper-slide {
+              cursor:pointer;   
+            }
+            </style>
+    
+    
+    
+              
+        <article id="post-15" class="post-15 page type-page status-publish hentry">
+            <div class="entry-content">
+            <section class="recommend" style="background: #fff;">
+                <div class="inner">
+                    <div class="title">
+                        <h3 style="text-align:left;margin-left:3%;">비슷한 어려움에 먼저 도움받은</h3>
+                        <h3 style="text-align:left;margin-left:3%;">소중한 의뢰인 성공사례</h3>
+                        
+                    </div>
+        
+                    <div class="swiper_wrap" data-aos="fade-up" data-aos-delay="200">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+        
+        
+                                <div class="swiper-slide" data-target="popup1" style="cursor:pointer;">
+                                    <div class="thumb">
+                                        <img src="./img/hoogi-3-1.webp" ><noscript><img src="./img/hoogi-3-1.webp" alt=""></noscript>
+                                    </div>
+                                    <div class="card" >
+                                        <div class="txt" >
+                                            
+                                                독촉으로 힘들었던 사례                                   
+                                            <strong>
+                                                300,000,000원                                   </strong>
+                                            <p>
+                                                채무 탕감 회생 개시 결정                                    </p>
+                                        </div>
+                                      
+                                    </div>
+                                </div>
+        
+        
+                                <div class="swiper-slide" data-target="popup2">
+                                    <div class="thumb">
+                                        <img src="./img/hoogi-13-4.webp" ><noscript><img src="./img/hoogi-13-4.webp" alt=""></noscript>
+                                    </div>
+                                    <div class="card">
+                                        <div class="txt">
+                                            
+                                                사업이 어려워진 사례                                    
+                                            <strong>
+                                                130,000,000원                                   </strong>
+                                            <p>
+                                                채무 탕감 회생 개시 결정                                    </p>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+        
+        
+                                <div class="swiper-slide" data-target="popup3">
+                                    <div class="thumb">
+                                        <img src="./img/hoogi-15-5.webp" ><noscript><img src="./img/hoogi-15-5.webp" alt=""></noscript>
+                                    </div>
+                                    <div class="card">
+                                        <div class="txt">
+                                            
+                                                카드빚으로 힘들었던 사례                                    
+                                            <strong>
+                                                150,000,000원                                   </strong>
+                                            <p>
+                                                채무 탕감 회생 개시 결정                                    </p>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+        
+        
+                                <div class="swiper-slide" data-target="popup4">
+                                    <div class="thumb">
+                                        <img src="./img/hoogi-27-6.webp" ><noscript><img src="./img/hoogi-27-6.webp" alt=""></noscript>
+                                    </div>
+                                    <div class="card">
+                                        <div class="txt">
+                                          
+                                                부동산 침체로 어려웠던 사례                                    
+                                            <strong>
+                                                270,000,000원                                   </strong>
+                                            <p>
+                                                채무 탕감 회생 개시 결정                                    </p>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+        
+        
+                                <div class="swiper-slide" data-target="popup5">
+                                    <div class="thumb">
+                                        <img src="./img/hoogi-5-7.webp" ><noscript><img src="./img/hoogi-5-7.webp" alt=""></noscript>
+                                    </div>
+                                    <div class="card">
+                                        <div class="txt">
+                                            
+                                                고금리 대출로 힘들었던 사례                                    
+                                            <strong>
+                                                50,000,000원                                   </strong>
+                                            <p>
+                                                채무 탕감 회생 개시 결정                                    </p>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+        
+                                <div class="swiper-slide" data-target="popup6">
+                                    <div class="thumb">
+                                        <img src="./img/hoogi-8-8.webp" ><noscript><img src="./img/hoogi-8-8.webp" alt=""></noscript>
+                                    </div>
+                                    <div class="card">
+                                        <div class="txt">
+                                           
+                                                건강 악화로 빚이 늘어난 사례                                 
+                                            <strong>
+                                                80,000,000원                                   </strong>
+                                            <p>
+                                                채무 탕감 회생 개시 결정                               </p>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+        
+        
+                                <div class="swiper-slide" data-target="popup7">
+                                    <div class="thumb">
+                                        <img src="./img/hoogi-18-9.webp" ><noscript><img src="./img/hoogi-18-9.webp" alt=""></noscript>
+                                    </div>
+                                    <div class="card">
+                                        <div class="txt">
+                                          
+                                                도박 빚이 늘어난 사례                                    
+                                            <strong>
+                                                180,000,000원                                   </strong>
+                                            <p>
+                                                채무 탕감 회생 개시 결정                                    </p>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+        
+        
+        
+                                <div class="swiper-slide" data-target="popup8">
+                                    <div class="thumb">
+                                        <img src="./img/hoogi-18-10.webp" ><noscript><img src="./img/hoogi-18-10.webp" alt=""></noscript>
+                                    </div>
+                                    <div class="card">
+                                        <div class="txt">
+                                          
+                                                보이스피싱, 전세사기 사례                                   
+                                            <strong>
+                                                180,000,000원                                   </strong>
+                                            <p>
+                                                채무 탕감 회생 개시 결정                                    </p>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+
+
+                                <div class="swiper-slide" data-target="popup9">
+                                    <div class="thumb">
+                                        <img src="./img/hoogi-28-11.webp" ><noscript><img src="./img/hoogi-18-9.webp" alt=""></noscript>
+                                    </div>
+                                    <div class="card">
+                                        <div class="txt">
+                                          
+                                                법인의 경영 악화 사례                                   
+                                            <strong>
+                                                280,000,000원                                   </strong>
+                                            <p>
+                                                채무 탕감 회생 개시 결정                                    </p>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                               
+        
+        
+                                                    </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <div class="swiper-arrow" data-aos="fade-up" data-aos-offset="-150">
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                </div>
+            </section>
+        
+        
+        
+            
+        </div>
+        
+        <div class="popup-overlay" id="popupOverlay"></div>
+        
+        <div class="popup" id="popup1">
+            <button class="popup-close">&times;</button>
+            <img src="./img/hoogi-3-1.webp" style="border:2px solid #000;width:100%;max-width:400px;">
+            <div class="popup-text">
+                
+                <div class="highlight">약 3억원 채무 회생 개시결정</div>
+                <h2>'황O연'님</h2>
+                <p>하루에도 수십통 씩 오는 개인사채업자의 욕설 섞인 독촉 문자와 전화로 너무 힘들어 신청했어요.</p>
+
+                </div>
+        </div>
+        
+        <div class="popup" id="popup2">
+            <button class="popup-close">&times;</button>
+            <img src="./img/hoogi-13-4.webp" style="border:2px solid #000;width:100%;max-width:400px;">
+            <div class="popup-text">
+                
+                <div class="highlight">1억 3천만원 채무 회생 개시결정</div>
+                <h2>'전O익'님
+                </h2>
+                <p>사업을 운영하다 코로나 여파로 인해 급격한 매출 감소와 예기치 못한 지출로 인해 채무가 쌓였고, 결국 더 이상 갚을 수 없는 상황에 이르렀습니다. 너무 힘들어 극단적인 선택을 할뻔했지만 주변 지인의 도움으로 개인회생을 신청하게 되었고 절망적이었던 상황에서 조금이나마 희망을 가질 수 있게되어 정말 감사합니다.</p>
+
+                </div>
+        </div>
+        
+        <div class="popup" id="popup3">
+            <button class="popup-close">&times;</button>
+            <img src="./img/hoogi-13-4.webp" style="border:2px solid #000;width:100%;max-width:400px;">
+            <div class="popup-text">
+                
+                <div class="highlight">1억 5천만원 채무 회생 개시결정</div>
+                <h2>'김O인'님
+                </h2>
+                <p>남편의 폭행으로 이혼 후 사회생활을 해야해서 공부를 하는동안 카드로 생활비를 충당해왔습니다. 다행히도 취직이 되어 돈은 벌고 있었지만 그동안 불어난 빚으로 인해 감당이 안되는 상황이었어요 겨우 취직을 했는데 빚을 갚을 방법이 보이지 않아 너무 힘들었습니다. 그래도 이리저리 알아보다가 개인회생을 시작했고 다행히도 승인이 되어 숨통이 트였어요 열심히 잘 갚아나가겠습니다. 감사합니다.</p>
+
+                </div>
+        </div>
+    
+        <div class="popup" id="popup4">
+            <button class="popup-close">&times;</button>
+            <img src="./img/hoogi-13-4.webp" style="border:2px solid #000;width:100%;max-width:400px;">
+            <div class="popup-text">
+                
+                <div class="highlight">2억 7천만원 채무 회생 개시결정</div>
+                <h2>'임O서'님
+                </h2>
+                <p>대출받아 구매한 집이 부동상 침체로 인해 매매는 커녕 이자만 부담이 되는 수준이 되어버려서 너무 힘들었는데 다행히도 잘 해결되어 살것같아요.</p>
+
+                </div>
+        </div>
+    
+        <div class="popup" id="popup5">
+            <button class="popup-close">&times;</button>
+            <img src="./img/hoogi-5-7.webp" style="border:2px solid #000;width:100%;max-width:400px;">
+            <div class="popup-text">
+                
+                <div class="highlight">5천만원 채무 회생 개시결정</div>
+                <h2>'신O원'님
+                </h2>
+                <p>집안사정으로 인해 대책없이 집을 나와 혼자살다보니 그것에 익숙해져서 직장이 없는 상태에서 고금리 대출에 손을 대게 되었고 이자를 감당 할 수 없는 상황이 되어 결국 개인회생을 신청하게 되었습니다. 통신사는 물론이고 은행까지 막혀 생활을 할 수 없는 상황이 되서 너무 답답했는데 덕분에 희망을 보게되었습니다. 감사합니다.</p>
+
+                </div>
+        </div>
+    
+        <div class="popup" id="popup6">
+            <button class="popup-close">&times;</button>
+            <img src="./img/hoogi-8-8.webp" style="border:2px solid #000;width:100%;max-width:400px;">
+            <div class="popup-text">
+                
+                <div class="highlight">8천만원 채무 회생 개시결정</div>
+                <h2>'김O훈'님
+                </h2>
+                <p>건강 악화로 인해 일을 그만두게 되었는데 수입이 사라지자 경제적으로 어려움에 처해 3금융에 손을 대게 되었고 처음엔 조금씩 갚아나가면 된다는 어리석은 생각으로 너무 쉽게 생각을 했었습니다. 원금이 늘어나자 이자도 감당 할 수 없는 지경에 이르게 되었고 결국 치료마저도 받기 어려운 상황이 되었습니다. 대부업체의 독촉과 협박으로 나날이 매일매일 불안에 떨어야 했고 가족에게는 미안하고 면목이 없어 삶의 의욕마저 떨어질 지경이었습니다. 하지만 개인회생 문의를 통해 이렇게 독촉을하는 것이 불법인 것을 알았고 덕분에 개시결정 까지 나서 숨통이 트였습니다. 다시 한 번 일어 날 수 있는 기회를 얻을 수 있게 해 주셔서 정말 감사합니다.</p>
+
+                </div>
+        </div>
+    
+        <div class="popup" id="popup7">
+            <button class="popup-close">&times;</button>
+            <img src="./img/hoogi-18-9.webp" style="border:2px solid #000;width:100%;max-width:400px;">
+            <div class="popup-text">
+                
+                <div class="highlight">1억 8천만원 채무 회생 개시결정</div>
+                <h2>'김O욱'님
+                </h2>
+                <p>회사 입사 후 첫 해외출장에서 선배의 권유로 카지노를 접하게 되었습니다. 호기심 반 권유 반으로 시작한 도박이 시발점이 되어 복귀해서도 계속 생각나게 되었고 결국엔 습관이 되어 대출까지 받으면서 까지 도박을 하게 되었습니다. 이전에도 도박빚으로 워크아웃을 통해 겨우 갚았지만 습관을 고치지 못해 다시 도박에 손을 대고 말았습니다. 점점 빚이 감당이 안되어 이자가 현재 수입만으로는 더 이상 변제가 불가능해 염치불구하고 개인회생 신청을 하게되었고 다행히도 개시결정이 나서 새로운 기회를 얻게 되었습니다. 부모님과 배우자를 생각해서라도 다시는 실수하지 않도록 정신차리고 다시 시작하려고 합니다. 정말 감사합니다.</p>
+
+                </div>
+        </div>
+    
+        <div class="popup" id="popup8">
+            <button class="popup-close">&times;</button>
+            <img src="./img/hoogi-18-10.webp" style="border:2px solid #000;width:100%;max-width:400px;">
+            <div class="popup-text">
+                
+                <div class="highlight">1억 8천만원 채무 회생 개시결정</div>
+                <h2>'이O영'님
+                </h2>
+                <p>집주인 채무로 아파트가 경매에 넘어가 전세금을 잃고, 아버지가 암에 걸리셔서 치료 및 생활비를 충당하느라 빚에 쫓겨 살았습니다. 그런데 엎친데 덮친겪으로 고금리 대환을 해준다는 보이스피싱에 당해 앞길이 암담하던차에 개인회생을 신청하게 되었고 개인회생이 통과되기를 오매불망 기다리던 차에 승인이 되어 너무 다행입니다.</p>
+
+                </div>
+        </div>
+
+        <div class="popup" id="popup9">
+            <button class="popup-close">&times;</button>
+            <img src="./img/hoogi-28-11.webp" style="border:2px solid #000;width:100%;max-width:400px;">
+            <div class="popup-text">
+                
+                <div class="highlight">2억 8천만원 채무 회생 개시결정</div>
+                <h2>'심O천'님
+                </h2>
+                <p>코로나 사태로 인한 경영 악화로 인해 법인회생을 하였고 나머지 회사에 대한 제반비용을 개인적으로 충당하였지만 더 이상 버티기가 힘들어 신청하였고 법인회생으로 인해 개인회생이 가능할지 몰라서 불안했으나 잘 진행해주셔서 숨통이 트입니다.</p>
+
+                </div>
+        </div>
+    
+    
+    
+    
+    
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const popupOverlay = document.getElementById("popupOverlay");
+                const slides = document.querySelectorAll(".swiper-slide");
+                const popups = document.querySelectorAll(".popup");
+                const closeButtons = document.querySelectorAll(".popup-close");
+                
+                slides.forEach(slide => {
+                    slide.addEventListener("click", function () {
+                        const targetPopup = document.getElementById(this.dataset.target);
+                        if (targetPopup) {
+                            popupOverlay.style.display = "block";
+                            targetPopup.style.display = "block";
+                            setTimeout(() => {
+                                popupOverlay.style.opacity = 1;
+                                targetPopup.style.opacity = 1;
+                                targetPopup.style.transform = "translate(-50%, -50%) scale(1)";
+                            }, 10);
+                        }
+                    });
+                });
+    
+                function closePopupFunc(event) {
+                    const popup = event.target.closest(".popup");
+                    if (popup) {
+                        popup.style.opacity = 0;
+                        popup.style.transform = "translate(-50%, -40%) scale(0.8)";
+                    }
+                    popupOverlay.style.opacity = 0;
+                    setTimeout(() => {
+                        popup.style.display = "none";
+                        popupOverlay.style.display = "none";
+                    }, 300);
+                }
+    
+                closeButtons.forEach(button => {
+                    button.addEventListener("click", closePopupFunc);
+                });
+                popupOverlay.addEventListener("click", () => {
+                    popups.forEach(popup => closePopupFunc({ target: popup }));
+                });
+            });
+        </script>
+    
+        <script type="text/javascript" src="https://www.nhreits.com/wp-content/themes/nhreits/assets/js/swiper.min.js"></script>
+        <script type="text/javascript" src="https://www.nhreits.com/wp-content/themes/nhreits/assets/js/aos.js"></script>
+        <script>
+        $(function() {
+            AOS.init({
+                duration: 800,
+            });
+        
+           
+        
+          
+        
+            var swiperRecommend = new Swiper('.recommend .swiper-container', {
+                loop: true,
+                slidesPerView: 'auto',
+                spaceBetween: 30,
+                navigation: {
+                    nextEl: '.recommend .swiper-button-next',
+                    prevEl: '.recommend .swiper-button-prev',
+                },
+                pagination: {
+                    el: '.recommend .swiper-pagination',
+                    type: 'progressbar',
+                },
+                autoplay: {
+                    delay: 3000,
+                },
+            });
+            var swiperContainerRecommend = document.querySelector(".recommend .swiper-container");
+            swiperContainerRecommend.addEventListener("mouseenter", function() {
+                swiperRecommend.autoplay.stop();
+            });
+            swiperContainerRecommend.addEventListener("mouseleave", function() {
+                swiperRecommend.autoplay.start();
+            });
+        
+        
+           
+        
+        });
+        </script>            
+            </div><!-- .entry-content -->
+                    </article><!-- #post-## -->
+        
+    
+        
+        
+        
+        
+        <script>
+        
+        window.lazyLoadOptions = {
+                        elements_selector: "img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",
+                        data_src: "lazy-src",
+                        data_srcset: "lazy-srcset",
+                        data_sizes: "lazy-sizes",
+                        class_loading: "lazyloading",
+                        class_loaded: "lazyloaded",
+                        threshold: 300,
+                        callback_loaded: function(element) {
+                            if ( element.tagName === "IFRAME" && element.dataset.rocketLazyload == "fitvidscompatible" ) {
+                                if (element.classList.contains("lazyloaded") ) {
+                                    if (typeof window.jQuery != "undefined") {
+                                        if (jQuery.fn.fitVids) {
+                                            jQuery(element).parent().fitVids();
+                                        }
+                                    }
+                                }
+                            }
+                        }};
+                
+                </script>
+                
+                
+                <script data-no-minify="1" async src="https://www.nhreits.com/wp-content/plugins/rocket-lazy-load/assets/js/16.1/lazyload.min.js"></script>
+            
+        
+    
+    
+    
+    
+
+
+            
+            <style>
+                .three-text{
+                    font-size:1.5em;
+                }
+
+                .two-title{
+                        font-size:27px !important;
+                    }
+ @media screen and (max-width: 1200px) {
+                    .two-title{
+                        font-size:2.7em !important;
+                    }
+                    .two-text, .three-text{
+                        font-size:2em;
+                    }
+
+                    .list-text li{
+                        padding-left:30px;
+                        font-size:2em !important;
+                    }
+                }
+
+                @media screen and (max-width: 600px) {
+                    .two-title{
+                        font-size:3em !important;
+                    }
+                    .two-text, .three-text{
+                        font-size:2em;
+                    }
+                    .list-text li{
+                        padding-left:20px;
+                        font-size:2.1em !important;
+                    }
+                }
+            </style>
+
+          <!-- 7 -->
+          <div class="contents bg-darker">
+            <div class="container">
+                <div class="row d-flex align-items-center align-responsive">
+                    <div class="col col-md-6 col-12 m-center text-white">
+                        <h2 class="wow fadeInUp two-title">어떤 조건이든 상관없습니다.<br>여러분의 빚 탕감과 독촉 정지를<br><br>가장 전문적으로 해내는<br>회생파산전문변호사가<br>직접 진행해드립니다.</h2>
+                        <h3 class="two-text">전국 단, 5% 도산 전문 변호사가<br>직접 사건을 관리하여<br>여러분의 부채 고민을<br>말끔하게 해결해드립니다.</h3><br>
+                        <!-- <p>무직·연체중이 아니라면 신청가능</p> -->
+                        <!-- <p class="small">*선착순 모집으로 예고없이 종료될 수 있습니다.</p> -->
+                        <!-- <a class="btn btn-light scroll p-text" href="#form">자세히 알아보기</a> -->
+                    </div>
+                    <div class="col col-md-6 col-12 mx-auto">
+                        <div style="text-align:-webkit-center;">  
+                            <img src="./img/cert.webp" style="width:100%;max-width:300px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+               <!-- 7 -->
+               <div class="contents bg-light">
+                <div class="container">
+                    <div class="row d-flex align-items-center align-responsive">
+                        <div class="col col-md-6 col-12 m-center">
+                            <h2 class="wow fadeInUp" id="title_txt" >빚과 추심 문제에서 만큼은<br>JLP가 특별할 수 밖에 없는 이유</h2>
+                            <!-- <p class="three-text" style="line-height:140%;margin-bottom:30px;">매년 사업체마다 평균 794만원이<br>다음의 이유로 더 납부되고 있습니다.<br>5년 뒤 국고로 귀속되기 전<br>꼭 받아야 할 여러분의 돈입니다</p> -->
+                            
+                        </div>
+                        <div class="col col-md-6 col-12 mx-auto">  
+                            <ul class="list-item">
+                                
+                                <li class="wow fadeInLeft" data-wow-delay="0.2s">
+                                    <img src="./main1/img/icon5.png" alt="" class="mr-2">
+                                    99% 개인회생 성공률을 가집니다.
+                                </li>
+                              
+                                <li class="wow fadeInLeft" data-wow-delay="0.4s">
+                                    <img src="./img/no-shouting.png" alt="" class="mr-2">
+                                    추심, 독촉 전화 즉시 방어로 조용하게
+                                </li>
+                                <li class="wow fadeInLeft" data-wow-delay="0.6s">
+                                    <img src="./img/conversation.png" alt="" class="mr-2">
+                                    도산전문변호사 직접 상담 관리  
+                                </li>
+
+                                <li class="wow fadeInLeft" data-wow-delay="0.6s">
+                                    <img src="./main1/img/icon7.png" alt="" class="mr-2">
+                                    부채 원금 최대 95% 탕감 가능
+                                </li>
+
+                                <li class="wow fadeInLeft" data-wow-delay="0.6s">
+                                    <img src="./main1/img/icon9.png" alt="" class="mr-2">
+                                    대출, 연체 이자까지 내지 않도록 조치
+                                </li>
+                              
+                            </ul>
+                            <div class="m-text text-center" style="margin-top:30px;">
+                                <a class="btn btn-darker scroll" href="#form_e11">무료 상담 받기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+  <!-- 3 -->
+  <div class="contents" >
+    <div class="container m-center">
+        <div class="row text-center" style="display: initial !important;">
+            <div class="graph-section">
+                <h2>
+                    특히 빚 탕감의 핵심인<br>변제계획안 작성에<br>수많은 경험으로 탕감액과<br>월 변제액을 최대로 줄여드립니다.
+                </h2>
+                <ul class="wrap">
+                    <li>수많은 경험으로 쌓은<br>변제 기획안 작성 노하우로</li>
+                    <li>빚의 무게를 최대한으로 가볍게!</li>
+                    <li></li>
+                </ul>
+                <div class="graph" >
+                    <div class="left">
+                        <div class="wrap">
+                            <p class="price"></p>
+                            <div class="bar" style="height:140px;"></div>
+                            <p class="txt"><span>현재 부채</span></p>
+                        </div>
+                    </div>
+                    <div class="middle" style="transform: none;"></div>
+                    <div class="right">
+                        <div class="wrap">
+                            <p class="price txtAni">최대 95%</p>
+                            <div class="bar" style="height:140px;"></div>
+                            <p class="txt"><span>탕감 후 부채</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(window).scroll(function() { 
+        if ($(this).scrollTop() > 800) {
+            $(".graph-section .graph .right .bar").stop().animate({"height":"10"},1400);
+        } 
+    }); 
+</script>
+       
+ <!-- 7 -->
+ <div class="contents bg-darker">
+    <div class="container">
+        <div class="row d-flex align-items-center align-responsive">
+            <div class="col col-md-4 col-12 m-center text-white">
+                <h2 class="wow fadeInUp two-title">비용, 거리, 노출 걱정<br>전혀 안하셔도 됩니다.<br>JLP는 약속드립니다</h2>
+                <h3 class="two-text">모든 건 비밀보장 되며<br>여러분이 개인회생 되지 않으면<br>일절 1원도 받지 않습니다.</h3><br>
+                
+            </div>
+            <div class="col col-md-8 col-12 mx-auto">  
+                <ul class="list-item list-text">
+                    <li class="wow fadeInLeft">
+                  <img src="./main1/img/icon1.png" alt="" class="mr-2">
+                        기각시 100% 환불 진행!
+                    </li>
+                    <li class="wow fadeInLeft" data-wow-delay="0.2s">
+                        <img src="./main1/img/icon1.png" alt="" class="mr-2">
+                        비용도 최대 4개월 분할 납부 가능!
+                    </li>
+                 
+                    <li class="wow fadeInLeft" data-wow-delay="0.5s">
+                        <img src="./main1/img/icon1.png" alt="" class="mr-2">
+                        전국 어디서든 비대면으로 진행 가능!
+                    </li>
+                    <li class="wow fadeInLeft" data-wow-delay="0.5s">
+                        <img src="./main1/img/icon1.png" alt="" class="mr-2">
+                        가족, 지인 모르게 진행 [배우자 제외]
+                    </li>
+                </ul>
+                <!-- <div class="m-text text-center">
+                    <a class="btn btn-darker scroll" href="#form2">자세히 알아보기</a>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<style>
+    #checklist {
+        font-family: 'Arial', sans-serif;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* 배경 이미지 */
+    #checklist .background-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.5); /* 기본 밝기 설정 (필요에 따라 조정 가능) */
+        z-index: -1; /* 텍스트보다 뒤로 배치 */
+    }
+
+    #checklist .container {
+        max-width: 600px;
+        width: 90%;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        text-align: center;
+        color: #333;
+        background: rgba(255, 255, 255, 0.9); /* 반투명 배경 추가 */
+    }
+
+    #checklist .header {
+        background: #fff;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    #checklist .header h1 {
+        font-size: 24px;
+        font-weight: bold;
+        color: #6b6bff;
+        margin-bottom: 10px;
+    }
+
+    #checklist .header p {
+        font-size: 16px;
+        color: #666;
+    }
+
+    #checklist .progress-container {
+        margin: 20px 0;
+        position: relative;
+    }
+
+    #checklist .progress-bar {
+        height: 20px;
+        width: 100%;
+        background: #e4e4e9;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    #checklist .progress-bar-fill {
+        height: 100%;
+        width: 0%;
+        background: #6b6bff;
+        transition: width 0.3s ease-in-out;
+    }
+
+    #checklist .checklist {
+        margin-top: 20px;
+        text-align: left;
+    }
+
+    #checklist .checklist-item {
+        display: flex;
+        align-items: center;
+        background: #f7f7fb;
+        margin-bottom: 15px;
+        padding: 15px;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: transform 0.2s ease-in-out, background 0.3s ease-in-out;
+    }
+
+    #checklist .checklist-item:hover {
+        background: #eef0ff;
+        transform: translateY(-3px);
+    }
+
+    #checklist .checklist-item input {
+        margin-right: 15px;
+        transform: scale(1.3);
+        cursor: pointer;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    #checklist .checklist-item label {
+        font-size: 16px;
+        font-weight: bold;
+        flex: 1;
+        color: #333;
+        line-height:140%;
+    }
+
+    #checklist .status {
+        font-size: 18px;
+        font-weight: bold;
+        color: #6b6bff;
+        margin-top: 20px;
+        transition: color 0.3s ease-in-out;
+    }
+
+    @media (max-width: 768px) {
+        #checklist .checklist-item label {
+            font-size: 14px;
+        }
+    }
+</style>
+
+<section id="checklist">
+    <img class="background-img wow fadeIn" src="./img/intro1.jpg" alt="배경 이미지">
+    <div class="container">
+        <div class="header">
+            <h1>개인회생 자격 체크리스트</h1>
+            <p>조건에 해당되는지 먼저 확인하세요!</p>
+        </div>
+
+        <!-- 충족도 표시 -->
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-bar-fill" id="progress-bar-fill"></div>
+            </div>
+        </div>
+
+        <!-- 체크리스트 -->
+        <div class="checklist">
+            <div class="checklist-item">
+                <input type="checkbox" id="item1">
+                <label for="item1">총 채무가 1천만원 이상, 최대 담보채무 15억, 무담보채무 10억 이하이다.</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="item2">
+                <label for="item2">정규직, 비정규직, 프리랜서 등 현재 소득이 있다.</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="item3">
+                <label for="item3">부채가 재산보다 많다.[빚 > 재산]</label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="item4">
+                <label for="item4">면책 받은 적이 없거나 있었다면 받은지 5년이 넘었다.</label>
+            </div>
+        </div>
+
+        <!-- 상태 메시지 -->
+        <div class="status" id="status-text" style="line-height:140%;">현재 0개 항목 충족</div>
+    </div>
+</section>
+
+
+<script>
+    const checklist = document.querySelector('#checklist');
+    if (checklist) {
+        const checklistItems = checklist.querySelectorAll('.checklist-item');
+        const checkboxes = checklist.querySelectorAll('input[type="checkbox"]');
+        const progressBarFill = checklist.querySelector('#progress-bar-fill');
+        const statusText = checklist.querySelector('#status-text');
+        const totalItems = checkboxes.length;
+
+        // 메시지 배열: 체크 개수에 따른 메시지
+        const messages = [
+            "현재 0개 항목 충족",
+            "현재 1개 항목 충족",
+            "현재 2개 항목 충족",
+            "현재 3개 항목 충족",
+            "현재 4개 항목 충족: 개인 회생 조건에 충족됩니다."
+        ];
+
+        checklistItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                const checkbox = item.querySelector('input[type="checkbox"]');
+
+                // 체크 상태 토글
+                checkbox.checked = !checkbox.checked;
+
+                // 체크 상태 업데이트
+                const checkedCount = checklist.querySelectorAll('input[type="checkbox"]:checked').length;
+                const percentage = Math.round((checkedCount / totalItems) * 100);
+
+                // 충족도 업데이트
+                progressBarFill.style.width = `${percentage}%`;
+
+                // 메시지 업데이트
+                statusText.textContent = messages[checkedCount];
+
+                // 색상 변화
+                progressBarFill.style.backgroundColor = percentage === 100 ? '#4caf50' : '#6b6bff';
+                statusText.style.color = percentage === 100 ? '#4caf50' : '#6b6bff';
+            });
+        });
+    }
+</script>
+
+
+    <style> 
+    /* 배경 이미지 (img 태그 활용) */
+    #intro-law .background-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.4); /* 기본 밝기 설정 */
+        z-index: -1; /* 텍스트 및 비디오보다 뒤로 배치 */
+    }
+    
+    </style>
+    
+        
+        <!-- 5 -->
+        <!-- <div class="contents pb-0" id="intro-law" style="position:relative;color:#fff;">
+            <img class="background-img" src="./img/law-pic2.jpg" alt="배경 이미지">
+
+            <div class="container m-center">
+                <div class="row d-flex align-items-center">
+                    <div class="col col-md-6 col-12">
+                        <h2 class="wow fadeInLeft">
+                           더 낸 세금 돌려 받으세요!<br>2명 중 1명이 현재<br><span style="color:#2196F3;font-weight:900;">평균 <span class="counter" style="font-weight:900;bottom:0;color:#2196F3">2,200</span> 만원</span><br>세금 환급 받고 계십니다
+                        </h2>
+                        <br>
+                        <p style="font-size:20px;line-height:160%;">더 낸 세금 원래 여러분의 돈입니다.<br>최신 세법을 토대로 서울대 회계사가<br>몰라서 더 낸 세금 전부 찾아서<br><u style="text-underline-position:under">1원도 빠짐없이 모두 돌려드립니다.</u>
+                        </p><br><br><br>
+
+                        <a class="btn btn-darker scroll" href="#form_e11">무료 환급금 조회</a>
+                    </div>
+                    <div class="col col-md-6 col-12 p-0">
+                       <video src="./img/intro_phone-ezgif.com-gif-to-mp4-converter.mp4" autoplay muted loop playsinline style="width:100%;"></video>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+
+
+
+        <script>
+            var typeText = document.querySelector(".typeText")
+var textToBeTyped = "사업자 세금 환급금"
+var textToBeTypedArr = ["김O인님 카드빚 : 약 150,000,000원 부채 탕감",  "황O연'님 : 독촉 정지 및 약 300,000,000원 부채 탕감", "김O욱님 도박빚 : 약 180,000,000원 부채 탕감","전O익님 사업빚 : 약 130,000,000원 부채 탕감","신O원님 고금리 빚 : 약 50,000,000원 부채 탕감", "임O서님 부동산 빚 : 약 270,000,000원 부채 탕감"]
+var index = 0, isAdding = true, textToBeTypedIndex = 0
+
+function playAnim() {
+setTimeout(function () {
+// set the text of typeText to a substring of the text to be typed using index.
+typeText.innerText = textToBeTypedArr[textToBeTypedIndex].slice(0, index)
+if (isAdding) {
+ // adding text
+ if (index > textToBeTypedArr[textToBeTypedIndex].length) {
+   // no more text to add
+   isAdding = false
+   //break: wait 2s before playing again
+   setTimeout(function () {
+     playAnim()
+   }, 2000)
+   return
+ } else {
+   // increment index by 1
+   index++
+ }
+} else {
+ // removing text
+ if (index === 0) {
+   // no more text to remove
+   isAdding = true
+   //switch to next text in text array
+   textToBeTypedIndex = (textToBeTypedIndex + 1) % textToBeTypedArr.length
+ } else {
+   // decrement index by 1
+   index--
+ }
+}
+// call itself
+playAnim()
+}, isAdding ? 65 : 35)
+}
+// start animation
+playAnim();
+           </script>
+
+ 
+
+
+
+<style>
+    #prcess {
+        width:100%;
+        margin:0;
+        padding:0;
+    }
+
+    #process .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+        color: white;
+    }
+
+    #process .header {
+        background: transparent;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        letter-spacing: 1px;
+    }
+
+    #process .toggle-buttons {
+        display: flex;
+        width:90%;
+        justify-content: center;
+        margin-bottom: 30px;
+        background: #27293a;
+        padding: 5px;
+        border-radius: 50px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    #process .toggle-pcs {
+        background: transparent;
+        color: white;
+        border: none;
+        flex: 1;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    #process .toggle-pcs.active {
+        background: #6b6bff;
+        color: white;
+        box-shadow: 0 4px 10px rgba(107, 107, 255, 0.5);
+    }
+
+    #process .content {
+        margin-top: 20px;
+        text-align: left;
+    }
+
+    #process .content p {
+        margin-bottom: 20px;
+        line-height: 1.8;
+    }
+
+    #process .steps {
+        list-style: none;
+        padding: 0;
+    }
+
+    #process .steps li {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 20px;
+        padding: 10px;
+        background: #27293a;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+    }
+
+    #process .steps li:hover {
+        transform: translateY(-5px);
+        background: #333547;
+    }
+
+    #process .steps li .step-number {
+        flex-shrink: 0;
+        width: 30px;
+        height: 30px;
+        background: #6b6bff;
+        color: white;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin: 10px 15px;
+        font-size: 14px;
+    }
+
+    #process  .steps li .step-content {
+        flex: 1;
+    }
+
+    #process .steps li .step-content h3 {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+
+    #process .steps li .step-content p {
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+        #process  .steps li {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        #process  .steps li .step-number {
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+
+        #process  .steps li .step-content {
+            text-align: center;
+        }
+    }
+</style>
+
+<div class="contents" id="process" style="background: linear-gradient(to bottom, #1e1e30, #1b1b27);">
+
+    <div class="container">
+        <div class="header">개인 회생, 파산 절차 안내</div><br>
+        <div class="toggle-buttons">
+            <button class="toggle-pcs active" data-target="rehab">개인회생</button>
+            <button class="toggle-pcs" data-target="bankruptcy">개인파산</button>
+        </div>
+        <div class="content" id="rehab-content">
+            <ul class="steps">
+                <li>
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>상담 및 서류준비</h3>
+                        <p>의뢰인 마다 필요서류가 다르기 때문에 상담 후 안내에 따라 관련서류를 준비합니다.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>변제계획안 작성</h3>
+                        <p>개인회생에서 가장 중요한 변제계획안 작성,전국 단 5%밖에 없는 도산전문 변호사가 도와 상황에 맞는 최적의 변제계획안을 작성합니다.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>신청서 제출 및 회생위원 선임</h3>
+                        <!-- <p>법적 절차에 맞는 신청서를 작성합니다.</p> -->
+                    </div>
+                </li>
+                <li>
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>보정명령</h3>
+                        <p>신청서 내용 중 보정이 필요한 부분에 대해 보정명령이 내려오면, 의뢰인이 최대한 많은 혜택을 받을 수 있도록 작성합니다.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>개시결정</h3>
+                        <!-- <p>작성된 서류를 법원에 접수합니다.</p> -->
+                    </div>
+                </li>
+                <li>
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <h3>채권자 집회기일</h3>
+                        <p>불참 시 사건이 기각되기 때문에 채무자가 필수 참석해야 합니다.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="step-number">7</div>
+                    <div class="step-content">
+                        <h3>인가결정</h3>
+                        <!-- <p>불참 시 사건이 기각되기 때문에 채무자가 필수 참석해야 합니다.</p> -->
+                    </div>
+                </li>
+                <li>
+                    <div class="step-number">8</div>
+                    <div class="step-content">
+                        <h3>면책신청</h3>
+                        <p>변제계획에 따른 변제 완료 후 면책 신청 및 결정을 진행합니다.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="content" id="bankruptcy-content" style="display: none;">
+            <ul class="steps">
+                <li>
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>상담 및 서류준비</h3>
+                        <p>의뢰인 마다 필요서류가 다르기 때문에 상담 후 안내에 따라 관련서류를 준비합니다.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>부채증명서 발급</h3>
+                        <p>채권자 수에 따라 소요일이 달라집니다.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>신청서 작성</h3>
+                        
+                    </div>
+                </li>
+                <li>
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>신청서 접수</h3>
+                        <!-- <p>법원이 파산 여부를 판결합니다.</p> -->
+                    </div>
+                </li>
+                <li>
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>예납명령</h3>
+                        <p>파산관재인 선임 비용 15~30만원을 법원에 납부합니다.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <h3>파산관재임 선임</h3>
+                        <p>파산관재인을 선임하여 파산에 대한 관재를 합니다.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="step-number">7</div>
+                    <div class="step-content">
+                        <h3>파산 선고결정</h3>
+                        <!-- <p>법원이 파산 여부를 판결합니다.</p> -->
+                    </div>
+                </li>
+                <li>
+                    <div class="step-number">8</div>
+                    <div class="step-content">
+                        <h3>면담 및 보정</h3>
+                        <p>파산관재인 면담 및 보정권고를 2~4회차 진행합니다.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="step-number">9</div>
+                    <div class="step-content">
+                        <h3>집회기일</h3>
+                        <p>채무자는 반드시 참석해야 하며, 불참 시 사건이 기각 될 수 있습니다.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="step-number">10</div>
+                    <div class="step-content">
+                        <h3>결정</h3>
+                        <p>파산 폐지 및 파산 면책결정</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    // 버튼과 콘텐츠 선택
+    const toggleBtns = document.querySelectorAll("#process .toggle-pcs");
+    const contents = document.querySelectorAll("#process .content");
+
+    // 각 버튼에 클릭 이벤트 추가
+    toggleBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            // 모든 버튼에서 'active' 클래스 제거
+            toggleBtns.forEach(b => b.classList.remove("active"));
+            // 클릭된 버튼에 'active' 클래스 추가
+            btn.classList.add("active");
+
+            // 클릭된 버튼의 data-target 속성 가져오기
+            const target = btn.dataset.target;
+
+            // 모든 콘텐츠 숨기기
+            contents.forEach(content => {
+                content.style.display = content.id === `${target}-content` ? "block" : "none";
+            });
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <style>
+                .sec04 h2{
+                    font-size:34px;
+                }
+
+                @media screen and (max-width: 500px) {
+                    .sec04 h2{
+                    font-size:2.6rem;
+                }
+                    
+                }
+            </style>
+
+
+
+
+
+<!--==========================
+Frequently Asked Questions Section
+============================-->
+<section id="faq">
+<div class="container">
+<header class="section-header">
+<h3>FAQ</h3>
+<!-- <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p> -->
+</header>
+
+<ul id="faq-list" class="wow fadeInUp">
+<li>
+  <a data-toggle="collapse" class="collapsed faq1" href="#faq1">개인회생 자격은 어떻게 되나요?<i class="ion-android-remove"></i></a>
+  <div id="faq1" class="collapse" data-parent="#faq-list">
+    <p><b>A. 일정한 소득으로도 감당하기 힘든 채무가 있는 경우 개인회생을 고려해 볼 수 있습니다.</b></p>
+      <p>일정한 소득 : 정규직, 비정규직, 아르바이트, 프리랜서, 일용직, 개인사업자 등 어떠한 직종이나 급여와 상관없이, 현재 소득이 있다면 가능합니다.
+        <br>빚의 크기 : 빚이 최소 1,000만원 이상 이며 재산보다 많으면 신청이 가능합니다. (재산 : 부동산, 동산, 예금, 임차보증금, 퇴직금 등)
+        총 빛의 금액 : 무담보 빚의 경우 10억원, 담보 빚의 경우 15억원을 넘지 않아야 합니다.<br>이상의 경우에는 일반회생으로 진행하시면 됩니다.
+        </p>
+     
+  </div>
+</li>
+
+<li>
+  <a data-toggle="collapse" href="#faq2" class="collapsed faq2">채무 조정 사실을 주변에서 알 수 있나요?<i class="ion-android-remove"></i></a>
+  <div id="faq2" class="collapse" data-parent="#faq-list">
+    
+    <p><b>A. 아니요, 알 수 없습니다.</b></p>
+    <p>재정관리를 본인이 하시는 경우 고의적으로 누군가 본인의 신용 조회를 하지 않는 이상 채무조정 진행여부는 알 수 없습니다. 단, 법원에서 심사를 거칠 때 함께 거주 중인 배우자의 재산 및 소득에 대한 소명이 필요한 경우에는 배우자의 서류를 일부 제출해야할 필요가 있으므로 가족에게 알려질 수 있습니다. 원활한 진행을 위해 배우자가 있으시면 미리 상의하시는것을 권장드립니다.
+      </p>
+   
+    
+  </div>
+</li>
+
+<li>
+  <a data-toggle="collapse" href="#faq3" class="collapsed faq3">기각이 되면 어떡하죠?<i class="ion-android-remove"></i></a>
+  <div id="faq3" class="collapse" data-parent="#faq-list">
+    <p><b>A. JLP에서 진행하시면 기각에 대한 걱정은 안 하셔도 됩니다!</b></p>
+    <p>개인회생, 파산을 진행하면서 기각이 되는 경우는 채무자가 신청의 자격이 갖추어 지지 않았을 때 또는 제출해야하는 서류를 제출하지 않거나 서류에 거짓이 있을때로 나뉘는데요. 저희 JLP는 서류를 준비함에 있어서 누락이나 실수없이 준비할 수있도록 서류대행시스템이 구축되어 있고 법원에 제출 후에도 법원에서 서류의 수정을 요청하는 경우도 있는데 이것도 자료를 수정함에 있어서 성실히 응한다면 기각 될 이유가 없습니다.
+      </p>
+  </div>
+</li>
+
+<li>
+  <a data-toggle="collapse" href="#faq4" class="collapsed faq4">개시 결정 받기까지 얼마나 걸리나요?<i class="ion-android-remove"></i></a>
+  <div id="faq4" class="collapse" data-parent="#faq-list">
+    <p><b>A. 상황에 따라 다르긴 하지만 4개월이면 개시 결정 받을 수 있습니다.</b></p>
+    <p>통상적으로 개시결정을 받기까지 평균 7개월 ~ 1년 이상 까지도 걸리게 됩니다. 하지만 JLP에서 사건을 진행하게 되신다면 4개월이면 개시결정을 받을 수 있습니다. 개시결정을 받았다는 것은 법원에서 개인회생 절차를 시작하겠다는 일종의 서류통과이므로 개시결정을 받은 후 변제계획안 대로 충실히 변제의무를 다 하신다면 인가까지는 1~2개월이면 받을 수 있습니다.
+      </p>
+   
+  </div>
+</li>
+
+<li>
+    <a data-toggle="collapse" href="#faq5" class="collapsed faq5">상담이나 사건 진행 시 방문이 필요한가요?<i class="ion-android-remove"></i></a>
+    <div id="faq5" class="collapse" data-parent="#faq-list">
+      <p><b>A. 아닙니다. 비대면으로 언제든 가능합니다.</b></p>
+      <p>JLP는 모든 진행이 비대면으로 가능하게 시스템이 구축되어있습니다. 상담부터 사건 진행까지 방문하지 않으셔도 충분히 가능합니다.
+        </p>
+     
+    </div>
+  </li>
+
+
+</ul>
+
+</div>
+</section><!-- #faq -->
+
+<!-- 
+<section id="call-to-action" class="wow fadeIn">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-9 text-center text-lg-left wow fadeInUp">
+          <h3 class="cta-title" style="line-height:140%;">세무 대리인 변경 없어도<br>편하게 환급 가능합니다</h3>
+          <p class="cta-text">그러니 전혀 부담갖지 마시고<br>5년간 더 낸 여러분의 돈을<br>3분 조회로 지금 당장 찾아가세요.</p>
+         
+        </div>
+        <div class="col-lg-3 cta-btn-container text-center wow fadeInUp">
+          <a class="cta-btn align-middle motive-btn scroll" href="#form_e11">무료 환급금 조회</a>
+        </div>
+      </div>
+
+    </div>
+  </section> -->
+
+<!-- 1 -->
+<div class="contents sec01" style="margin-bottom:0px;border-bottom:0px;">
+    <div class="container m-center">
+        <div class="row d-flex align-items-center">
+            <div class="col col-md-6 col-12">
+                <h4>이젠 고민하지 마시고<br>더 악화되기 전에<br>JLP가 도와드리겠습니다.</h4>
+                <br><h2>
+                    무료 상담받고<br>최대 탕감 가능 금액과<br>월 변제액 알아보시고<br>추심의 고통에서 벗어나세요! 
+                </h2>
+             
+            </div>
+            <div class="col col-md-6 col-12 p-0">
+                <div class="count">
+                    <div class="row pb-2">
+                        <div class="col-4 text-left align-bottom">
+                            <p>부채 탕감</p>
+                        </div>
+                        <div class="col-8 text-right">
+                            <p>
+                                최대 <span class="counter" style="color:#2196F3;bottom:0px;">95.3</span>
+                                %</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row py-2">
+                        <div class="col-4 text-left">
+                            <p>개시 기간</p>
+                        </div>
+                        <div class="col-8 text-right">
+                            <p>
+                                최소 <span class="counter" style="color:#2196F3;bottom:0px;">4</span>
+    
+                                개월 ~ </p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row pt-2">
+                        <div class="col-4 text-left">
+                            <p>월 변제액?</p>
+                        </div>
+                        <div class="col-8 text-right">
+                            <p>
+                                <span class="txtAni"  style="color:#2196F3;bottom:0px;">?</span>
+                                원</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-12 pb-0">
+                <!-- <p class="text-right small" style="line-height: 1.3em;color: #9b9b9b;">
+                    *최저 연 %기준<br>
+                    ()
+                </p> -->
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+<div id="test_body"></div>
+        <!--footer 시작-->
+   
+        <footer class="bg-light p-4">
+            <div class="container-fluid">
+                <div class="row justify-content-center text-center">
+                    <p style="text-align:center; color:#000; font-size: 12px; line-height: +1.4;">
+                        E.jlp_re@jlpartners.kr ᅵ T. 1670-7309 ᅵ F. 02-6219-7301 <br>ᅵ 대표 정유진, 광고책임변호사 장동훈 ᅵ<br>ᅵ사업자 등록번호. 169-87-02711 06647ᅵ<br>
+                        ᅵ서울시 서초구 반포대로30길 6, 2층 (서초동, 대영빌딩) ᅵ<br>ᅵ 별관 : 서울 서초구 서초동 1553-16 홍은빌딩 7층ᅵ<br><br>
+                        법무법인JLP. © All Rights Reserved.<br><br><br><br><br><br>
+            </p>
+                </div>
+
+            </div>
+        </footer>
+        <!--footer 끝-->
+
+        <!-- end form -->
+        <script>
+            function chk_num(obj){obj.value=obj.value.replace(/[^0-9]/g,'');}
+
+            $(document).ready(function ($) {
+                $(".btn-show").click(function (e) {
+                    $(".agreement").toggle();
+                    return false;
+                });
+            });
+        </script>
+
+            <!-- Script File -->
+   
+
+            <div id="privacy">
+                <div id="privacyContent">
+                  <div class="titWrap">
+                    <span>개인정보처리방침</span>
+                    <i style="margin-top:-20px !important" class="ion-close-circled closeBtn"></i>
+                  </div>
+                  <div style="line-height:1.2" class="conWrap">
+                    개인정보처리방침<br><br>
+                    ‘주식회사 플로스’ 회사는 (이하 ‘회사’는) 고객님의 개인정보를 중요시하며, “개인정보보호법”, “정보통신망 이용촉진 및 정보보호에 관한 법률”등 관련법규를 준수하고 있습니다. 회사는 개인정보취급방침을 통하여 고객님께서 제공하시는 개인정보가 어떠한 용도와 방식으로 이용되고 있으며, 개인정보보호를 위해 어떠한 조치가 취해지고 있는지 알려드립니다.<br />
+                    아울러 개인정보 제공자가 동의한 내용 외의 다른 목적으로 활용하지 않으며, 제공된 개인정보의 이용을 거부하고자 할 때에는 개인정보 관리책임자를 통해 열람, 정정, 삭제를 요구할 수 있습니다.<br><br>
+                    <br />
+                    01. 수집하는 개인정보 항목<br />
+                    <br />
+                    회사는 상담, 서비스 신청 등등을 위해 아래와 같은 개인정보를 수집하고 있습니다.<br />
+                    <br />
+                    -수집항목 : 본인이름, 이메일, 본인연락처, 문의사항<br />
+                    -개인정보수집방법 : 홈페이지(상담신청양식), 전화<br />
+                    <br />
+                    02. 개인정보의 수집 및 이용목적<br />
+                    회사는 수집한 개인정보를 다음의 목적을 위해 활용합니다.<br />
+                    <br />
+                    서비스 제공에 관한 계약 이행 및 서비스 제공에 따른 상담, 요금정산, 구매 및 요금결제, 물품배송 또는 청구지 등 발송<br />
+                    회원관리 : 회원제 서비스 이용에 따른 본인확인 , 개인 식별 , 불량회원의 부정 이용 방지와 비인가 사용 방지 , 구매 의사 확인 , 연령확인 , 만14세 미만 아동 개인정보 수집 시 법정 대리인 동 여부 확인 , 불만처리 등 민원처리 , 고지사항 전달, 입사 지원에 따른 본인 확인, 제휴신청 업체 정보 확인<br />
+                    마케팅 및 광고      에 활용 : 신규 서비스(제품) 개발 및 특화 , 이벤트 등 광고성 정보 전달 , 인구통계학적 특성에 따른 서비스 제공 및 광고 게재 , 접속 빈도 파악 또는 회원의 서비스 이용에 대한 통계<br />
+                    <br />
+                    또한, 본 회사는 “통신비밀보호법”에 의거하여 공개되지 않은 타인 간의 대화를 녹음 또는 청취하지 못하며,<br />
+                    위반 시 10년 이하의 징역과 5년 이하의 자격정지에 처하도록 규정을 따르고 있으며, 녹취를 할 때 내 사건에 증거로 제출할 목적으로 서로간의 합의하에만 녹취가 가능합니다.<br />
+                    <br />
+                    03. 개인정보의 보유 및 이용기간<br />
+                    원칙적으로, 개인정보 수집 및 이용목적이 달성된 후에는 예외 없이 해당 정보를 지체 없이 파기합니다. 단, 다음의 정보에 대해서는 아래의 이유로 명시한 기간 동안 보존합니다.<br />
+                    <br />
+                    보존항목 : 이름, 나이, 연락처, 주소, 이메일<br />
+                    보존근거 : 전자상거래 등에서의 소비자보호에 관한 법률<br />
+                    보존기간 : 5년<br />
+                    <br />
+                    그리고 관계법령의 규정에 의하여 보존할 필요가 있는 경우 회사는 아래와 같이 관계법령에서 정한 일정한 기간 동안 회원정보를 보관합니다.<br />
+                    <br />
+                    보존항목 : 이름, 나이, 연락처, 주소, 이메일<br />
+                    보존근거 : 전자상거래 등에서의 소비자보호에 관한 법률<br />
+                    보존기간 : 5년<br />
+                    <br />
+                    04. 개인정보의 파기절차 및 방법<br />
+                    회사는 원칙적으로 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다. 파기절차 및 방법은 다음과 같습니다.<br />
+                    <br />
+                    <br />
+                    -파기절차<br />
+                    <br />
+                    고객님이 상담신청 등을 위해 입력하신 정보는 목적이 달성된 후 별도의 DB로 옮겨져(종이의 경우 별도의 서류함)내부 방침 및 기타 관련 법령에 의한 정보보호 사유에 따라(보유 및 이용기간 참조)일정기간 저장된 후 파기되어집니다. 별도 DB로 옮겨진 개인정보는 법률에 의한 경우가 아니고서는 보유되어지는 이외의 다른 목적으로 이용되지 않습니다.<br />
+                    <br />
+                    -파기방법<br />
+                    <br />
+                    전자적 파일형태로 저장된 개인정보는 기록을 재생할 수 없는 기술적 방법을 사용하여 삭제합니다.<br />
+                    <br />
+                    05. 개인정보의 제3자 제공<br />
+                    회사는 정보주체의 개인정보를 이용목적 내에서만 처리하며, 정보 주체의 동의, 법률의 특별한 규정이 있는 경우에만 개인정보를 제3자에게 제공합니다.<br />
+                    회사는 다음과 같이 개인정보를 제3자에게 제공하고 있습니다.<br />
+                    <br />
+                    -제공하는 개인정보 항목 : 본인이름, 본인나이, 본인연락처, 불편사항, 결혼유무, 이메일 등 고객이 입력한 정보<br />
+                    -제공받는 자의 개인정보 이용목적<br />
+                    서비스 제공에 관한 이행 및 서비스 제공에 따른 콘텐츠제공<br />
+                    고객을 대상으로 제품 상담 응대 및 판매<br />
+                    서비스 제공에 관한 계약 이행 및 서비스 제공에 따른 상담, 요금정산, 구매 및 요금결제, 물품배송 또는 청구지 등 발송<br />
+                    -회원 관리 : 회원제 서비스 이용에 따른 본인확인 , 개인 식별 , 불량회원의 부정 이용 방지와 비인가 사용 방지 , 구매 의사 확인 , 연령확인 , 만14세 미만 아동 개인정보 수집 시 법정 대리인 동의여부 확인 , 불만처리 등 민원처리 , 고지사항 전달, 입사 지원에 따른 본인 확인, 제휴신청 업체 정보 확인<br />
+                    -마케팅 및 광고에 활용 : 신규 서비스(제품) 개발 및 특화 , 이벤트 등 광고성 정보 전달 , 인구통계학적 특성에 따른 서비스 제공 및 광고 게재 , 접속 빈도 파악 또는 회원의 서비스 이용에 대한 통계<br />
+                    -제공받는 자의 보유․이용기간 : 5년(소비자의 불만 또는 분쟁처리에 관한 기록 : 3년)<br />
+                    고객은 제3자 개인정보 제공에 대하여 동의를 거부할 권리가 있으며 동의를 거부할 경우 서비스 제공 및 서비스 제공에 따른 콘텐츠 제공에 제한이 있을 수 있습니다.<br />
+                    <br />
+                    06. 이용자 및 법정대리인의 권리와 그 행사방법<br />
+                    이용자는 언제든지 등록되어 있는 자신의 개인정보를 조회하거나 수정할 수 있으며 가입해지를 요청할 수도 있습니다. 이용자들의 개인정보 조회, 수정을 위해서는 ‘개인정보변경’(또는 ‘회원정보수정’ 등)을 가입해지(동의철회)를 위해서는 “회원탈퇴”를 클릭하여 본인 확인 절차를 거치신 후 직접 열람, 정정 또는 탈퇴가 가능합니다. 혹은 개인정보관리책임자에게 서면, 전화 또는 이메일로 연락하시면 지체 없이 조치하겠습니다. 귀하가 개인정보의 오류에 대한 정정을 요청하신 경우에는 정정을 완료하기 전까지 당해 개인정보를 이용 또는 제공하지 않습니다. 또한 잘못된 개인정보를 제3자에게 이미 제공한 경우에는 정정 처리결과를 제3자에게 지체 없이 통지하여 정정이 이루어지도록 하겠습니다. 회사는 이용자의 요청에 의해 해지 또는 삭제된 개인정보는 “회사가 수집하는 개인정보의 보유 및 이용기간”에 명시된 바에 따라 처리하고 그 외의 용도로 열람 또는 이용할 수 없도록 처리하고 있습니다.<br />
+                    <br />
+                    07. 개인정보 자동수집 장치의 설치, 운영 및 그 거부에 관한 사항<br />
+                    회사는 귀하의 정보를 수시로 저장하고 찾아내는‘쿠키(cookie)’ 등을 운용합니다. 쿠키란 인사이드케어 솔루션의 웹사이트를 운영하는데 이용되는 서버가 귀하의 브라우저에 보내는 아주 작은 텍스트 파일로서 귀하의 컴퓨터 하드디스크에 저장됩니다. 회사은(는) 다음과 같은 목적을 위해 쿠키를 사용합니다.<br />
+                    <br />
+                    쿠키 등 사용 목적<br />
+                    회원과 비회원의 접속 빈도나 방문 시간 등을 분석, 이용자의 취향과 관심분야를 파악 및 자취 추적, 각종 이벤트 참여 정도 및 방문 회수 파악 등을 통한 타겟 마케팅 및 개인 맞춤 서비스 제공<br />
+                    귀하는 쿠키 설치에 대한 선택권을 가지고 있습니다. 따라서, 귀하는 웹브라우저에서 옵션을 설정함으로써 모든 쿠키를 허용하거나, 쿠키가 저장될 때마다 확인을 거치거나, 아니면 모든 쿠키의 저장을 거부할 수도 있습니다.<br />
+                    쿠키 설정 거부 방법<br />
+                    예: 쿠키 설정을 거부하는 방법으로는 회원님이 사용하시는 웹 브라우저의 옵션을 선택함으로써 모든 쿠키를 허용하거나 쿠키를 저장할 때마다 확인을 거치거나, 모든 쿠키의 저장을 거부할 수 있습니다.<br />
+                    설정방법 예(인터넷 익스플로어의 경우) : 웹 브라우저 상단의 도구 &gt; 인터넷 옵션 &gt; 개인정보<br />
+                    단, 귀하께서 쿠키 설치를 거부하였을 경우 서비스 제공에 어려움이 있을 수 있습니다.<br />
+                    <br />
+                    08. 개인정보에 관한 민원서비스<br />
+                    회사는 고객의 개인정보를 보호하고 개인정보와 관련한 불만을 처리하기 위하여 아래와 같이 관련 부서 및 개인정보관리책임자를 지정하고 있습니다.<br />
+                    <br /> 
+                    귀하께서는 회사의 서비스를 이용하시며 발생하는 모든 개인정보 보호 관련민원을 개인정보관리책임자 혹은 담당부서로 신고하실 수 있습니다.<br />
+                    회사는 이용자들의 신고사항에 대해 신속하게 충분한 답변을 드릴 것입니다.<br />
+                    <br />
+                    기타 개인정보침해에 대한 신고나 상담이 필요하신 경우에는 아래 기관에 문의하시기 바랍니다.<br />
+                    <br />
+                    개인분쟁조정위원회 (www.1336.or.kr/1336)<br />
+                    정보보호마크인증위원회 (www.eprivacy.or.kr/02-580-0533~4)<br />
+                    대검찰청 인터넷범죄수사센터 (http://icic.sppo.go.kr/02-3480-3600)<br />
+                    경찰청 사이버테러대응센터 (www.ctrc.go.kr/02-392-0330)
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+
+
+
+
+    <div class="bottom_contact pc_img">
+        <div class="inner clfix">
+            <div class="title">
+              <a > 
+ <span class="tit">빚의 무게를 줄여주는</span></a>
+                <span class="tel"><a>무료 상담 신청</a><img src="./form/img/click_icon.png" alt="" class="click_img"></span>
+            </div><!-- // title -->
+            <div class="input_wrap">
+                <form id="form_e12" name="frm_phonecall_web" action="" method="post" target="hidden_iframe12" onsubmit="dll2(); submitted2=true;">
+                    <input type="hidden" name="entry.1187665206"  value="네이버 파워링크">
+                    <input type="hidden" name="entry.1275557685"  value="pc 플로팅 메뉴 신청">
+
+
+                    <ul class="clfix">
+                        <li>
+                            <span>성명</span>
+                            <input type="text" id="pc_name" name="entry.1050124842" >
+                        </li>
+                        <li>
+                            <span>연락처</span>
+                            <input type="text"  id="pc_phone" name="entry.754157585" maxlength="11">
+                        </li>
+                        <li>
+            <select name="entry.1242013704" id="pc_select" class="select2">
+                                    <option selected disabled>신청 유형</option>
+                                    <option value="개인회생">개인회생</option>
+                                    <option value="개인파산">개인파산</option>
+                                    
+                                                                    
+                
+            </select>
+                        </li>
+                    </ul><!-- // clfix -->
+        <div class="b_check check_bar">
+          <input type="checkbox" checked name="policy_agree" value="1" id="agree12" style="display:inline;">
+          <span style="color:#fff;">개인정보 수집 및 이용 동의</span> <span id="pc_alert" style="margin-left:40px;color:#fff;"></span>
+        </div>
+               
+            </div><!-- // input_wrap -->
+            <div class="go_btn">
+                <button id="pc_btn" disabled>무료 조회</button>
+            </div>
+        </div><!-- // inner -->
+    </div><!-- // bottom_contact -->
+  </form>
+
+    <div class="bottom_contact_mob mob_img">
+        <div class="top_thumb">
+    <div class="title">
+      <a ></a>
+      <a  style="display:contents;width:100%;max-width:300px;"> <img src="./form/img/click_icon.png" alt="" class="click_img">
+      <span class="tit">빚의 무게가 버거울 때</span>
+      <span class="tel">무료 상담 신청</span></a>
+    </div><!-- // title -->
+    <div class="btn">
+      <a href="javascript:void(0)" style="padding-top:0px;font-size:1.4rem;">무료상담</a>
+    </div><!-- // btn -->
+        </div><!-- // top_thumb -->
+        <div class="bottom_con">
+            <div class="inner">
+                <form name="frm_phonecall_mob" id="form_e13" method="post" target="hidden_iframe13" onsubmit="dll3(); submitted3=true;">
+                    <input type="hidden" name="entry.1187665206"  value="네이버 파워링크">
+                    <input type="hidden" name="entry.1275557685"  value="모바일 플로팅 메뉴 신청">
+                    <ul class="in_wrap clfix">
+                        <li>
+                            <span>성명</span>
+                            <input type="text" class="r_input" name="entry.1050124842"  id="mob_name">
+                        </li>
+                        <li>
+                            <span>연락처</span>
+                            <input type="text" class="r_input wr_tel" name="entry.754157585" maxlength="11" id="mob_phone">
+                        </li>
+                        <li>
+            <select name="entry.1242013704" id="mob_select" class="select3">
+                <option selected disabled>신청 유형</option>
+                <option value="개인회생">개인회생</option>
+                <option value="개인파산">개인파산</option>
+                                                
+                                                                   
+            
+            </select>
+                        </li>
+                    </ul><!-- // clfix -->
+        <div class="b_check">
+          <input type="checkbox" checked name="policy_agree" value="1" id="agree13" style="display: inline;">
+          <span>개인정보 수집 및 이용 동의</span> 
+        </div>
+                    <div class="m_go_btn">
+                        <button  id="mob_btn" style="color:#fff;width:100%;font-size:1.8em;" disabled>상담신청</button>
+                    </div><!-- // m_go_btn -->
+        <!-- <ul class="btn_list clfix">
+          <li><a href="tel:010-3041-2734"><img src="../intro/img/b_tel.png" alt=""></a></li>
+          <li><a href="/sub05/sub01.php"><img src="../intro/img/map_icon_new.png" alt=""></a></li>
+          <li><a href="https://blog.naver.com/winnwinners" target="_blank"><img src="../intro/img/blog.png" alt=""></a></li>
+          <li><a href="http://pf.kakao.com/_xoavxfG" target="_blank"><img src="../intro/img/talk.png" alt=""></a></li>
+          <li class="close_btn"><a href="javascript:void(0)"><img src="../intro/img/b_close.png" alt=""></a></li>
+        </ul> -->
+                </form>
+                <script type="text/javascript">var submitted2 = false;</script>
+                <iframe name="hidden_iframe12" id="hidden_iframe12" style="display:none;" onload=""></iframe>
+
+                
+    <script type="text/javascript">var submitted3 = false;</script>
+    <iframe name="hidden_iframe13" id="hidden_iframe13" style="display:none;" onload=""></iframe>
+            </div><!-- // inner -->
+        </div><!-- // bottom_con -->
+    </div><!-- // bottom_contact_mob -->
+
+
+    </body>
+    <script src="./form/js/jquery.min.js"></script>
+    <script src="./form/js/jquery-migrate.min.js"></script>
+    <script src="./form/js/form.js"></script>
+    <script src="./form/js/validation.js"></script>
+
+    <script src="./form/js/validation-float-pc.js"></script>
+    <script src="./form/js/validation-float-mob.js"></script>
+    <script src="./form/column/js/personal_f.js"></script>
+
+    <script>
+        $('.navi_btn').click(function(){
+          $(this).toggleClass('on');
+          $('.navi').stop().fadeToggle()
+        });
+      
+      
+      
+        $('.lnb h3').click(function(){
+          var naviTitle = $(this).next('ul');
+          $(this).addClass('on');
+          $('.lnb h3').not(this).removeClass('on');
+          naviTitle.stop().slideDown();
+          $('.lnb h3').next().not(naviTitle).slideUp();
+        });
+      
+        $('.right_contact .left').click(function(){
+          $('.right_contact').toggleClass('on');
+        });
+      
+        $('.bottom_contact_mob .top_thumb').click(function(){
+          $('.bottom_contact_mob').toggleClass('on');
+        });
+      
+        $('.bottom_contact_mob .bottom_con .btn_list .close_btn').click(function(){
+          $('.bottom_contact_mob').removeClass('on');
+        });	
+      </script>  
+  
+  <script type="text/javascript">
+    $(window).scroll(function() { 
+        if ($(this).scrollTop() > 1800) { 
+            $(".roll-text ul.wrap > li").eq(0).find("ul").stop().animate({"bottom":"-1000px"},1000,"easeInOutCubic");
+                setTimeout(function(){
+                    $(".roll-text ul.wrap > li").eq(1).find("ul").stop().animate({"bottom":"-1000px"},1000,"easeInOutCubic");
+                },200);
+                setTimeout(function(){
+                    $(".roll-text ul.wrap > li").eq(2).find("ul").stop().animate({"bottom":"-900px"},1000,"easeInOutCubic");
+                },300);
+        } 
+    }); 
+  </script>
+
+
+<script>
+    $('[name="entry.1187665206"]').val("당근-3050");
+    </script>
+
+
+</html>

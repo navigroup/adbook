@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개인회생 및 개인파산 절차</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #1e1e30, #1b1b27);
+            color: white;
+        }
+
+        #process .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #process .header {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        #process .toggle-buttons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            background: #27293a;
+            padding: 5px;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #process .toggle-btn {
+            background: transparent;
+            color: white;
+            border: none;
+            flex: 1;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #process .toggle-btn.active {
+            background: #6b6bff;
+            color: white;
+            box-shadow: 0 4px 10px rgba(107, 107, 255, 0.5);
+        }
+
+        #process .content {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        #process .content p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        #process .steps {
+            list-style: none;
+            padding: 0;
+        }
+
+        #process .steps li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 10px;
+            background: #27293a;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        #process .steps li:hover {
+            transform: translateY(-5px);
+            background: #333547;
+        }
+
+        #process .steps li .step-number {
+            flex-shrink: 0;
+            width: 30px;
+            height: 30px;
+            background: #6b6bff;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 10px 15px;
+            font-size: 14px;
+        }
+
+        #process  .steps li .step-content {
+            flex: 1;
+        }
+
+        #process .steps li .step-content h3 {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        #process .steps li .step-content p {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            #process  .steps li {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            #process  .steps li .step-number {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            #process  .steps li .step-content {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section id="process">
+        <div class="container">
+            <div class="header">개인 회생, 파산 절차 안내</div><br>
+            <div class="toggle-buttons">
+                <button class="toggle-btn active" data-target="rehab">개인회생</button>
+                <button class="toggle-btn" data-target="bankruptcy">개인파산</button>
+            </div>
+            <div class="content" id="rehab-content">
+                <ul class="steps">
+                    <li>
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>상담 및 서류준비</h3>
+                            <p>필요한 서류를 준비한 뒤 상담을 진행합니다.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>부채증명서 발급</h3>
+                            <p>채권자 목록에 따라 부채증명서를 발급합니다.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>신청서 작성</h3>
+                            <p>법적 절차에 맞는 신청서를 작성합니다.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>법원 접수</h3>
+                            <p>작성된 서류를 법원에 접수합니다.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3>법원 접수</h3>
+                            <p>작성된 서류를 법원에 접수합니다.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step-number">6</div>
+                        <div class="step-content">
+                            <h3>법원 접수</h3>
+                            <p>작성된 서류를 법원에 접수합니다.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="content" id="bankruptcy-content" style="display: none;">
+                <ul class="steps">
+                    <li>
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>상담 및 서류준비</h3>
+                            <p>파산 절차를 위한 초기 상담을 진행합니다.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>부채증명서 발급</h3>
+                            <p>채무 증명 서류를 발급받습니다.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>예납명령 및 법원 접수</h3>
+                            <p>예납명령 발급 후, 법원에 관련 서류를 접수합니다.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>파산 선고</h3>
+                            <p>법원이 파산 여부를 판결합니다.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const toggleBtns = document.querySelectorAll(".toggle-btn");
+        const contents = document.querySelectorAll("#process .content");
+
+        toggleBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                toggleBtns.forEach(b => b.classList.remove("active"));
+                btn.classList.add("active");
+
+                const target = btn.dataset.target;
+                contents.forEach(content => {
+                    content.style.display = content.id === `${target}-content` ? "block" : "none";
+                });
+            });
+        });
+    </script>
+</body>
+</html>

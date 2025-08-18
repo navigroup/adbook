@@ -1,0 +1,80 @@
+@charset "utf-8";
+
+
+/* box-sizing */
+* , *:before, *:after {  -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+/* font */
+html { -moz-text-size-adjust: none; -webkit-text-size-adjust: none; text-size-adjust: none; } 
+
+/* maring & padding  */
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+   margin:0; padding:0; vertical-align:baseline; border:0; font-size:100%; font:inherit; 
+}
+
+
+/* block */
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block}
+body {background-color:  inherit;}
+
+
+/* ul, ol */
+ul, ol, dl { list-style: none; }
+
+
+/* a */
+a {color:inherit;}
+a, a:hover, a:active, a:focus {text-decoration: none;}
+
+
+/* typography */
+:root {overflow-wrap: break-word; word-break: break-word; }
+body, button, input, select, td, textarea, th { font-size: inherit; font-family: inherit; line-height:1.6; font-weight:400;color:inherit } 
+address, caption, cite, code, dfn, em, var {font-style:normal; font-weight:400;}
+abbr[title] {border-bottom: 1px dotted}
+b,strong {font-weight: 700}
+small {font-size: 80%}
+img {vertical-align: top; max-width:100%;}
+hr {box-sizing: content-box;height: 0}
+pre {overflow: auto;}
+i { font-style: normal; }
+blockquote, q {quotes: none; }
+blockquote:after, blockquote:before, q:after, q:before { content:' '; content: none; }
+
+
+/* typo-custom */
+body {line-height: 1.6;}
+h1,h2,h3, h4 {line-height: 1.2; }
+button,input,label {line-height: 1.2;}
+
+
+/* contents */
+fieldset,img,picture { display: block; max-width: 100%;}
+audio,canvas,progress,video {display: inline-block;vertical-align: top;}
+audio:not([controls]) {display: none;height: 0}
+[hidden],template {display: none}
+
+
+/* input */
+html input[type=button], input[type=email], input[type=password], input[type=reset], input[type=search], input[type=submit], input[type=tel], input[type=text] {-webkit-appearance:none;border-radius:0}
+input, button, textarea, select, select {font: inherit; vertical-align:middle; }
+input {line-height: normal}
+input[type="checkbox"],input[type="radio"] {box-sizing: border-box; padding: 0;}
+input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button {height: auto}
+input[type="search"] {-webkit-appearance: textfield;box-sizing: content-box;}
+input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration {-webkit-appearance: none}
+button::-moz-focus-inner,input::-moz-focus-inner {border: 0;padding: 0}
+button {padding:0; border:0; cursor: pointer;overflow: visible; background:transparent; appearance: none;}
+button,input,optgroup,select,textarea {color: inherit; font: inherit;margin: 0;}
+button,select {text-transform: none}
+button,html input[type="button"],input[type="reset"],input[type="submit"] {-webkit-appearance: button;cursor: pointer;border:0;}
+button[disabled],html input[disabled] {cursor: default}
+
+
+/* table */
+table {border-collapse:collapse;border-spacing:0; }
+
+
+/* etc */
+/* body, button, input, select, td, textarea, th {font-size: inherit; font-family: inherit; line-height:1.6; font-weight:400;color:inherit}  */

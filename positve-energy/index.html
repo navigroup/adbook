@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>포지티브 에너지 파워</title>
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: '#6366F1',
+          secondary: '#F59E0B'
+        },
+        borderRadius: {
+          'none': '0px',
+          'sm': '4px',
+          DEFAULT: '8px',
+          'md': '12px',
+          'lg': '16px',
+          'xl': '20px',
+          '2xl': '24px',
+          '3xl': '32px',
+          'full': '9999px',
+          'button': '8px'
+        }
+      }
+    }
+  }
+</script>
+
+<!-- Fonts & Icons -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<script src="./js/jquery.min.js"></script>
+<script src="./js/jquery-migrate.min.js"></script>
+
+<!-- Style -->
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body{font-family:'Noto Sans KR',sans-serif;background:#FAFAFA;position:relative}
+.sidebar{
+  transition:transform .3s ease;
+  -ms-overflow-style:none;            /* IE & Edge */
+  scrollbar-width:none;              /* Firefox    */
+}
+.sidebar::-webkit-scrollbar{display:none;} /* Chrome, Safari  */
+.sidebar-toggle{z-index:50}
+.sidebar.closed{transform:translateX(100%)}
+.sidebar.open{transform:translateX(0)}
+@media(min-width:768px){
+  .content-container{margin-right:300px}
+  .sidebar.closed{transform:translateX(0)}
+}
+
+/* ▼ 더 알아보기 토글 */
+#moreContent{overflow:hidden;max-height:0;transition:max-height .6s ease}
+#moreContent.open{max-height:10000px;margin-right:300px;}
+@media screen and (max-width:768px) {
+  #moreContent.open{margin-right:0px;}
+}
+/* ==================== DOTCOM-STYLE ==================== */
+nav::before{
+  content:"📘 뉴욕타임즈 베스트 셀러!";
+  position:fixed;top:0;left:0;width:100%;
+  background:#B6191F;color:#fff;font-weight:700;font-size:.85rem;
+  line-height:1.75rem;text-align:center;z-index:45;
+}
+nav{top:1.75rem!important}
+.bg-primary{background:#B6191F!important}
+.text-primary{color:#B6191F!important}
+.hover\:bg-primary\/90:hover{background:#C1171A!important}
+.bg-primary\/10{background:#FFF5F5!important;border:2px solid #B6191F}
+.bg-secondary\/10{border:2px solid #B6191F}
+.content-container h1{
+  font-family:'Georgia','Times New Roman',serif;font-weight:800;line-height:1.2;
+  font-size:clamp(2rem,6vw,4rem);color:#0F1A38;text-align:center;margin-bottom:.75rem
+}
+.content-container h2{
+  font-family:'Noto Sans KR',sans-serif;font-weight:500;color:#374151;
+  font-size:clamp(1.125rem,3vw,1.5rem);text-align:center;margin-bottom:2.5rem
+}
+.aspect-video{border:4px solid #B6191F;border-radius:10px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,.12)}
+.aspect-video::before{
+  content:"Make Sure Your Sound Is Turned ON! (Please Wait For Video To Fully Load)";
+  display:block;background:#B6191F;color:#fff;font-size:.75rem;font-weight:700;text-align:center;padding:.35rem .5rem
+}
+.sidebar .bg-secondary{background:#B6191F!important}
+.sidebar .bg-secondary:hover{background:#C1171A!important}
+.fixed.bottom-0 a.text-primary{color:#B6191F!important}
+.bg-primary\/10 h3{color:#B6191F}
+.bg-primary\/10 h4{color:#0F1A38;font-weight:700}
+.star-rating{color:#FDBA12;font-size:1.25rem}
+
+/* ========== Testimonial Cards ========== */
+.testi-wrap{@apply max-w-7xl mx-auto mb-16 px-4}
+.testi-card{@apply bg-white rounded-3xl shadow-md ring-1 ring-gray-100 p-8 flex flex-col md:flex-row items-center gap-6 transition-transform}
+.testi-card:hover{transform:translateY(-4px)}
+.testi-img{@apply w-28 h-28 md:w-32 md:h-32 rounded-md object-cover flex-shrink-0}
+.testi-quote{@apply italic text-lg leading-relaxed text-gray-800 text-center md:text-left}
+.testi-author{@apply mt-4 font-extrabold text-2xl text-[#0F1A38] text-center md:text-left}
+@media(max-width:1300px){
+  .testi-card{padding:2rem 1.5rem}
+  .testi-img{width:100%;height:auto}
+  .testi-quote{margin-top:1rem}
+}
+
+/* 카드 컨테이너 – 1열(모바일) ▶︎ 2열(PC) */
+.testi-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:2rem;
+}
+@media(min-width:1300px){
+  .testi-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+/* 카드 자체 — 그라데이션+둥근 모서리+입체 그림자 */
+.testi-card{
+  background:linear-gradient(135deg,#ffffff 0%,#f7f9fc 100%);
+  border-radius:24px;
+  padding:2rem;
+  display:flex;align-items:center;gap:1.5rem;
+  box-shadow:0 6px 20px rgba(0,0,0,.05);
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+.testi-card:hover{transform:translateY(-8px);box-shadow:0 12px 28px rgba(0,0,0,.08)}
+
+.testi-img{width:90px;height:90px;border-radius:12px;object-fit:cover;flex-shrink:0}
+.testi-quote{font-size:1.05rem;line-height:1.6;color:#1F2937;font-style:italic;margin-bottom:.75rem}
+.testi-author{    font-size: 0.8rem;
+    font-weight: 600;
+    color: #3d3e42;margin:0}
+
+@media(max-width:1300px){
+  .testi-card{flex-direction:column;text-align:center}
+  .testi-img{width:120px;height:120px}
+  .testi-quote{margin-top:1rem}
+}
+</style>
+</head>
+
+
+<body class="bg-white text-gray-800">
+<!-- ================== NAV ================== -->
+<nav class="fixed w-full bg-white shadow-md z-40 h-14">
+  <div class="flex items-center justify-between px-4 h-full">
+    <a href="./index.html"><span class="font-['Pacifico'] text-primary text-xl"><img src="./logo1.png" style="width:100%;max-width:120px ;"></span></a>
+    <button class="sidebar-toggle md:hidden w-10 h-10 flex items-center justify-center"><i class="ri-menu-line ri-lg"></i></button>
+  </div>
+</nav>
+
+<div class="flex flex-col md:flex-row mt-14">
+  <!-- ============ MAIN ============ -->
+  <main class="content-container flex-1 p-4 pb-20">
+    <div style="text-align:-webkit-center"><br><br><h1>포지티브 에너지 파워 </h1><h2>당신의 운명은 포지티브 에너지가 좌우한다! </h2></div>
+
+    <!-- Video -->
+    <div class="w-full max-w-3xl mx-auto aspect-video mb-6">
+      <iframe class="w-full h-full" src="https://www.youtube.com/embed/-1pnFBeZoGs?si=SUwIsjjwyXXfXaO8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+   
+
+        <!-- Testimonials -->
+        <section class="testi-wrap">
+          <h3 class="text-lg font-bold mb-4">🌍 세계적 명의들의 추천사</h3>
+          <div class="testi-grid  gap-8">
+            <figure class="testi-card">
+              <img src="./deepak.jpeg" class="testi-img" alt="Tony Robbins">
+              <figcaption>
+                <p class="testi-quote">"정말 재미있고 실용적인 책이다. 실제로 써먹을 수 있는 효과적이고 귀중한 팁이 가득하다.
+  
+            주디스 올로프는 우리를 신비로운 에너지의 세계로 안내하는 진정한 선각자다. 매사에 짜증이 나거나, 이유 없이 조급해하는 사람, 모든 일에 자신이 없고 사는 게 막연히 두려운 사람이라면 반드시 읽어야 한다."</p>
+                <h4 class="testi-author">- 🧠 디팩 초프라(Deepak Chopra 의학박사, 심신상관의학 창시자, 타임지 선정 ‘100년간 가장 영향력 있는 인물 100인’ 베스트셀러 『바라는 대로 이루어진다』의 저자)</h4>
+              </figcaption>
+            </figure>
+            <figure class="testi-card">
+              <img src="./dr-dean-ornish.png" class="testi-img" alt="Dan S. Kennedy">
+              <figcaption>
+                <p class="testi-quote">"당신을 둘러싼 모든 것을 에너지의 관점에서 보라. 직관과 에너지 치유법의 대가, 주디스 올로프는 당신이 가진 좋은 에너지를 끌어내고, 삶을 갉아먹는 에너지 뱀파이어에 대항하는 방법을 알려준다. 끊임없이 누군가에게 활력을 빼앗겨 고갈되고 있다면, 이 책에 나온 열 가지 처방으로 그 악순환의 고리를 끊고 내면의 평화를 얻기 바란다. 강력하게 추천하고 싶은 책이다!"</p>
+                <h4 class="testi-author">- 🧘‍♂️ 딘 오니시딘 오니시(Dean Ornish 의학박사, 샌프란시스코·샌디에이고 의과대학 교수 예방의학연구소 설립자, 베스트셀러 『Undo It』 저자)</h4>
+              </figcaption>
+            </figure>
+<figure class="testi-card">
+              <img src="./dr-larry-dossey-holding-glasses.jpg" class="testi-img" alt="Dan S. Kennedy">
+              <figcaption>
+                <p class="testi-quote">"현대의학에 에너지를 결합한 새롭고 독보적인 책이다. 과로와 스트레스, 엇나가는 대인관계로 완전히 탈진해버린 사람들에게 중요한 구급약이 될 것이다. 언제나 에너제틱하고 유쾌한 사람, 보기만 해도 기분이 좋아지는 사람들의 비밀이 여기에 다 있다."</p>
+                <h4 class="testi-author">- 💬 래리 도시(Larry Dossey 의학박사, 통합의학의 선구자 베스트셀러 『Healing Words』 저자)</h4>
+              </figcaption>
+            </figure>
+<figure class="testi-card">
+              <img src="./bernie.jpeg" class="testi-img" alt="Dan S. Kennedy">
+              <figcaption>
+                <p class="testi-quote">"더욱 에너제틱한 삶으로 한 단계 업그레이드하고 싶은가? 이 책은 축제처럼 열정적인 삶을 꿈꾸는 사람들에게 가장 완벽한 안내자가 될 것이다"</p>
+                <h4 class="testi-author">- 💬 버니 시겔(Bernie Siegel, 의학박사, 대체 의학의 선구자, ㅅ게계적인 영성 잡지 '왓킨스'선정 영성 지도자 20인, 베스트셀러 『Love, Medicine and Miracles』 저자)</h4>
+              </figcaption>
+            </figure>
+          
+        </section><br><br>
+  <div style="text-align:-webkit-center;">
+<p class="text-gray-700 mb-2">『포지티브 에너지 파워』는 CNN, CBS, NPR, 오프라 매거진 등 주요 매체와 USA투데이, 리더스 다이제스트에서 극찬을 받았습니다.</p>
+</div>
+
+<!-- ▼ 더 알아보기 버튼 -->
+    <button id="moreBtn" class="mx-auto mb-6 flex items-center gap-1 text-primary font-medium hover:text-primary/80 transition-colors" style="margin-bottom:50px;margin-top:20px;">
+      더 알아보기 <i class="ri-arrow-down-s-line"></i>
+    </button>
+          </div>
+   
+    
+
+    <!-- ▼ 토글될 나머지 콘텐츠 -->
+    <div id="moreContent" >
+      <!-- Introduction -->
+      <div class="bg-white rounded-lg shadow-md p-5 mb-6">
+        <h2 class="text-xl font-bold mb-4">당신의 에너지는 지금 안녕하신가요?</h2>
+        <p class="text-gray-700 mb-3">출근길부터 피로하고, 하루 종일 쏟아지는 업무와 사람들 속에서 자꾸만 지쳐가는 나.</p>
+        <p class="text-gray-700 mb-3">이유 없이 짜증이 나고, 작은 말에도 마음이 무너지고, 모든 것이 버겁게만 느껴지는 당신.</p>
+        <p class="text-gray-700 mb-4">'나는 왜 이렇게 쉽게 기운이 빠질까?' '왜 나만 이렇게 예민하게 반응할까?' 그런 생각을 반복한 적 있다면, 이제는 알아야 할 시간이 왔습니다.</p>
+        <div class="bg-gray-50 p-4 rounded-lg mb-4">
+          <p class="font-medium mb-2">💡 문제는 피곤함이 아닙니다.</p>
+          <p class="text-primary font-bold">진짜 원인은… 당신의 에너지가 고갈되고 있다는 것.</p>
+        </div>
+        <ul class="space-y-2 mb-4">
+          <li class="flex items-start"><span class="mr-2">✔</span><span>아무리 쉬어도 회복되지 않는 피로감</span></li>
+          <li class="flex items-start"><span class="mr-2">✔</span><span>나도 모르게 무너지는 감정의 벽</span></li>
+          <li class="flex items-start"><span class="mr-2">✔</span><span>누군가와 대화한 뒤엔 더 지쳐 있는 나</span></li>
+          <li class="flex items-start"><span class="mr-2">✔</span><span>삶의 방향조차 불분명한 막막함</span></li>
+        </ul>
+        <p class="text-gray-700 mb-3">이 모든 것은 감정의 소진, 내면의 에너지 유출에서 비롯됩니다.</p>
+        <p class="text-gray-700 font-medium">그리고 이제, 그 에너지를 되찾을 시간입니다.</p>
+      </div>
+
+      <!-- Book Introduction -->
+      <div class="bg-white rounded-lg shadow-md p-5 mb-6">
+        <div class="flex flex-col md:flex-row gap-4">
+          <div class="w-full md:w-1/3">
+            <img src="./positive.jpg" alt="포지티브 에너지 파워 책" class="w-full h-auto rounded-md shadow-sm">
+          </div>
+          <div class="w-full md:w-2/3">
+            <h3 class="text-lg font-bold mb-2">📖 『포지티브 에너지 파워』</h3>
+            <p class="text-gray-700 mb-3">세계적인 정신과 의사이자 UCLA 교수, 주디스 올로프 박사가 전하는 에너지 치유의 바이블.</p>
+            <p class="text-gray-700 mb-3">20년 임상 데이터를 바탕으로 과학, 직관, 영성, 심리학을 융합하여 10가지 실천 처방으로 구성된 실제 효과 검증된 회복 프로그램입니다.</p>
+            <p class="text-gray-700">잠재적 에너지를 감지하고, 정화하고, 다시 나를 중심에 세우는 10주.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Benefits -->
+      <div class="bg-white rounded-lg shadow-md p-5 mb-6">
+        <h3 class="text-lg font-bold mb-4">🌿 이 책은 당신에게 이런 변화를 약속합니다</h3>
+        <ul class="space-y-3 mb-4">
+          <li class="flex items-start"><span class="text-primary mr-2">✅</span><span>외부 환경에 휘둘리지 않고 감정을 지키는 힘</span></li>
+          <li class="flex items-start"><span class="text-primary mr-2">✅</span><span>'예민함'을 잠재력으로 바꾸는 전략</span></li>
+          <li class="flex items-start"><span class="text-primary mr-2">✅</span><span>관계 속에서 에너지를 뺏기지 않는 자기 보호</span></li>
+          <li class="flex items-start"><span class="text-primary mr-2">✅</span><span>지친 일상 속에서도 나답게 회복하는 기술</span></li>
+        </ul>
+      </div>
+
+      <!-- Special Offer -->
+      <div class="bg-primary/10 rounded-lg shadow-md p-5 mb-6">
+        <h3 class="text-lg font-bold mb-3">🎁 무료 샘플북 다운로드 </h3>
+        <div class="flex items-center mb-2"><span class="text-primary mr-2"></span></div>
+        <div class="bg-white p-4 rounded-lg mb-4">
+          <h4 class="font-bold mb-2">지금까지 아무리 노력해도 원하는 삶을 이루지 못했다면 </h4>
+          <p class="text-gray-700 mb-2">당신의 문제는 재능이나 노력이 아닙니다!</p>
+          <p class="text-gray-700">이제는 포지티브 에너지의 비밀'을 깨달아야 합니다!</p>
+        </div>
+        <button class="w-full bg-primary text-white py-3 px-4 rounded-button font-medium shadow-md hover:bg-primary/90 transition-colors cursor-pointer" onclick="document.querySelector('.sidebar').classList.remove('closed'); document.querySelector('.sidebar').classList.add('open');">
+          지금 바로 무료 샘플북 받기
+        </button>
+      </div>
+      <br><Br><Br>
+    </div>
+  </div>
+
+
+  </main>
+
+  <!-- ============ SIDEBAR (폼) ============ -->
+  <aside class="sidebar fixed top-14 right-0 h-[calc(100%-3.5rem)] w-full md:w-[300px] bg-white shadow-lg z-30 overflow-y-auto p-4 closed">
+    <div class="bg-secondary/10 rounded-lg p-4 mb-6">
+      <h3 class="text-lg font-bold mb-3 text-center">📘 무료 샘플북</h3>
+      <p class="text-sm text-gray-700 mb-4 text-center">당신의 내면을 살리는 첫걸음, 지금 바로 시작하세요.</p>
+      <form id="form_e11" class="space-y-4" action="" method="POST" target="hidden_iframe11" onsubmit="dll();submitted=true;">
+        <input type="hidden" name="entry.1052012929" value="메타">
+        <div><label class="block text-sm font-medium text-gray-700 mb-1" for="name">이름</label><input id="name" name="entry.556779716" type="text" maxlength="4" placeholder="홍길동" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-secondary"></div>
+        <div><label class="block text-sm font-medium text-gray-700 mb-1" for="email">이메일 주소</label><input id="email" name="entry.181386148" type="email" placeholder="example@email.com" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-secondary"></div>
+        <div><label class="block text-sm font-medium text-gray-700 mb-1" for="phone">전화번호</label><input id="phone" name="entry.947408275" type="tel" maxlength="11" placeholder="휴대폰번호" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-secondary"></div>
+        <label class="text-sm"><input id="agree11" type="checkbox" checked> 개인정보동의</label>
+        <input id="send_message" type="submit" value="샘플북 무료신청" disabled class="w-full bg-secondary text-white py-3 px-4 rounded-button font-medium shadow-md hover:bg-secondary/90 transition-colors cursor-pointer">
+        <iframe id="hidden_iframe11" name="hidden_iframe11" style="display:none"></iframe>
+        <script>var submitted=false;</script>
+      </form>
+    </div>
+
+   <!-- Related Books -->
+    <div class="mb-6">
+      <h3 class="text-lg font-bold mb-3">관련 도서</h3>
+      <div class="space-y-4">
+        <a href="https://product.kyobobook.co.kr/detail/S000214874666" class="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer">
+          <div class="w-16 h-16 flex-shrink-0 overflow-hidden rounded">
+            <img src="https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791194114055.jpg" alt="명상의 힘" class="w-full h-full" style="object-fit: contain;">
+          </div>
+          <div class="ml-3">
+            <h4 class="font-medium text-sm">운 좋은 놈이 성공한다 </h4>
+            <p class="text-xs text-gray-500">경제불황 30년 동안 승승장구한 1% 부자의 사이토 히토리의 성공비결</p>
+          </div>
+        </a>
+        <a href="https://product.kyobobook.co.kr/detail/S000211745020" class="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer">
+          <div class="w-16 h-16 flex-shrink-0 overflow-hidden rounded">
+            <img src="https://image.yes24.com/goods/124226256/XL" alt="바라는 대로 이루어진다다" class="w-full h-full" style="object-fit: contain;">
+          </div>
+          <div class="ml-3">
+            <h4 class="font-medium text-sm">바라는 대로 이루어진다</h4>
+            <p class="text-xs text-gray-500">세계 영향력 1위 의학 박사 디팩 초프라의 고품격 자기 계발서! </p>
+          </div>
+        </a>
+        <a href="https://product.kyobobook.co.kr/detail/S000213674290" class="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer">
+          <div class="w-16 h-16 flex-shrink-0 overflow-hidden rounded">
+            <img src="https://image.yes24.com/goods/128262716/XL" alt="수면의 과학" class="w-full h-full" style="object-fit: contain;">
+          </div>
+          <div class="ml-3">
+            <h4 class="font-medium text-sm">간헐적 몰입</h4>
+            <p class="text-xs text-gray-500">‘최고의 나’를 일깨우는 에너지 몰입 혁명!</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Social -->
+    <div>
+      <h3 class="text-lg font-bold mb-3">소셜 미디어</h3>
+      <div class="flex flex-col space-y-3">
+        <a href="#" class="flex items-center p-3 bg-red-50 rounded-lg hover:bg-red-100 transition-colors cursor-pointer"><i class="ri-youtube-fill ri-lg text-red-600"></i><span class="ml-2 text-sm">유튜브 채널</span></a>
+        <a href="#" class="flex items-center p-3 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors cursor-pointer"><i class="ri-instagram-fill ri-lg text-blue-600"></i><span class="ml-2 text-sm">인스타그램</span></a>
+        <a href="#" class="flex items-center p-3 bg-green-50 rounded-lg hover:bg-green-100 transition-colors cursor-pointer"><i class="ri-kakao-talk-fill ri-lg text-yellow-500"></i><span class="ml-2 text-sm">카카오 채널</span></a>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<!-- Tab Bar -->
+<footer class="fixed bottom-0 w-full bg-white border-t border-gray-200 shadow-lg z-40">
+  <div class="grid grid-cols-3 h-16">
+   
+    <a href="#" class="flex flex-col items-center justify-center text-gray-500 sidebar-toggle"><i class="ri-book-open-line"></i><span class="text-xs">요약본 신청</span></a>
+    <a href="https://product.kyobobook.co.kr/detail/S000216175186" class="flex flex-col items-center justify-center text-gray-500"><i class="ri-shopping-cart-line"></i><span class="text-xs">장바구니</span></a>
+    <a href="https://youtube.com/booktuber" class="flex flex-col items-center justify-center text-gray-500">
+      <div class="w-6 h-6 flex items-center justify-center"><i class="ri-youtube-fill"></i></div>
+      <span class="text-xs mt-1">책추남 TV</span>
+
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  const sidebar=document.querySelector('.sidebar');
+  /* 모든 sidebar-toggle 요소(네비 햄버거 버튼 + 요약본 아이콘)에서 사이드바 토글 */
+  document.querySelectorAll('.sidebar-toggle').forEach(btn=>{
+    btn.addEventListener('click',e=>{
+      e.preventDefault();
+      sidebar.classList.toggle('closed');
+      sidebar.classList.toggle('open');
+    });
+  });
+  const moreBtn=document.getElementById('moreBtn');
+  const moreContent=document.getElementById('moreContent');
+  moreBtn.addEventListener('click',()=>{
+    moreContent.classList.toggle('open');
+    moreBtn.innerHTML=moreContent.classList.contains('open')?
+      '접기 <i class="ri-arrow-up-s-line"></i>':
+      '더 알아보기 <i class="ri-arrow-down-s-line"></i>';
+  });
+});
+</script>
+<style>
+  #footer-energy {
+    --e-bg:#000;
+    --e-text:#F4F4F4;
+    --e-accent:#B6191F;
+    --e-sub:#9CA3AF;
+    background:var(--e-bg);color:var(--e-text);font-family:'Noto Sans KR',sans-serif;margin-top:4rem;
+  }
+  #footer-energy a {color:var(--e-text);transition:color .25s;}
+  #footer-energy a:hover {color:var(--e-accent);}
+  .footer-flexbox {
+    max-width:1280px;
+    margin-left:0;
+    margin-right:300px;
+    padding:3.5rem 1.25rem 2.5rem;
+    display:grid;
+    grid-template-columns:repeat(4,1fr); /* 기본: 4단 */
+    grid-template-areas:
+      "logo quick resource .";
+    gap:3rem;
+    align-items:flex-start;
+    justify-content:flex-start;
+  }
+  .footer-col { min-width:0; display:flex; flex-direction:column; align-items:flex-start; text-align:left;}
+  .logo-col    { grid-area: logo; }
+  .quick-col   { grid-area: quick; }
+  .resource-col{ grid-area: resource; }
+  /* 로고 강제 왼쪽 (항상 1번칸에) */
+  .footer-logo {margin-bottom:1.1rem;}
+  .footer-title {font-size:1rem;font-weight:700;margin-bottom:1rem;color:#fff}
+  .footer-linklist {list-style:none;display:flex;flex-direction:column;gap:.8rem;margin:0;padding:0;}
+  .footer-linkitem {font-size:.92rem}
+  .footer-slogan {margin-top:0.5rem;font-size:.97rem;line-height:1.6;}
+  .footer-sns-row {display:flex;gap:.7rem;margin-top:1.1rem;}
+  .footer-sns-link {width:42px;height:42px;display:flex;align-items:center;justify-content:center;border:1.5px solid var(--e-accent);border-radius:50%;transition:all .25s;}
+  .footer-sns-link:hover {background:var(--e-accent);border-color:var(--e-text);}
+  .footer-sns-link i {font-size:1.25rem;}
+  .footer-line {height:1px;width:100%;background:rgba(255,255,255,.1);margin:2.8rem 0 1.6rem}
+  .footer-copy {text-align:center;font-size:.8rem;color:var(--e-sub);padding-bottom:2.2rem;}
+  /* 1200px 이하: 2단, 로고 1번, quick 2번, resource 1행 2번 */
+  @media (max-width:1200px) {
+    .footer-flexbox {
+      grid-template-columns:1fr 1fr;
+      grid-template-areas:
+        "logo quick"
+        "resource resource";
+      gap:2.2rem;
+    }
+    .logo-col    { grid-area: logo; }
+    .quick-col   { grid-area: quick; }
+    .resource-col{ grid-area: resource; }
+  }
+  /* 640px 이하: 2단 유지, 줄여서 */
+  @media (max-width:640px) {
+    .footer-flexbox {
+      grid-template-columns:1fr 1fr;
+      grid-template-areas:
+        "logo quick"
+        "resource resource";
+      gap:1.5rem;
+      margin-right:0;
+      padding:3rem 1rem 2rem;
+    }
+    .logo-col    { grid-area: logo; }
+    .quick-col   { grid-area: quick; }
+    .resource-col{ grid-area: resource; }
+  }
+  @media (max-width:370px) {
+    .footer-flexbox {padding:2rem .5rem 1.2rem;}
+  }
+</style>
+
+<section id="footer-energy">
+  <div class="footer-flexbox">
+    <!-- 브랜드 영역 (로고, 항상 왼쪽) -->
+    <div class="footer-col logo-col">
+      <div class="footer-logo"><img src="./logo1.png" alt="포지티브 에너지 로고" style="width:200px;"></div>
+      <div class="footer-slogan">회사명 : 나비스쿨출판 |<br>법인사업자번호: 355-87-08194 |<br>대표자: 조우석 |<br>
+        <a href="./policy.html">개인정보처리방침</a></div>
+    </div>
+    <!-- 바로가기 -->
+    <!-- <nav class="footer-col quick-col" aria-label="빠른 이동">
+      <span class="footer-title">바로 가기</span>
+      <ul class="footer-linklist">
+        <li class="footer-linkitem"><a href="#form_e11">무료 샘플북</a></li>
+        <li class="footer-linkitem"><a href="#top">맨 위로</a></li>
+      </ul>
+    </nav> -->
+    <!-- 자료실 -->
+  
+  </div>
+  <div class="footer-line"></div>
+  <p class="footer-copy">        
+    © 2025 포지티브 에너지. All rights reserved.</p><Br><br><Br>
+</section>
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="./js/validation-form.js"></script>
+<script src="./js/personal_f.js"></script>
+</body>
+</html>

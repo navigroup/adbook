@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Responsive Lawyer Profile Card</title>
+    <style>
+      
+
+     
+
+        /* 토글 버튼 컨테이너 */
+.toggle-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    border-radius: 30px;
+    background: #f0f0f5;
+    padding: 5px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 개별 버튼 스타일 */
+.toggle-btn {
+    background: transparent;
+    color: #666;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 활성화된 버튼 스타일 */
+.toggle-btn.active {
+    background: #6b6bff;
+    color: white;
+    box-shadow: 0 4px 10px rgba(107, 107, 255, 0.3);
+}
+
+/* 활성화된 버튼 아래 강조 효과 */
+.toggle-btn.active::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 4px;
+    background: white;
+    border-radius: 2px;
+}
+
+
+        /* .toggle-btn:hover, .toggle-btn.active {
+            background: #4f4fcf;
+        } */
+
+        /* 프로필 컨테이너 기본 스타일 */
+        .profile-container {
+            display: none; /* 처음에는 숨김 */
+            max-width: 800px;
+            width: 100%;
+            margin:0 auto;
+        }
+        
+
+        .profile-card {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            max-width: 700px;
+            width: 100%;
+            position: relative;
+            margin: 20px auto;
+            transition: all 0.3s ease-in-out;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        /* show 클래스가 추가되면 애니메이션 실행 */
+        .profile-card.show {
+            animation: fadeInCards 0.6s ease-out forwards;
+        }
+
+        @media (min-width: 600px) {
+            .profile-card {
+                flex-direction: row;
+            }
+        }
+
+        .profile-card .content {
+            padding: 24px;
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-card .content h1 {
+            font-size: 20px;
+            color: #333333;
+            margin-bottom: 12px;
+        }
+
+        .profile-card .content p {
+            font-size: 16px;
+            color: #666666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .profile-card .content .cta {
+            font-size: 14px;
+            color: #6b6bff;
+            text-decoration: none;
+            border: 1px solid #6b6bff;
+            border-radius: 8px;
+            padding: 8px 16px;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .profile-card .content .cta:hover {
+            background: #6b6bff;
+            color: #ffffff;
+        }
+
+        .profile-card .image {
+            height: 230px;
+            width: 230px;
+            background: url('./img/yang.webp') no-repeat center center;
+            background-size: contain;
+            position: absolute;
+            bottom: 0px;
+            right: -10px;
+            z-index: 2;
+        }
+
+        @media (min-width: 621px) {
+            .profile-card .image {
+                position: relative;
+                flex: 0 0 230px;
+                height: auto;
+                right:35px;
+                background-size: cover;
+                border-radius: 0;
+                box-shadow: none;
+            }
+        }
+
+        @media (max-width: 620px) {
+            .profile-card .image {
+                width: 250px;
+                height: 250px;
+                right: -25px;
+                bottom: 0px;
+            }
+
+            .profile-card .content h1 {
+                font-size: 18px;
+                margin-bottom: 8px;
+            }
+
+            .profile-card .content p {
+                font-size: 13px;
+                line-height: 1.4;
+                margin-bottom: 12px;
+            }
+        }
+
+        @media (max-width: 470px) {
+            .profile-card .image {
+                width: 170px;
+                height: 170px;
+                right: -25px;
+                bottom: 0px;
+            }
+
+            .profile-card .content h1 {
+                font-size: 18px;
+                margin-bottom: 8px;
+            }
+
+            .profile-card .content p {
+                font-size: 13px;
+                line-height: 1.4;
+                margin-bottom: 12px;
+            }
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 18px;
+            color: #6b6bff;
+            margin-bottom: 20px;
+        }
+
+        .logo span {
+            margin-left: 8px;
+        }
+
+        .highlight {
+            color: #333333;
+            font-weight: bold;
+        }
+        .pf {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh; /* 화면에 맞게 최대 높이 설정 */
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* 스크롤 가능하게 설정 */
+    scrollbar-width: none; /* Firefox에서 스크롤바 숨기기 */
+    -ms-overflow-style: none; /* IE 및 Edge에서 스크롤바 숨기기 */
+}
+
+/* 크롬 및 사파리에서 스크롤바 숨기기 */
+.pf::-webkit-scrollbar {
+    display: none;
+}
+
+        .pf.fade-in {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .pf .pf-header {
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .pf .pf-header h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin:0;
+        }
+
+        .pf .pf-header p {
+            font-size: 14px;
+            color: #666;
+            margin:0;
+        }
+
+        .pf .pf-content {
+            display: flex;
+            flex-direction: row;
+            padding: 20px;
+        }
+
+        .pf .pf-image {
+            flex: 1;
+            background: url('https://yklawfirm.co.kr/upload_file/thumbnail_202405131645561.png') no-repeat center center;
+            background-size: contain;
+            border-radius: 12px;
+            margin-right: 20px;
+            display: block;
+        }
+
+        .pf .pf-info {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 30px;
+        }
+
+        .pf .pf-info h3 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-: 15px 0 10px;
+        }
+
+        .pf .pf-info p, .pf .pf-info ul {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+            padding-left:0;
+            margin:0;
+            
+        }
+
+        .pf .pf-info ul li {
+            margin-left: 20px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: transparent;
+            color: #333;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .close-btn:hover {
+            color: #ff4d4f;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .overlay.fade-in {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .pf .pf-mobile{
+                display:none;
+            }
+
+        @media (max-width: 768px) {
+
+            .pf .pf-mobile{
+                display:block;
+            }
+          
+            .pf .pf-content {
+                flex-direction: column;
+            }
+
+            .pf-image {
+                margin: 0 auto 20px;
+                width: 100%;
+                height: 250px;
+                display: block; 
+                background-size: cover;
+            }
+
+            .pf .pf-info {
+                padding-left: 0;
+            }
+
+        }
+
+     
+  /* 새로운 fade-in 효과 (순차적으로 나타나기) */
+.fade-in-out {
+    display: block !important;
+    opacity: 0;
+    transform: scale(0.95);
+    animation: fadeInScale 0.6s ease-out forwards;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* 개별 프로필 카드 애니메이션 (순차적 등장) */
+.profile-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInCards 0.6s ease-out forwards;
+}
+
+
+@keyframes fadeInCards {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
+
+
+</head>
+<body>
+
+<!-- 개인회생 vs 개인파산 선택 버튼 -->
+    <div class="toggle-buttons">
+        <button class="toggle-btn active" data-target="rehab">개인회생</button>
+        <button class="toggle-btn" data-target="bankruptcy">개인파산</button>
+    </div>
+
+    <!-- 개인회생 프로필 컨테이너 -->
+    <div class="profile-container fade-in-out" id="rehab">
+    <div class="profile-card" data-target="pf1">
+        <div class="content">
+            <div class="logo">
+                <img src="icon.svg" alt="Logo" width="24" height="24">
+                <span>개인회생</span>
+            </div>
+            <h1>원금 최대 95.3% 탕감, 가능합니다</h1>
+            <p>전국 단 5% 뿐인 도산전문 변호사가 직접<br>카드, 은행, 캐피탈, 대부업체 등<br>모든 빚을 최대 <span class="highlight">1%</span>까지 줄여드립니다.</p>
+            <p>JLP 대표변호사<br>장동훈</p>
+            <a href="#" class="cta">자세히 보기</a>
+        </div>
+        <div class="image"></div>
+    </div>
+    
+
+
+
+    <div class="profile-card" data-target="pf2">
+        <div class="content">
+            <div class="logo">
+                <img src="icon.svg" alt="Logo" width="24" height="24">
+                <span>개인회생</span>
+            </div>
+            <h1>원금 최대 95.3% 탕감, 가능합니다</h1>
+            <p>전국 단 5% 뿐인 도산전문 변호사가 직접<br>카드, 은행, 캐피탈, 대부업체 등<br>모든 빚을 최대 <span class="highlight">1%</span>까지 줄여드립니다.</p>
+            <p>JLP 대표변호사<br>장동훈</p>
+            <a href="#" class="cta">자세히 보기</a>
+        </div>
+        <div class="image"></div>
+    </div>
+    
+</div> 
+
+
+ <!-- 개인회생 프로필 컨테이너 -->
+ <div class="profile-container" id="bankruptcy">
+    <div class="profile-card" data-target="pf1">
+        <div class="content">
+            <div class="logo">
+                <img src="icon.svg" alt="Logo" width="24" height="24">
+                <span>개인파산</span>
+            </div>
+            <h1>원금 최대 95.3% 탕감, 가능합니다</h1>
+            <p>전국 단 5% 뿐인 도산전문 변호사가 직접<br>카드, 은행, 캐피탈, 대부업체 등<br>모든 빚을 최대 <span class="highlight">1%</span>까지 줄여드립니다.</p>
+            <p>JLP 대표변호사<br>장동훈</p>
+            <a href="#" class="cta">자세히 보기</a>
+        </div>
+        <div class="image"></div>
+    </div>
+    
+
+
+
+    <div class="profile-card" data-target="pf2">
+        <div class="content">
+            <div class="logo">
+                <img src="icon.svg" alt="Logo" width="24" height="24">
+                <span>개인파산</span>
+            </div>
+            <h1>원금 최대 95.3% 탕감, 가능합니다</h1>
+            <p>전국 단 5% 뿐인 도산전문 변호사가 직접<br>카드, 은행, 캐피탈, 대부업체 등<br>모든 빚을 최대 <span class="highlight">1%</span>까지 줄여드립니다.</p>
+            <p>JLP 대표변호사<br>장동훈</p>
+            <a href="#" class="cta">자세히 보기</a>
+        </div>
+        <div class="image"></div>
+    </div>
+    
+</div> 
+
+
+<div class="overlay"></div>
+
+
+
+<div class="pf" id="pf1">
+    <button class="close-btn">&times;</button>
+    <div class="pf-header">
+        <h2>최인호 대표변호사</h2>
+        <p>choein@yklaw.net</p>
+    </div>
+    <div class="pf-content">
+        <div class="pf-image"></div>
+        <div class="pf-info">
+            <div style="text-align:-webkit-center;">
+            <img class="pf-mobile" src="https://yklawfirm.co.kr/upload_file/thumbnail_202405131645561.png" style="width:100%;max-width:150px;margin-bottom:20px;">
+            </div>
+            <h3>전문분야</h3>
+            <p>형사: 성범죄, 경제범죄, 부패 · 공공범죄</p>
+            <p>민사 · 행정: 저작권, 기타 민사</p>
+            <p>가사: 이혼</p>
+            <h3>약력</h3>
+            <ul>
+                <li>서울대학교 법과대학 졸업</li>
+                <li>서울대학교 법학석사</li>
+                <li>사법시험 제34회 합격</li>
+                <li>부산지방검찰청 검사(해양, 강력, 환경, 소방)</li>
+                <li>수원지방검찰청 평택지청 검사</li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="pf" id="pf2">
+    <button class="close-btn">&times;</button>
+    <div class="pf-header">
+        <h2>최지웅 대표</h2>
+        <p>wldnd1223@naver.com</p>
+    </div>
+    <div class="pf-content">
+        <div class="pf-image"></div>
+        <div class="pf-info">
+            <div style="text-align:-webkit-center;">
+            <img class="pf-mobile" src="https://yklawfirm.co.kr/upload_file/thumbnail_202405131645561.png" style="width:100%;max-width:150px;margin-bottom:20px;">
+            </div>
+            <h3>전문분야</h3>
+            <p>형사: 성범죄, 경제범죄, 부패 · 공공범죄</p>
+            <p>민사 · 행정: 저작권, 기타 민사</p>
+            <p>가사: 이혼</p>
+            <h3>약력</h3>
+            <ul>
+                <li>서울대학교 법과대학 졸업</li>
+                <li>서울대학교 법학석사</li>
+                <li>사법시험 제34회 합격</li>
+                <li>부산지방검찰청 검사(해양, 강력, 환경, 소방)</li>
+                <li>수원지방검찰청 평택지청 검사</li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $('.profile-card').on('click', function () {
+        var targetPopup = $(this).data('target'); // 클릭한 요소의 data-target 값 가져오기
+        $('.overlay, #' + targetPopup).addClass('fade-in'); // 해당하는 팝업 열기
+    });
+
+    $('.close-btn, .overlay').on('click', function () {
+        $('.overlay, .pf').removeClass('fade-in'); // 모든 팝업 닫기
+    });
+});
+
+</script>
+
+<script>
+ $(document).ready(function () {
+    $(".toggle-btn").on("click", function () {
+        var target = $(this).data("target");
+
+        // 버튼 활성화 변경
+        $(".toggle-btn").removeClass("active");
+        $(this).addClass("active");
+
+        // 기존 profile-container 숨기기
+        $(".profile-container").removeClass("fade-in-out").css("display", "none");
+
+        // 선택한 profile-container 표시 (순차 애니메이션을 위해 timeout 사용)
+        $("#" + target).css("display", "block").addClass("fade-in-out");
+
+        // 모든 profile-card 초기화 (opacity: 0, transform: translateY(20px))
+        $("#" + target).find(".profile-card").each(function (index) {
+            var card = $(this);
+            card.css({
+                "opacity": "0",
+                "transform": "translateY(20px)"
+            });
+
+            // 개별 카드 순차적으로 나타나도록 delay 적용
+            setTimeout(function () {
+                card.addClass("show");
+            }, index * 200); // 200ms 간격으로 순차적 등장
+        });
+    });
+});
+
+</script>
+
+  
+</body>
+</html>
