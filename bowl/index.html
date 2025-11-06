@@ -98,7 +98,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:#FAFAFA;position:relative}
 }
 /* ==================== DOTCOM-STYLE ==================== */
 nav::before{
-  content:"📘 뉴욕타임즈 베스트 셀러!";
+  content:"📘 유튜버 책추남TV 강력 추천 도서";
   position:fixed;top:0;left:0;width:100%;
   background:#2aa9b9;color:#fff;font-weight:700;font-size:.85rem;
   line-height:1.75rem;text-align:center;z-index:45;
@@ -187,6 +187,13 @@ nav{top:1.75rem!important}
   </div>
 </nav>
 
+
+
+<div class="flex flex-col md:flex-row mt-14">
+  <!-- ============ MAIN ============ -->
+  <main class="content-container flex-1 p-4 pb-20">
+
+
 <section id="saitoHitoriBowl" aria-label="사이토 히토리 ‘그릇’ 포스터">
   <style>
     /* ================= Scope: #saitoHitoriBowl only ================= */
@@ -231,7 +238,7 @@ nav{top:1.75rem!important}
 
     /* ===== 카드 래퍼 ===== */
     #saitoHitoriBowl .shb-wrap{
-      position:relative; z-index:2; margin:0 300px 0 0; 
+      position:relative; z-index:2; margin: 0; 
       padding:34px 22px 40px; border-radius:var(--radius);
       
 s
@@ -316,18 +323,13 @@ s
 
     <!-- 상세 카피 -->
     <div class="shb-copy">
-      <p>12년 연속 사업·성공 분야 스테디셀러, 전국 남녀노소의 실전적 지침서.<br>비법이 아닌 <span class="st">태도와 그릇</span>을 바꾸어 <span class="em">인생의 흐름</span>을 바꾸다.</p>
+      <p>12년 연속 사업·성공 분야 스테디셀러<br>전국 남녀노소의 실전적 지침서.<br>비법이 아닌 <span class="st">태도와 그릇</span>을 바꾸어<br><span class="em">인생의 흐름</span>을 바꾸다.</p>
     </div>
 
     <p class="shb-foot">사이토 히토리가 말하는 <span class="em">마음의 크기</span>,<br>그릇이 바꾸는 인생의 흐름.</p>
   </div>
 </section>
-
-
-<div class="flex flex-col md:flex-row mt-14">
-  <!-- ============ MAIN ============ -->
-  <main class="content-container flex-1 p-4 pb-20">
-    <div style="text-align:-webkit-center"><br><br><h1 style=" font-family: 'BookkMyungjo';">사이토 히토리<br>그릇</h1><h2 style="font-family: 'SchoolSafetyFoundation-400';">내 그릇의 크기가<br> 내 운명을 결정한다! </h2></div>
+    <div style="text-align:-webkit-center"><br><br><h1 >사이토 히토리<br>⌜그릇⌟</h1><h2 style="font-family: 'SchoolSafetyFoundation-400';">내 그릇의 크기가<br> 내 운명을 결정한다! </h2></div>
 
  <div class="w-full max-w-3xl mx-auto aspect-video mb-6">
   <iframe 
@@ -346,29 +348,30 @@ s
        
 
 <!-- ▼ 더 알아보기 버튼 -->
-    <button id="moreBtn" class="mx-auto mb-6 flex items-center gap-1 text-primary font-medium hover:text-primary/80 transition-colors" style="margin-bottom:50px;margin-top:20px;">
+    <!-- <button id="moreBtn" class="mx-auto mb-6 flex items-center gap-1 text-primary font-medium hover:text-primary/80 transition-colors" style="margin-bottom:50px;margin-top:20px;">
       더 알아보기 <i class="ri-arrow-down-s-line"></i>
-    </button>
+    </button> -->
           </div>
    
     
 
     <!-- ▼ 토글될 나머지 콘텐츠 -->
-    <div id="moreContent" >
+    <div id="moreContent" class="open" >
       <!-- Introduction -->
-  <div class="bg-white rounded-lg shadow-md p-5 mb-6"> <h2 class="text-xl font-bold mb-4">내 그릇의 크기가 내 운명을 바꿉니다</h2> <p class="text-gray-700 mb-3">열심히 하는데도 성과가 들쭉날쭉하고, 좋은 기회가 와도 금세 흘러가 버린다고 느끼신 적 있나요? 사이토 히토리는 <em>“그릇의 크기”</em>가 들어오는 사람·돈·운의 양을 결정한다고 말합니다.</p> <p class="text-gray-700 mb-3">사소한 말습관과 표정, 태도가 내면의 그릇을 좁히기도 넓히기도 합니다. 불평과 짜증은 금을 내고, 미소와 감사·칭찬은 그릇의 벽을 단단하게 합니다.</p> <p class="text-gray-700 mb-4">“왜 나는 같은 자리에 머무를까?”라고 스스로에게 묻는 순간, 답은 능력이 아니라 <strong>그릇을 키우는 법</strong>에 있습니다.</p> <div class="bg-gray-50 p-4 rounded-lg mb-4"> <p class="font-medium mb-2">💡 문제는 능력이 부족해서가 아닙니다.</p> <p class="text-primary font-bold">진짜 원인은… 마음의 그릇이 좁아져 좋은 것들이 머물 공간이 없다는 것.</p> </div> <ul class="space-y-2 mb-4"> <li class="flex items-start"><span class="mr-2">✔</span><span>사소한 말에 쉽게 흔들리고 상처가 오래간다 — 그릇이 좁아 숨 쉴 틈이 없습니다.</span></li> <li class="flex items-start"><span class="mr-2">✔</span><span>칭찬보다 변명·불평이 먼저 나온다 — 그릇의 벽에 금이 갑니다.</span></li> <li class="flex items-start"><span class="mr-2">✔</span><span>받는 건 익숙하지만 먼저 베풀기는 두렵다 — 그릇이 채워질 통로가 막혀 있습니다.</span></li> <li class="flex items-start"><span class="mr-2">✔</span><span>운·사람·돈이 와도 오래 머물지 않는다 — 넘칠 뿐 머무를 바닥이 약합니다.</span></li> </ul> <p class="text-gray-700 mb-3">이 모든 것은 태도·말습관·표정에서 새어 나가는 <strong>운의 입구</strong> 문제입니다. 그릇을 키우면 흐름이 달라집니다.</p> <p class="text-gray-700 font-medium">오늘부터 시작하세요: 밝은 말 한마디, 미소 연습, 먼저 주기, 작은 정리 한 번. 작지만 확실한 행동이 당신의 그릇을 넓히고, 좋은 것들이 머무를 자리를 만듭니다.</p> </div>
+  <div class="bg-white rounded-lg shadow-md p-5 mb-6"> <h2 class="text-xl font-bold mb-4">내 그릇의 크기가 내 운명을 바꿉니다</h2> <p class="text-gray-700 mb-3">열심히 하는데도 성과가 들쭉날쭉하고,<br>좋은 기회가 와도 금세 흘러가 버린다고 느끼신 적 있나요?<br>사이토 히토리는 <em>“그릇의 크기”</em> 가 들어오는<br>사람·돈·운의 양을 결정한다고 말합니다.</p> <p class="text-gray-700 mb-3">사소한 말습관과 표정, 태도가 내면의 그릇을<br>좁히기도 넓히기도 합니다. 불평과 짜증은 금을 내고,<br>미소와 감사·칭찬은 그릇의 벽을 단단하게 합니다.</p> <p class="text-gray-700 mb-4">“왜 나는 같은 자리에 머무를까?”라고<br>스스로에게 묻는 순간, 답은 능력이 아니라<Br><strong>그릇을 키우는 법</strong>에 있습니다.</p> <div class="bg-gray-50 p-4 rounded-lg mb-4"> <p class="font-medium mb-2">💡 문제는 능력이 부족해서가 아닙니다.</p> <p class="text-primary font-bold">진짜 원인은… 마음의 그릇이 좁아져 좋은 것들이 머물 공간이 없다는 것.</p> </div> <ul class="space-y-2 mb-4"> <li class="flex items-start"><span class="mr-2">✔</span><span>사소한 말에 쉽게 흔들리고 상처가 오래간다 — 그릇이 좁아 숨 쉴 틈이 없습니다.</span></li> <li class="flex items-start"><span class="mr-2">✔</span><span>칭찬보다 변명·불평이 먼저 나온다 — 그릇의 벽에 금이 갑니다.</span></li> <li class="flex items-start"><span class="mr-2">✔</span><span>받는 건 익숙하지만 먼저 베풀기는 두렵다 — 그릇이 채워질 통로가 막혀 있습니다.</span></li> <li class="flex items-start"><span class="mr-2">✔</span><span>운·사람·돈이 와도 오래 머물지 않는다 — 넘칠 뿐 머무를 바닥이 약합니다.</span></li> </ul> <p class="text-gray-700 mb-3">이 모든 것은 태도·말습관·표정에서 새어 나가는 <strong>운의 입구</strong> 문제입니다. 그릇을 키우면 흐름이 달라집니다.</p> <p class="text-gray-700 font-medium">오늘부터 시작하세요: 밝은 말 한마디, 미소 연습, 먼저 주기, 작은 정리 한 번. 작지만 확실한 행동이 당신의 그릇을 넓히고, 좋은 것들이 머무를 자리를 만듭니다.</p> </div>
 
      <!-- Book Introduction -->
 <div class="bg-white rounded-lg shadow-md p-5 mb-6">
   <div class="flex flex-col md:flex-row gap-4">
     <div class="w-full md:w-1/3">
-      <img src="https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791193278809.jpg" alt="그릇 책 표지" class="w-full h-auto rounded-md shadow-sm">
+      <img src="https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791194114109.jpg" alt="그릇 책 표지" class="w-full h-auto rounded-md shadow-sm" style="    max-height: 400px;
+    object-fit: contain;">
     </div>
     <div class="w-full md:w-2/3">
       <h3 class="text-lg font-bold mb-2">📖 『그릇』</h3>
-      <p class="text-gray-700 mb-3">사이토 히토리와 시바무라 에미코가 전하는 ‘운의 그릇을 키우는 법’.</p>
-      <p class="text-gray-700 mb-3">인생의 흐름을 바꾸는 건 노력보다 ‘받아들일 수 있는 마음의 크기’입니다. 사람, 돈, 기회가 머무는 것은 ‘그릇의 크기’에 달려 있다고 말합니다.</p>
-      <p class="text-gray-700">사람과 말, 일상의 태도를 바꾸어 그릇을 단단히 키우는 법 — 인생의 복을 담는 힘을 배우는 시간입니다.</p>
+      <p class="text-gray-700 mb-3">사이토 히토리와 시바무라 에미코가<Br>전하는 ‘운의 그릇을 키우는 법’.</p>
+      <p class="text-gray-700 mb-3">인생의 흐름을 바꾸는 건 노력보다<br>‘받아들일 수 있는 마음의 크기’입니다.<br><Br>사람, 돈, 기회가 머무는 것은<br>‘그릇의 크기’에 달려 있다고 말합니다.</p>
+      <p class="text-gray-700">사람과 말, 일상의 태도를 바꾸어<br>그릇을 단단히 키우는 법<br>인생의 복을 담는 힘을 배우는 시간입니다.</p>
     </div>
   </div>
 </div>
@@ -410,12 +413,12 @@ s
   </main>
 
   <!-- ============ SIDEBAR (폼) ============ -->
-  <aside class="sidebar fixed top-14 right-0 h-[calc(100%-3.5rem)] w-full md:w-[300px] bg-white shadow-lg z-30 overflow-y-auto p-4 closed">
+  <aside class="sidebar fixed top-14 right-0 h-[calc(100%-3.5rem)] w-full md:w-[300px] bg-white shadow-lg z-30 overflow-y-auto p-4 closed" style="margin-top:29px;">
     <div class="bg-secondary/10 rounded-lg p-4 mb-6">
       <h3 class="text-lg font-bold mb-3 text-center">📘 무료 샘플북</h3>
       <p class="text-sm text-gray-700 mb-4 text-center">당신의 내면을 살리는 첫걸음, 지금 바로 시작하세요.</p>
       <form id="form_e11" class="space-y-4" action="" method="POST" target="hidden_iframe11" onsubmit="dll();submitted=true;">
-        <input type="hidden" name="entry.1052012929" value="메타">
+        <input type="hidden" name="entry.1052012929" value="그릇">
         <div><label class="block text-sm font-medium text-gray-700 mb-1" for="name">이름</label><input id="name" name="entry.556779716" type="text" maxlength="4" placeholder="홍길동" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-secondary"></div>
         <div><label class="block text-sm font-medium text-gray-700 mb-1" for="email">이메일 주소</label><input id="email" name="entry.181386148" type="email" placeholder="example@email.com" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-secondary"></div>
         <div><label class="block text-sm font-medium text-gray-700 mb-1" for="phone">전화번호</label><input id="phone" name="entry.947408275" type="tel" maxlength="11" placeholder="휴대폰번호" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-secondary"></div>
@@ -477,7 +480,7 @@ s
   <div class="grid grid-cols-3 h-16">
    
     <a href="#" class="flex flex-col items-center justify-center text-gray-500 sidebar-toggle"><i class="ri-book-open-line"></i><span class="text-xs">요약본 신청</span></a>
-    <a href="https://product.kyobobook.co.kr/detail/S000216175186" class="flex flex-col items-center justify-center text-gray-500"><i class="ri-shopping-cart-line"></i><span class="text-xs">장바구니</span></a>
+    <a href="https://product.kyobobook.co.kr/detail/S000218305047" class="flex flex-col items-center justify-center text-gray-500"><i class="ri-shopping-cart-line"></i><span class="text-xs">바로 구매</span></a>
     <a href="https://youtube.com/booktuber" class="flex flex-col items-center justify-center text-gray-500">
       <div class="w-6 h-6 flex items-center justify-center"><i class="ri-youtube-fill"></i></div>
       <span class="text-xs mt-1">책추남 TV</span>
