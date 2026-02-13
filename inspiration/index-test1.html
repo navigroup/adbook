@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -18,7 +19,7 @@
 <meta property="og:title" content="웨인 다이어 ‘인스피레이션’｜내 인스피레이션의 크기가 내 운명을 바꾼다">
 <meta property="og:description" content="돈과 일, 관계와 마음의 인스피레이션을 키우는 핵심 원리와 실천 체크리스트. 오늘부터 넓히는 법.">
 <meta property="og:url" content="https://navischool.co.kr/bowl/index.html">
-<meta property="og:image" content="https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791194114123.jpg">
+<meta property="og:image" content="./ins-thumb.jpg">
 
 
 <!-- Twitter -->
@@ -97,7 +98,6 @@
 }
 
 
-:where([class^="ri-"])::before { content: "\f3c2"; }
 body{font-family:'Noto Sans KR',sans-serif;background:#FAFAFA;position:relative}
 .sidebar{
   transition:transform .3s ease;
@@ -127,8 +127,8 @@ nav::before{
   line-height:2rem;text-align:center;z-index:45;
 }
 nav{top:1.75rem!important}
-.bg-primary{background:#7077ff important}
-.text-primary{color:#7077ff important}
+.bg-primary{background:#7077ff !important}
+.text-primary{color:#7077ff !important}
 .hover\:bg-primary\/90:hover{background:#0d8797!important}
 .bg-primary\/10{background:#ffffff36!important;border:2px solid #2aa8b900}
 .bg-secondary\/10{border:2px solid #385093}
@@ -148,23 +148,12 @@ nav{top:1.75rem!important}
 }
 .sidebar .bg-secondary{background:#7077ff!important}
 .sidebar .bg-secondary:hover{background:#f9be59!important}
-.fixed.bottom-0 a.text-primary{color:#7077ff important}
+.fixed.bottom-0 a.text-primary{color:#7077ff !important}
 .bg-primary\/10 h3{color:#000404}
 .bg-primary\/10 h4{color:#385093;font-weight:700}
 .star-rating{color:#FDBA12;font-size:1.25rem}
 
 /* ========== Testimonial Cards ========== */
-.testi-wrap{@apply max-w-7xl mx-auto mb-16 px-4}
-.testi-card{@apply bg-white rounded-3xl shadow-md ring-1 ring-gray-100 p-8 flex flex-col md:flex-row items-center gap-6 transition-transform}
-.testi-card:hover{transform:translateY(-4px)}
-.testi-img{@apply w-28 h-28 md:w-32 md:h-32 rounded-md object-cover flex-shrink-0}
-.testi-quote{@apply italic text-lg leading-relaxed text-gray-800 text-center md:text-left}
-.testi-author{@apply mt-4 font-extrabold text-2xl text-[#0F1A38] text-center md:text-left}
-@media(max-width:1300px){
-  .testi-card{padding:2rem 1.5rem}
-  .testi-img{width:100%;height:auto}
-  .testi-quote{margin-top:1rem}
-}
 
 /* 카드 컨테이너 – 1열(모바일) ▶︎ 2열(PC) */
 .testi-grid{
@@ -172,8 +161,8 @@ nav{top:1.75rem!important}
   grid-template-columns:1fr;
   gap:2rem;
 }
-@media(min-width:1300px){
-  .testi-grid{grid-template-columns:repeat(2,1fr)}
+@media (min-width:1300px){
+  .testi-grid{ grid-template-columns:repeat(2,1fr); }
 }
 
 /* 카드 자체 — 그라데이션+둥근 모서리+입체 그림자 */
@@ -181,27 +170,68 @@ nav{top:1.75rem!important}
   background:linear-gradient(135deg,#ffffff 0%,#f7f9fc 100%);
   border-radius:24px;
   padding:2rem;
-  display:flex;align-items:center;gap:1.5rem;
+  display:flex;
+  align-items:center;
+  gap:1.5rem;
   box-shadow:0 6px 20px rgba(0,0,0,.05);
-  transition:transform .25s ease,box-shadow .25s ease;
+  transition:transform .25s ease, box-shadow .25s ease;
 }
-.testi-card:hover{transform:translateY(-8px);box-shadow:0 12px 28px rgba(0,0,0,.08)}
-
-.testi-img{width:90px;height:90px;border-radius:12px;object-fit:cover;flex-shrink:0}
-.testi-quote{font-size:1.05rem;line-height:1.6;color:#1F2937;font-style:italic;margin-bottom:.75rem}
-.testi-author{    font-size: 0.8rem;
-    font-weight: 600;
-    color: #3d3e42;margin:0}
-
-@media(max-width:1300px){
-  .testi-card{flex-direction:column;text-align:center}
-  .testi-img{width:120px;height:120px}
-  .testi-quote{margin-top:1rem}
+.testi-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 12px 28px rgba(0,0,0,.08);
 }
+
+.testi-img{
+  width:90px;
+  height:90px;
+  border-radius:12px;
+  object-fit:cover;
+  flex-shrink:0;
+}
+
+.testi-quote{
+  font-size:1.05rem;
+  line-height:1.6;
+  color:#1F2937;
+  font-style:italic;
+  margin:0 0 .75rem; /* margin-bottom만 남기는 형태 */
+}
+
+.testi-author{
+  font-size:.8rem;
+  font-weight:600;
+  color:#3d3e42;
+  margin:0;
+}
+
+/* 1300px 미만에서 카드만 세로 정렬 */
+@media (max-width:1299px){
+  .testi-card{
+    flex-direction:column;
+    text-align:center;
+  }
+  .testi-img{ width:120px; height:120px; }
+  .testi-quote{ margin-top:1rem; }
+}
+
 </style>
+
+<style>
+  /* SIDEBAR open/close 동작을 위한 핵심 CSS */
+  aside.sidebar{
+    transition: transform .25s ease;
+    will-change: transform;
+  }
+  /* aside.sidebar.closed{
+    transform: translateX(110%);
+  } */
+
+</style>
+
 </head>
 
-<body class="bg-white text-gray-800">
+<body id="inspirationPage" class="bg-transparent text-gray-800">
+
 <!-- ================== NAV ================== -->
 <nav class="fixed w-full bg-white shadow-md z-40 h-14">
   <div class="flex items-center justify-between px-4 h-full">
@@ -212,12 +242,18 @@ nav{top:1.75rem!important}
 
 
 
+
 <div class="flex flex-col md:flex-row mt-14">
+
+
   <!-- ============ MAIN ============ -->
 <main class="content-container flex-1 p-4">
 
   
 <section id="inspirationHeroSection" aria-label="영감 히어로 섹션">
+
+  
+
   <style>
     /* ===============================
        Scope: #inspirationHeroSection ONLY
@@ -322,11 +358,19 @@ nav{top:1.75rem!important}
       flex-wrap:wrap;
     }
     #inspirationHeroSection .ih-title .accent{
-     font-size: clamp(15px, 4vw, 30px);
+      font-size:clamp(15px, 2.9vw, 24px);
+     /* font-size:30px; */
       font-weight:900;
       color:var(--accent);
       letter-spacing:-.04em;
     }
+
+
+
+
+
+
+
     #inspirationHeroSection .ih-title .spark{
       font-size:clamp(34px, 5.4vw, 44px);
       line-height:1;
@@ -414,6 +458,7 @@ nav{top:1.75rem!important}
     }
 
  </style>
+
   <div class="ih-wrap">
     <!-- floating book -->
     <div class="ih-bookStage" aria-hidden="true">
@@ -1589,6 +1634,7 @@ nav{top:1.75rem!important}
   </div>
 </section>
 
+
 <section id="inspirationBenefitsSection" aria-label="영감받는 삶의 변화 섹션">
   <style>
     /* ===============================
@@ -2373,50 +2419,7 @@ nav{top:1.75rem!important}
   
 </section>
 
-<section id="inspirationDirectionSection">
-  <div class="inner-wrapper">
-    <div class="section-header">
-      <div class="brand-logo">🧭</div>
-      <h2>인스피레이션은 당신에게<br>
-        <span class="highlight">삶의 방향을 선물합니다</span>
-      </h2>
-    </div>
 
-    <div class="benefit-grid">
-      <article class="benefit-card">
-        <div class="icon-circle">✓</div>
-        <h3>내면의 평온</h3>
-        <p>사소한 일에도 흔들리지 않는 중심을 잡습니다.<br>
-          외부의 평가나 소음에서 벗어나<br>
-          영혼의 중심을 찾는 법을 배웁니다.</p>
-      </article>
-
-      <article class="benefit-card">
-        <div class="icon-circle">✓</div>
-        <h3>자연스러운 성취</h3>
-        <p>억지로 짜내는 노력이 아닌 흐름을 따르는 삶.<br>
-          자신을 채찍질하는 대신,<br>
-          영감이 당신을 이끌게 하는 법을 익힙니다.</p>
-      </article>
-
-      <article class="benefit-card">
-        <div class="icon-circle">✓</div>
-        <h3>잠재력 발견</h3>
-        <p>나도 몰랐던 내 안의 위대한 가능성을 깨웁니다.<br>
-          잠자고 있던 천재성과 재능이 깨어나<br>
-          꿈꾸던 것보다 더 큰 존재가 됩니다.</p>
-      </article>
-
-      <article class="benefit-card">
-        <div class="icon-circle">✓</div>
-        <h3>운명적 타이밍</h3>
-        <p>삶의 모든 순간이 의미 있게 연결됩니다.<br>
-          내면의 영감과 정렬될 때,<br>
-          마법 같은 우연의 일치를 일상에서 목격합니다.</p>
-      </article>
-    </div>
-  </div>
-</section>
 
 <style>
   /* ===============================
@@ -3290,36 +3293,8 @@ nav{top:1.75rem!important}
 
 </section>
 
+</main>
 
-
-
-
-      <!-- ▼ 더 알아보기 버튼 -->
-    <!-- <button id="moreBtn" class="mx-auto mb-6 flex items-center gap-1 text-primary font-medium hover:text-primary/80 transition-colors" style="margin-bottom:50px;margin-top:20px;">
-      더 알아보기 <i class="ri-arrow-down-s-line"></i>
-    </button> -->
-          </div>
-     <!-- Book Introduction -->
-      </div>
-      <br>
-    </div>
-  </div>
-    <!-- ▼ 토글될 나머지 콘텐츠 -->
-    <div id="moreContent" class="open" >
-      <!-- Introduction -->
-
-
-
-
-
-
-
-   
-
-  </main>
-</section>
-
-    
 
   <!-- ============ SIDEBAR (폼) ============ -->
   <aside class="sidebar fixed top-14 right-0 h-[calc(100%-3.5rem)] w-full md:w-[300px] bg-white shadow-lg z-30 overflow-y-auto p-4 closed" style="margin-top:29px;">
@@ -3383,7 +3358,7 @@ nav{top:1.75rem!important}
        rel="noopener noreferrer"
        class="flex items-center p-3 bg-green-50 rounded-lg hover:bg-red-100 transition-colors cursor-pointer">
       <div class="w-6 h-6 flex items-center justify-center bg-green-500 text-white text-xs font-bold rounded">
-  N
+
 </div>
 
       <span class="ml-2 text-sm">네이버 카페</span>
@@ -3407,6 +3382,9 @@ nav{top:1.75rem!important}
       <span class="ml-2 text-sm">카카오 채널</span>
     </a>
 
+    <div style="height:100px;"></div>
+   
+
   </div>
 </div>
 
@@ -3422,10 +3400,10 @@ nav{top:1.75rem!important}
    rel="noopener noreferrer"
    class="flex flex-col items-center justify-center text-gray-500">
   <i class="ri-user-star-line"></i>
-  <span class="text-xs">웨인 다이어</span>
-</a>
+  <span class="text-xs">웨인 다이어</span></a>
 
     <a href="https://search.shopping.naver.com/book/catalog/58785061777?query=%EC%9D%B8%EC%8A%A4%ED%94%BC%EB%A0%88%EC%9D%B4%EC%85%98&NaPm=ct%3Dmlhj61p4%7Cci%3D6006b827d0276c2f04c48a1baab4ac408a0496a6%7Ctr%3Dboksl%7Csn%3D95694%7Chk%3Da05269914980b1708a02f1c7dc06a03b69521816" class="flex flex-col items-center justify-center text-gray-500"><i class="ri-shopping-cart-line"></i><span class="text-xs">바로 구매</span></a>
+
     <a href="https://youtube.com/booktuber" class="flex flex-col items-center justify-center text-gray-500">
       <div class="w-6 h-6 flex items-center justify-center"><i class="ri-youtube-fill"></i></div>
       <span class="text-xs mt-1">책추남 TV</span>
@@ -3455,8 +3433,8 @@ document.addEventListener('DOMContentLoaded',()=>{
   });
 });
 </script>
-<style>
 
+<style>
   #footer-energy {
     --e-bg:#f8fafd;
     --e-text:#030000;
@@ -3552,10 +3530,43 @@ document.addEventListener('DOMContentLoaded',()=>{
     © 2026 인스피레이션. All rights reserved.</p><Br><br><Br>
 </section>
 
-
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="./js/validation-form.js"></script>
 <script src="./js/personal_f.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const openBtn = document.getElementById('snOpenSummaryForm');
+  const sidebar = document.querySelector('aside.sidebar');
+  const form = document.getElementById('form_e11');
+
+  if (!openBtn || !sidebar) return;
+
+  function openSidebarAndFocus() {
+    // 1) 무조건 열기 (토글 X)
+    sidebar.classList.remove('closed');
+    sidebar.classList.add('open');
+    sidebar.setAttribute('aria-hidden', 'false');
+
+    // 2) 사이드바 내부에서 폼 위치로 스크롤
+    setTimeout(() => {
+      if (form) {
+        // aside가 overflow-y-auto라서 "aside 내부 스크롤"을 내려줘야 함
+        const top = form.offsetTop - 12;
+        sidebar.scrollTo({ top, behavior: 'smooth' });
+
+        // 3) 첫 input에 포커스
+        const firstInput = form.querySelector('input, textarea, select');
+        if (firstInput) firstInput.focus({ preventScroll: true });
+      }
+    }, 50);
+  }
+
+  openBtn.addEventListener('click', (e) => {
+    e.preventDefault();      // a태그 기본 스크롤 동작 막기
+    openSidebarAndFocus();
+  });
+});
+</script>
+
 </body>
 </html>
