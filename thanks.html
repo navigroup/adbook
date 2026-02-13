@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>인스피레이션</title>
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: '#6366F1',
+          secondary: '#F59E0B'
+        },
+        borderRadius: {
+          'none': '0px',
+          'sm': '4px',
+          DEFAULT: '8px',
+          'md': '12px',
+          'lg': '16px',
+          'xl': '20px',
+          '2xl': '24px',
+          '3xl': '32px',
+          'full': '9999px',
+          'button': '8px'
+        }
+      }
+    }
+  }
+</script>
+
+<!-- Fonts & Icons -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<script src="./js/jquery.min.js"></script>
+<script src="./js/jquery-migrate.min.js"></script>   
+
+
+<!-- Style -->
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  position: relative;
+  background-image:url("./bg-whi.png");
+    background-repeat:repeat-y
+    background-size:720px auto; /* 패턴 크기(원하는 느낌으로 조절) */
+    background-position:0 0;
+.sidebar { transition: transform 0.3s ease; }
+.sidebar-toggle { z-index: 50; }
+.sidebar.open  { transform: translateX(0);     }
+.sidebar.closed{ transform: translateX(100%); }
+@media (min-width: 768px) {
+  .content-container { margin-right: 300px; }
+  .sidebar.closed   { transform: translateX(0); }
+}
+
+/* ▼ 추가 : 더 알아보기 토글 애니메이션 */
+#moreContent       { overflow:hidden; max-height:0; transition:max-height .6s ease; }
+#moreContent.open  { max-height:10000px; } /* 충분히 큰 값 */
+
+  /* ─────────── 다운로드 버튼 ─────────── */
+  .download-btn{
+      display:inline-block;
+      margin-top:32px;
+      padding:16px 48px;
+      font-size:18px;
+      font-weight:700;
+      letter-spacing:-0.5px;
+      color:#ffecc4;                              /* 부드러운 골드 텍스트 */
+      background:linear-gradient(135deg,#101834 0%,#263c7a 100%); /* 딥 네이비→인디고 */
+      border:1px solid rgba(255,236,196,.25);     /* 옅은 골드 라인 */
+      border-radius:12px;
+      text-decoration:none;
+      box-shadow:
+        0 6px 15px rgba(0,0,0,.35),              /* 기본 그림자 */
+        inset 0 0 0 1px rgba(255,255,255,.04);    /* 은은한 인셋 */
+      transition:all .25s ease;
+    }
+    .download-btn:hover{
+      transform:translateY(-4px) scale(1.03);
+      background:linear-gradient(135deg,#263c7a 0%,#101834 100%); /* 색상 반전 */
+      box-shadow:
+        0 10px 22px rgba(0,0,0,.45),
+        0 0 8px 2px rgba(255,223,149,.5);        /* 골드 글로우 */
+    }
+    /* 아이콘 추가 (선택) */
+    .download-btn::before{
+      /* content:"📥"; */
+      margin-right:8px;
+    }
+
+</style>
+</head>
+<body class="bg-white text-gray-800">
+
+<!-- Nav Bar -->
+<nav class="fixed top-0 w-full bg-white shadow-md z-40 h-14">
+  <div class="flex items-center justify-between px-4 h-full">
+    <div class="flex items-center">
+      <a href="./index.html"><span class="font-['Pacifico'] text-primary text-xl"><img src="./logo1.png" style="width:100%;max-width:120px ;"></span></a>
+    </div>
+    <div class="flex items-center space-x-2">
+      <button class="sidebar-toggle md:hidden w-10 h-10 flex items-center justify-center">
+        <i class="ri-menu-line ri-lg"></i>
+      </button>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="flex flex-col md:flex-row mt-14">
+  <!-- Main Content -->
+  <div class="content-container flex-1 p-4 pb-20">
+    
+    <!-- Notion Section -->
+
+    <div class="relative rounded-lg overflow-hidden mb-6 shadow-md">
+      <img src="./웨인다이어 BLUE.jpg" alt="인스피레이션 노션 요약본 배너" class="w-full h-48 object-cover">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-4">
+        <h1 class="text-white text-2xl font-bold">인스피레이션 요약본 보러가기</h1>
+        <p class="text-white text-sm">⏬아래 영상을 클릭해 주세요.</p>
+      </div>
+    </div>
+
+    
+<section id="inspiSummaryVideo" aria-label="인스피레이션 요약본 바로가기">
+  <style>
+    /* ===== Scope: #inspiSummaryVideo ONLY ===== */
+    #inspiSummaryVideo{
+      --brand-900:#394B83;
+      --brand-700:#4A619D;
+      --shadow:0 18px 55px rgba(16,18,28,.14);
+      --radius:18px;
+
+      font-family:Pretendard,"Noto Sans KR",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+      padding:18px 14px 28px;
+      text-align:center;
+      background:#fff;
+    }
+    #inspiSummaryVideo *{box-sizing:border-box;}
+
+    #inspiSummaryVideo .wrap{
+      max-width:1100px;
+      margin:0 auto;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:16px;
+    }
+
+    /* ✅ PC에서 더 커보이게: 폭 clamp + 최대폭 확장 */
+    #inspiSummaryVideo .video-link{
+      display:block;
+      width:clamp(320px, 48vw, 860px);
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(57,75,131,.16);
+      text-decoration:none;
+      background:#000;
+    }
+
+    /* ✅ 세로 영상인데 좌우 검정 여백 없애기 = cover로 꽉 채우고 크롭 */
+    #inspiSummaryVideo .video-frame{
+      position:relative;
+      width:100%;
+      aspect-ratio: 4 / 3; /* PC에서 보기 좋은 가로 프레임(원하면 4/3도 가능) */
+      background:#000;
+      overflow:hidden;
+    }
+
+    #inspiSummaryVideo video{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:cover;       /* ✅ 핵심: 여백 없이 꽉 채우기 */
+      object-position:center; /* 중앙 기준 크롭 */
+    }
+
+    #inspiSummaryVideo .download-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 20px;
+      border-radius:14px;
+      background:linear-gradient(180deg, var(--brand-700), var(--brand-900));
+      color:#fff;
+      font-weight:900;
+      letter-spacing:-.02em;
+      text-decoration:none;
+      box-shadow:0 14px 30px rgba(16,18,28,.18);
+      border:1px solid rgba(255,255,255,.18);
+      min-width:min(360px, 92vw);
+    }
+    #inspiSummaryVideo .download-btn:active{transform:translateY(1px);}
+
+    /* 모바일에서는 세로 감성 살리기(원하면 유지/삭제 가능) */
+    @media (max-width: 520px){
+      #inspiSummaryVideo .video-link{
+        width:min(92vw, 380px);
+        border-radius:18px;
+      }
+      #inspiSummaryVideo .video-frame{
+        aspect-ratio: 9 / 16; /* 모바일은 세로로 보여주기 */
+      }
+    }
+  </style>
+
+<section id="inspiSummaryVideo" aria-label="인스피레이션 요약본 바로가기">
+  <style>
+    #inspiSummaryVideo{
+      --brand-900:#394B83;
+      --brand-700:#4A619D;
+      --shadow:0 18px 55px rgba(16,18,28,.14);
+      font-family:Pretendard,"Noto Sans KR",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+      padding:18px 14px 28px;
+      text-align:center;
+      background:#ffffff00;
+    }
+    #inspiSummaryVideo *{box-sizing:border-box;}
+
+    #inspiSummaryVideo .wrap{
+      max-width:1100px;
+      margin:0 auto;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:16px;
+    }
+
+    /* ✅ PC에서도 세로로 크게: 여백 0% */
+    #inspiSummaryVideo .video-link{
+      display:block;
+      width:clamp(320px, 34vw, 520px); /* PC에서 자동으로 크게 */
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(57,75,131,.16);
+      text-decoration:none;
+      background:#000;
+    }
+
+    /* ✅ 핵심: 9:16 (세로) */
+    #inspiSummaryVideo .video-frame{
+      position:relative;
+      width:100%;
+      aspect-ratio: 9 / 16;
+      overflow:hidden;
+      background:#000;
+    }
+
+    #inspiSummaryVideo video{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:cover;
+      object-position:center;
+    }
+
+    #inspiSummaryVideo .download-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:14px 20px;
+      border-radius:14px;
+      background:linear-gradient(180deg, var(--brand-700), var(--brand-900));
+      color:#fff;
+      font-weight:900;
+      letter-spacing:-.02em;
+      text-decoration:none;
+      box-shadow:0 14px 30px rgba(16,18,28,.18);
+      border:1px solid rgba(255,255,255,.18);
+      min-width:min(360px, 92vw);
+    }
+  </style>
+
+  <div class="wrap">
+    <a class="video-link"
+      href="https://navimba.notion.site/zip-2f5a562c4be280308544da78586a59be?source=copy_link"
+      target="_blank" rel="noopener" aria-label="인스피레이션 노션 요약본 클릭">
+      <div class="video-frame" aria-label="intro video">
+        <video src="./5. insp slid.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      </div>
+    </a>
+
+    <a class="download-btn"
+      href="https://navimba.notion.site/zip-2f5a562c4be280308544da78586a59be?source=copy_link"
+      target="_blank" rel="noopener">
+      인스피레이션 요약본 보러가기
+    </a>
+  </div>
+</section>
+
+</section>
+
+    <!-- YouTube Video -->
+    <!-- <div class="w-full max-w-3xl mx-auto aspect-video mb-6">
+      <iframe class="w-full h-full"
+        src="https://www.youtube.com/embed/-1pnFBeZoGs?si=SUwIsjjwyXXfXaO8"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+    </div> -->
+
+    <!-- Expert Reviews -->
+    <!-- <div class="bg-white rounded-lg shadow-md p-5 mb-6">
+        <h3 class="text-lg font-bold mb-4">🌍 세계적 명의들의 추천사 </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <div class="bg-gray-50 p-3 rounded-lg">
+            <p class="text-gray-700 italic mb-2">"정말 재미있고 실용적인 책이다. 실제로 써먹을 수 있는 효과적이고 귀중한 팁이 가득하다.
+  
+            주디스 올로프는 우리를 신비로운 에너지의 세계로 안내하는 진정한 선각자다. 매사에 짜증이 나거나, 이유 없이 조급해하는 사람, 모든 일에 자신이 없고 사는 게 막연히 두려운 사람이라면 반드시 읽어야 한다."</p>
+            <p class="text-sm text-gray-500">- 🧠 디팩 초프라(Deepak Chopra 의학박사, 심신상관의학 창시자, 타임지 선정 ‘100년간 가장 영향력 있는 인물 100인’ 베스트셀러 『바라는 대로 이루어진다』의 저자)</p>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-lg">
+            <p class="text-gray-700 italic mb-2">"당신을 둘러싼 모든 것을 에너지의 관점에서 보라. 직관과 에너지 치유법의 대가, 주디스 올로프는 당신이 가진 좋은 에너지를 끌어내고, 삶을 갉아먹는 에너지 뱀파이어에 대항하는 방법을 알려준다. 끊임없이 누군가에게 활력을 빼앗겨 고갈되고 있다면, 이 책에 나온 열 가지 처방으로 그 악순환의 고리를 끊고 내면의 평화를 얻기 바란다. 강력하게 추천하고 싶은 책이다!"</p>
+            <p class="text-sm text-gray-500">- 🧘‍♂️ 딘 오니시(Dean Ornish 의학박사, 샌프란시스코·샌디에이고 의과대학 교수 예방의학연구소 설립자, 베스트셀러 『Undo It』 저자)</p>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-lg">
+            <p class="text-gray-700 italic mb-2">"현대의학에 에너지를 결합한 새롭고 독보적인 책이다. 과로와 스트레스, 엇나가는 대인관계로 완전히 탈진해버린 사람들에게 중요한 구급약이 될 것이다. 언제나 에너제틱하고 유쾌한 사람, 보기만 해도 기분이 좋아지는 사람들의 비밀이 여기에 다 있다."</p>
+            <p class="text-sm text-gray-500">- 💬 래리 도시(Larry Dossey 의학박사, 통합의학의 선구자 베스트셀러 『Healing Words』 저자)</p>
+          </div>
+        </div>
+        <p class="text-gray-700 mb-2">『포지티브 에너지 파워』는 CNN, CBS, NPR, 오프라 매거진 등 주요 매체와 USA투데이, 리더스 다이제스트에서 극찬을 받았습니다.</p>
+      </div>
+
+  
+  </div> -->
+
+  <!-- Sidebar -->
+  <div class="sidebar fixed top-14 right-0 h-[calc(100%-3.5rem)] w-full md:w-[300px] bg-white shadow-lg z-30 overflow-y-auto p-4 closed">
+    <!-- Free Sample Book Form -->
+    <!-- <div class="bg-secondary/10 rounded-lg p-4 mb-6">
+      <h3 class="text-lg font-bold mb-3 text-center">📘 무료 샘플북</h3>
+      <p class="text-sm text-gray-700 mb-4 text-center">당신의 내면을 살리는 첫걸음, 지금 바로 시작하세요.</p>
+      <form id="sampleBookForm" class="space-y-4" action=""
+       method="POST" target="hidden_iframe11" onsubmit="dll(); submitted=true;">
+       <input type="hidden" name="entry.1052012929" id="from" value="메타" />
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-700 mb-1">이름</label>
+          <input type="text" id="name" name="entry.556779716" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-secondary" placeholder="홍길동" maxlength="4" >
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700 mb-1">이메일 주소</label>
+          <input type="email" id="email" name="entry.181386148" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-secondary" placeholder="example@email.com" >
+        </div>
+        <div>
+          <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">전화번호</label>
+          <input type="tel" id="phone" name="entry.947408275" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline:none focus:ring-1 focus:ring-secondary" placeholder="휴대폰번호" maxlength="11">
+        </div>
+        <label>
+          <input type="checkbox" checked id="agree11" value="front-end" /> 개인정보동의
+        </label>    
+      
+
+        <input type="submit" class="w-full bg-secondary text-white py-3 px-4 rounded-button font-medium shadow-md hover:bg-secondary/90 transition-colors cursor-pointer" value="샘플북 받기" id="send_message" disabled>
+        <iframe name="hidden_iframe11" id="hidden_iframe11" style="display:none;" onload=""></iframe>
+        <script>var submitted = false;</script>
+      </form>
+    </div> -->
+
+    <!-- Related Books -->
+    <div class="mb-6">
+      <h3 class="text-lg font-bold mb-3">관련 도서</h3>
+      <div class="space-y-4">
+        <a href="https://product.kyobobook.co.kr/detail/S000214874666" class="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer">
+          <div class="w-16 h-16 flex-shrink-0 overflow-hidden rounded">
+            <img src="https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791194114055.jpg" alt="명상의 힘" class="w-full h-full" style="object-fit: contain;">
+          </div>
+          <div class="ml-3">
+            <h4 class="font-medium text-sm">운 좋은 놈이 성공한다 </h4>
+            <p class="text-xs text-gray-500">경제불황 30년 동안 승승장구한 1% 부자의 사이토 히토리의 성공비결</p>
+          </div>
+        </a>
+       <a href="https://product.kyobobook.co.kr/detail/S000211745020" class="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer">
+          <div class="w-16 h-16 flex-shrink-0 overflow-hidden rounded">
+            <img src="https://image.yes24.com/goods/124226256/XL" alt="바라는 대로 이루어진다다" class="w-full h-full" style="object-fit: contain;">
+          </div>
+          <div class="ml-3">
+            <h4 class="font-medium text-sm">바라는 대로 이루어진다</h4>
+            <p class="text-xs text-gray-500">세계 영향력 1위 의학 박사 디팩 초프라의 고품격 자기 계발서! </p>
+          </div>
+        </a>
+        <a href="https://product.kyobobook.co.kr/detail/S000213674290" class="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer">
+          <div class="w-16 h-16 flex-shrink-0 overflow-hidden rounded">
+            <img src="https://image.yes24.com/goods/128262716/XL" alt="수면의 과학" class="w-full h-full" style="object-fit: contain;">
+          </div>
+          <div class="ml-3">
+            <h4 class="font-medium text-sm">간헐적 몰입</h4>
+            <p class="text-xs text-gray-500">‘최고의 나’를 일깨우는 에너지 몰입 혁명!</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Social Media -->
+    <div>
+      <h3 class="text-lg font-bold mb-3">소셜 미디어</h3>
+      <div class="flex flex-col space-y-3">
+        <a href="https://www.youtube.com/channel/UC4tMubdhTUlnWLUr-BzjeOw" class="flex items-center p-3 bg-red-50 rounded-lg hover:bg-red-100 transition-colors cursor-pointer">
+          <div class="w-8 h-8 flex items-center justify-center">
+            <i class="ri-youtube-fill ri-lg text-red-600"></i>
+          </div>
+          <span class="ml-2 text-sm">유튜브 채널</span>
+        </a>
+        <a href="https://www.instagram.com/lucky_booktuber/" class="flex items-center p-3 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors cursor-pointer">
+          <div class="w-8 h-8 flex items-center justify-center">
+            <i class="ri-instagram-fill ri-lg text-blue-600"></i>
+          </div>
+          <span class="ml-2 text-sm">인스타그램</span>
+        </a>
+        <a href="#" class="flex items-center p-3 bg-green-50 rounded-lg hover:bg-green-100 transition-colors cursor-pointer">
+          <div class="w-8 h-8 flex items-center justify-center">
+            <i class="ri-kakao-talk-fill ri-lg text-yellow-500"></i>
+          </div>
+          <span class="ml-2 text-sm">카카오 채널</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Tab Bar -->
+<footer class="fixed bottom-0 w-full bg-white border-t border-gray-200 shadow-lg z-40">
+  <div class="grid grid-cols-3 h-16">
+   
+   <a href="https://www.drwaynedyer.com/" 
+   target="_blank" 
+   rel="noopener noreferrer"
+   class="flex flex-col items-center justify-center text-gray-500">
+  <i class="ri-user-star-line"></i>
+  <span class="text-xs">웨인 다이어</span>
+</a>
+
+    <a href="https://search.shopping.naver.com/book/catalog/58785061777?query=%EC%9D%B8%EC%8A%A4%ED%94%BC%EB%A0%88%EC%9D%B4%EC%85%98&NaPm=ct%3Dmlhj61p4%7Cci%3D6006b827d0276c2f04c48a1baab4ac408a0496a6%7Ctr%3Dboksl%7Csn%3D95694%7Chk%3Da05269914980b1708a02f1c7dc06a03b69521816" class="flex flex-col items-center justify-center text-gray-500"><i class="ri-shopping-cart-line"></i><span class="text-xs">바로 구매</span></a>
+    <a href="https://youtube.com/booktuber" class="flex flex-col items-center justify-center text-gray-500">
+      <div class="w-6 h-6 flex items-center justify-center"><i class="ri-youtube-fill"></i></div>
+      <span class="text-xs mt-1">책추남 TV</span>
+
+  </div>
+</footer>
+
+
+
+
+
+<!-- Script -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  /* 기존 사이드바 & 모달 */
+  const sidebar       = document.querySelector('.sidebar');
+  const sidebarToggle = document.querySelector('.sidebar-toggle');
+  sidebarToggle.addEventListener('click', () => {
+    sidebar.classList.toggle('closed');
+    sidebar.classList.toggle('open');
+  });
+
+  // const sampleBookForm = document.getElementById('sampleBookForm');
+  // const successModal   = document.getElementById('successModal');
+  // const closeModal     = document.getElementById('closeModal');
+  // if (sampleBookForm){
+  //   sampleBookForm.addEventListener('submit', e => { e.preventDefault(); successModal.classList.remove('hidden'); });
+  // }
+  // if (closeModal){
+  //   closeModal.addEventListener('click', () => successModal.classList.add('hidden'));
+  // }
+
+  /* ▼ 새로 추가 : 더 알아보기 토글 */
+  const moreBtn      = document.getElementById('moreBtn');
+  const moreContent  = document.getElementById('moreContent');
+  moreBtn.addEventListener('click', () => {
+    moreContent.classList.toggle('open');
+    if (moreContent.classList.contains('open')) {
+      moreBtn.innerHTML = '접기 <i class="ri-arrow-up-s-line"></i>';
+    } else {
+      moreBtn.innerHTML = '더 알아보기 <i class="ri-arrow-down-s-line"></i>';
+    }
+  });
+});
+</script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- <script src="lib/contactform/countdown-form.js"></script> -->
+<script src="./js/validation-form.js"></script>
+<script src="./js/personal_f.js"></script>
+
+
+
+
+</body>
+</html>
